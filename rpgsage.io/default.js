@@ -92,9 +92,6 @@ async function fetchSnippetHtml($div) {
 
 	// get the html
 	let html = await $.ajax(url).catch(console.error);
-	if (location.href.includes("file://") && location.href.includes("e20.")) {
-		html = await $.ajax(url.replace("./", "../rpgsage.io/")).catch(console.error);
-	}
 	if (!html) {
 		$div.replaceWith(`<div class="alert alert-danger">${url}</div>`);
 		return null;
