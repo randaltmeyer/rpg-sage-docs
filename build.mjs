@@ -29,45 +29,65 @@ function readSnippet(snippetFilePath) {
 }
 
 const letters = "abcdefghijklmnopqrstuvwxyz";
-function addNavItem(navItems, isSub) {
-	if (isSub) {
+function addNavItem(navItems, itemSub, itemNav) {
+	// it is only a sub if marked as one
+	const sub = itemSub === "true";
+
+	// by default we nav to main (unless data-item-nav="false") and only nav to sub if marked (when data-item-nav="true")
+	const nav = sub ? itemNav === "true" : itemNav !== "false";
+
+	// handle a sub
+	if (sub) {
 		const navItem = navItems[navItems.length - 1];
 		const letter = letters[navItem.children.length];
-		const childItem = { key:`${navItem.key}${letter}`, label:`` };
+		const childItem = { key:`${navItem.key}${letter}`, label:``, sub, nav };
 		navItem.children.push(childItem);
 		return childItem;
 	}
-	const navItem = { key:`${navItems.length + 1}`, label:``, children:[] };
+
+	// handle a main
+	const navItem = { key:`${navItems.length + 1}`, label:``, nav, children:[] };
 	navItems.push(navItem);
 	return navItem;
 }
 
+// <div data-item-snippet-url="./snippets/item/inviting-rpg-sage.html" data-item-sub="true" data-item-nav="true"></div>
 const itemSnippetRegex = /<div\s+data\-item\-snippet\-url="([^"]+)"(?:\s+data\-item\-sub="([^"]+)")?(?:\s+data\-item\-nav="([^"]+)")?><\/div>/ig;
 function processItemSnippets(file, navItems) {
-	// <div data-item-snippet-url="./snippets/item/inviting-rpg-sage.html" data-item-sub="true" data-item-nav="true"></div>
 	while (itemSnippetRegex.test(file.fileContents)) {
 		file.fileContents = file.fileContents.replace(itemSnippetRegex, (_div, snippetPath, itemSub, itemNav, _index) => {
-			const isSub = itemSub === "true";
+			// generate the navItem
+			const navItem = addNavItem(navItems, itemSub, itemNav);
+
+			// read html
 			let snippetHtml = readSnippet(snippetPath);
-			const hTag = isSub ? "h5" : "h4";
-			const pad = isSub ? `ps-4` : ``;
-			const navItem = addNavItem(navItems, isSub);
+
+			// add item id to snippet
 			snippetHtml = snippetHtml.replace(/^<div/i, () => `<div id="item-${navItem.key}"`);
-			snippetHtml = snippetHtml.replace(/<h\d>([^<]+)<\/h\d>/i, (_tag, text) => {
+
+			// update the item header to include key (number/letter)
+			snippetHtml = snippetHtml.replace(/<h\d>(.*?)<\/h\d>/i, (_tag, text) => {
+				// pass label back for building nav later
 				navItem.label = text;
+
+				// return updated header
+				const hTag = navItem.sub ? "h5" : "h4";
+				const pad = navItem.sub ? `ps-4` : ``;
 				return `<${hTag} class="${pad}">${navItem.key}. ${text}</${hTag}>`;
 			});
 			return snippetHtml;
 		});
 	}
+
+	// just in case we mess up during dev
 	if (file.fileContents.match(/data\-item\-snippet\-url/i)) {
 		console.warn(`"data-item-snippet-url" found in file "${file.filePath}"!`);
 	}
 }
 
+// <div data-snippet-url="./snippets/nav/navbar-top.html"></div>
 const snippetRegex = /<div\s+data\-snippet\-url="([^"]+)"><\/div>/ig;
 function processSnippets(file) {
-	// <div data-snippet-url="./snippets/nav/navbar-top.html"></div>
 	while (snippetRegex.test(file.fileContents)) {
 		file.fileContents = file.fileContents.replace(snippetRegex, (_div, snippetPath, _index) => readSnippet(snippetPath));
 	}
@@ -77,10 +97,30 @@ function processSnippets(file) {
 }
 
 function processNavItems(file, navItems) {
-	let html = "NAV HTML HERE";
-	file.fileContents = file.fileContents.replace(/(<nav\s+class="nav\s+flex\-column"\s+id="navbar\-left\-items">)(<\/nav>)/i, (_, left, right) => {
-		return `${left}${html}${right}`;
-	});
+	if (navItems.length) {
+		const html = navItems.reduce((html, navItem)=> {
+			if (navItem.nav) {
+				html += `<a class="nav-link" href="#item-${navItem.key}">${navItem.key}. ${navItem.label}</a>`;
+				const navableChildren = navItem.children.filter(navChild => navChild.nav);
+				if (navableChildren.length) {
+					html += `<nav class="nav flex-column">`;
+					navableChildren.forEach(navChild => {
+						html += `<a class="nav-link" href="#item-${navChild.key}">${navChild.key}. ${navChild.label}</a>`;
+					});
+					html += `</nav>`;
+				}
+			}
+			return html;
+		}, "");
+		file.fileContents = file.fileContents.replace(/(<nav\s+class="nav\s+flex\-column"\s+id="navbar\-left\-items">)(<\/nav>)/i, (_, left, right) => {
+			return `${left}${html}${right}`;
+		});
+	}else {
+		file.fileContents = file.fileContents.replace(
+			`>Topics</button>`,
+			` style="visibility:hidden;">Topics</button>`
+		);
+	}
 }
 
 function writeFile(file) {

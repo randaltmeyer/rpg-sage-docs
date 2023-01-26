@@ -23,9 +23,73 @@
 	</head>
 	<body>
 
-		<!-- <div data-snippet-url="./snippets/dev/size-helper.html"></div> -->
+		<nav class="navbar fixed-top m-0 p-0" id="navbar-top">
+	<button class="navbar-toggler bg-primary text-light m-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar-left" aria-controls="navbar-left">Topics</button>
+	<button class="navbar-toggler bg-primary text-light m-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar-right" aria-controls="navbar-right">Links</button>
+	<div class="offcanvas offcanvas-start" tabindex="-1" id="navbar-left" aria-labelledby="navbar-left-label">
+	<div class="offcanvas-header mb-0 pb-0">
+		<h5 class="offcanvas-title" id="navbar-left-label">
+			Guide Topics
+		</h5>
+		<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	</div>
+	<div class="offcanvas-body">
+		<nav class="navbar flex-column align-items-stretch">
+			<nav class="nav flex-column" id="navbar-left-items"><a class="nav-link" href="#item-1">1. Inviting RPG Sage</a><a class="nav-link" href="#item-2">2. Command Types</a><nav class="nav flex-column"><a class="nav-link" href="#item-2a">2a. Message Commands</a><a class="nav-link" href="#item-2b">2b. Slash Commands</a><a class="nav-link" href="#item-2c">2c. Command Prefix</a><a class="nav-link" href="#item-2d">2d. Command Permissions</a></nav><a class="nav-link" href="#item-3">3. Sage Help</a><a class="nav-link" href="#item-4">4. Admin (Administrative) Commands</a><a class="nav-link" href="#item-5">5. Game Admin (Administrative) Commands</a><a class="nav-link" href="#item-6">6. Dialog Commands</a><a class="nav-link" href="#item-7">7. Dice Commands</a><a class="nav-link" href="#item-8">8. Character Import</a><a class="nav-link" href="#item-9">9. Other Commands</a><a class="nav-link" href="#item-10">10. Pathfinder 2e Commands</a><a class="nav-link" href="#item-11">11. Pathfinder Society 2e Commands</a></nav>
+		</nav>
+	</div>
+</div>
 
-		<div data-snippet-url="./snippets/nav/navbar-top.html"></div>
+	<div class="offcanvas offcanvas-end" tabindex="-1" id="navbar-right" aria-labelledby="navbar-right-label">
+	<div class="offcanvas-header mb-0 pb-0 text-dark">
+		<h5 class="offcanvas-title" id="navbar-right-label">RPG Sage Links</h5>
+		<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	</div>
+	<div class="offcanvas-body">
+		<nav class="navbar flex-column align-items-stretch">
+			<div class="alert alert-warning text-center p-1 mt-1 mb-1">
+				<a href="features.html">Feature Guide</a>
+				<br/><small>what we do</small>
+			</div>
+			<div class="alert alert-warning text-center p-1 mt-1 mb-1">
+				<a href="index.html">Command Guide</a>
+				<br/><small>mostly complete</small>
+			</div>
+			<div class="alert alert-warning text-center p-1 mt-1 mb-1">
+				<a href="quick.html">Quick Start Guide</a>
+				<br/><small>learn the basics</small>
+			</div>
+			<div class="alert alert-warning text-center p-1 mt-1 mb-1">
+				<a href="https://e20.rpgsage.io/demo.html">Essence20 Demo</a>
+				<br/><small>see it in action</small>
+			</div>
+			<div class="alert alert-success text-center p-1 mt-1 mb-1">
+				<a href="https://discord.com/api/oauth2/authorize?client_id=644942473315090434&permissions=535529122897&scope=bot%20applications.commands" target="_blank">Invite RPG Sage</a>
+				<br/><small>to your server</small>
+			</div>
+			<div class="alert alert-primary text-center p-1 mt-1 mb-1">
+				<a href="https://www.patreon.com/rpgsage" target="_blank">Join our Patreon</a>
+				<br/><a href="https://ko-fi.com/rpgsage" target="_blank">Visit our Ko-Fi</a>
+				<br/>Support us!
+			</div>
+			<div class="alert alert-info text-center p-1 mt-1 mb-1">
+				<a href="https://discord.com/invite/pfAcUMN" target="_blank">RPG Sage Discord</a>
+				<br/>Chat with us!
+			</div>
+			<div class="alert alert-info text-center p-1 mt-1 mb-1">
+				<a href="https://twitter.com/RPGSageOfficial" target="_blank">@RPGSageOfficial</a>
+				<br/>Follow us!
+			</div>
+			<div class="text-center p-1 mt-1 mb-1">
+				<a href="terms.html" target="_blank"><small>Terms of Service</small></a>
+				<br/><a href="privacy.html" target="_blank"><small>Privacy Policy</small></a>
+			</div>
+		</nav>
+	</div>
+</div>
+
+</nav>
+
 
 		<div class="container">
 
@@ -55,72 +119,729 @@
 				</p>
 			</div>
 
-			<div data-item-snippet-url="./snippets/item/inviting-rpg-sage.html"></div>
+			<div id="item-1" class="item">
+	<h4 class="">1. Inviting RPG Sage</h4>
+	<div class="row m-0">
+		<div class="col">
+			<p>
+				To invite RPG Sage to your Discord Server, click <a href="https://discord.com/api/oauth2/authorize?client_id=644942473315090434&permissions=535529122897&scope=bot%20applications.commands" target="_blank">here</a>.
+				<br/>Sage asks for various permissions needed to function as expected:
+				<br/><small>some features are still in development</small>
+			</p>
+			<p class="text-center d-lg-none">
+				<img src="https://rpgsage.io/images/docs/invite-permission-list.jpg" alt="An image of the RPG Sage invite prompt listing all of the permissions it is requesting."/>
+				<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle permissions breakdown]</em></button>
+			</p>
+			<ul class="breakdown-togglee d-none d-lg-block">
+				<li><strong>Manage Roles:</strong> &nbsp; A future Sage feature will create/manage roles for games. <small>in development</small></li>
+				<li><strong>Manage Channels:</strong> &nbsp; A future Sage feature will create/manage channels for games. <small>in development</small></li>
+				<li><strong>Create Invite:</strong> &nbsp; A future Sage feature will create invites for games posted as looking for players. <small>not yet in development</small></li>
+				<li><strong>Manage Emojis and Stickers:</strong> &nbsp; A future Sage feature may allow custom emojis for games. <small>not yet in development</small></li>
+				<li><strong>Manage Webhooks:</strong> &nbsp; This is how Sage posts dialog as characters instead of their players.</li>
+				<li><strong>Read Messages:</strong> &nbsp; Sage needs to be able to read messages to parse commands.</li>
+				<li><strong>Send Messages:</strong> &nbsp; Sage needs to be able to send messages to respond to commands.</li>
+				<li><strong>Manage Messages:</strong> &nbsp; Sage needs to be able to manage messages to function (such as edit, pin, or delete messages).</li>
+				<li><strong>Embed Links:</strong> &nbsp; Sage needs to be able to embed links to link game material to their source (such as Archives of Nethys).</li>
+				<li><strong>Attach Files:</strong> &nbsp; Sage's import command can attach a .txt of your character formatted in markdown.</li>
+				<li><strong>Read Message History:</strong> &nbsp; Sage needs to be able to search messages to function. A future Sage feature may allow for more enhanced game/dialog specific search. <em>(not yet in development)</em></li>
+				<li><strong>Add Reactions:</strong> &nbsp; Sage needs to be able to add reactions to inform and interact with users.</li>
+				<li><strong>Use External Emojis:</strong> &nbsp; Sage needs access to the default emoji set on RPG Sage's Discord server.</li>
+				<li><strong>Use Application Commands:</strong> &nbsp; I am currently moving most of the commands from posting as a message to Slash Commands!</li>
+			</ul>
+		</div>
+		<div class="col-lg-4 col-md-6 d-none d-lg-block text-center">
+			<img src="https://rpgsage.io/images/docs/invite-permission-list.jpg" alt="An image of the RPG Sage invite prompt listing all of the permissions it is requesting."/>
+		</div>
+	</div>
+</div>
 
-			<div data-item-snippet-url="./snippets/item/general/command-types.html"></div>
-			<div data-item-snippet-url="./snippets/item/general/message-commands.html" data-item-sub="true" data-item-nav="true"></div>
-			<div data-item-snippet-url="./snippets/item/general/slash-commands.html" data-item-sub="true" data-item-nav="true"></div>
-			<div data-item-snippet-url="./snippets/item/general/command-prefix.html" data-item-sub="true" data-item-nav="true"></div>
-			<div data-item-snippet-url="./snippets/item/general/command-permissions.html" data-item-sub="true" data-item-nav="true"></div>
+			<div id="item-2" class="item">
+	<h4 class="">2. Command Types</h4>
+	<p>
+		The primary ways in which you will interact with Sage are through commands.
+		Sage has four types of commands that it responds to:
+	</p>
+		<ul style="margin:0 0 0 20px;padding:0 0 0 20px;">
+			<li>Dialog Commands</li>
+			<li>Dice Commands</li>
+			<li>Message Commands</li>
+			<li>Slash Commands</li>
+		</ul>
+	<p>
+		<small>Dialog and Dice commands will be discussed later.</small>
+	</p>
+</div>
 
-			<div data-item-snippet-url="./snippets/item/sage-help.html"></div>
+			<div id="item-2a" class="item">
+	<h5 class="ps-4">2a. Message Commands</h5>
+	<p>
+		Message Commands are commands given to Sage by posting a message into chat, either a channel where Sage has access or via a direct message to Sage.
+	</p>
+	<p class="text-center">
+		<img src="https://rpgsage.io/images/docs/message-command-sage-help.jpg"/>
+	</p>
+	<div class="alert alert-info m-1">
+		<p>
+			To further understand a Message Command, think of them as having the following components: Prefix, Action, Command, SubCommands, and Arguments.
+		</p>
+		<ul>
+			<li><strong>Prefix</strong> is there so that you can have multiple bots that know to ignore commands intended for other bots.</li>
+			<li><strong>Action</strong> distinguishes between telling Sage to do something and asking Sage to find something.</li>
+			<li><strong>Command</strong> is specifically what task you want Sage to do.</li>
+			<li><strong>SubCommand</strong> break down commands further <small>such as add/remove</small>.</li>
+			<li><strong>Arguments</strong><sup>1,2</sup> are any details you need to give Sage so that it can do the task for you.</li>
+		</ul>
+		<p>
+			<sup>1</sup>Arguments are sometimes given as one word (<code>name</code>), multiple words with quotes around them (<code>"Vash the Stampede"</code>), and other times key/value pairs (<code>name="Vash the Stampede"</code>).
+			<br/><sup>2</sup>If you see in these guides (or in the help) <code>@UserMention</code>, you need to ensure that Discord created a proper User Mention for Sage to be able to properly find the user. <small>A "Proper User Mention" means that Discord recognized the user you were trying to mention and replaced your entered text with a link to the user. See image below.</small>
+		</p>
+		<p class="text-center">
+			<img src="https://rpgsage.io/images/docs/proper-user-mention.jpg"/>
+		</p>
+		<code>sage!help dice</code> is a simple command with a Prefix <code>sage</code>, Action <code>!</code>, Command <code>help</code>, and SubCommand <code>dice</code>
+	</div>
+</div>
+			<div id="item-2b" class="item">
+	<h5 class="ps-4">2b. Slash Commands</h5>
+	<p>
+		Slash Commands are commands given to Sage by typing <code>/sage</code> and following the prompts Discord gives you to complete the command.
+	</p>
+	<p class="text-center">
+		<img src="https://rpgsage.io/images/docs/slash-command-sage-help.jpg"/>
+	</p>
+	<p>
+		Note that Sage cannot respond to a DM from you unless you have opened a channel with it, which is done via the Slash Command: <code>/sage dm</code>.
+	</p>
+</div>
+			<div id="item-2c" class="item">
+	<h5 class="ps-4">2c. Command Prefix</h5>
+	<p>
+		By default, Sage commands that start with <code>!</code> or <code>?</code> require a prefix.
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!help</code>
+		<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle command parts breakdown]</em></button>
+	</p>
+	<div class="alert alert-secondary ms-3 me-3 m-0 p-1 mb-4 d-none breakdown-togglee">
+		<small>This command has Prefix <code>sage</code>, Action <code>!</code>, and Command <code>help</code>.</small>
+	</div>
+	<p>
+		You can change Sage's prefix with the <code>prefix</code> command:
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!prefix set newPrefix</code>
+		<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle command parts breakdown]</em></button>
+	</p>
+	<div class="alert alert-secondary ms-3 me-3 m-0 p-1 mb-4 d-none breakdown-togglee">
+		<small>This command has Prefix <code>sage</code>, Action <code>!</code>, Command <code>prefix</code>, SubCommand <code>set</code> and Argument <code>newPrefix</code>.</small>
+	</div>
+	<p>
+		You can also remove Sage's prefix with the <code>prefix</code> command:
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!prefix unset</code>
+		<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle command parts breakdown]</em></button>
+	</p>
+	<div class="alert alert-secondary ms-3 me-3 m-0 p-1 mb-4 d-none breakdown-togglee">
+		<small>This command has Prefix <code>sage</code>, Action <code>!</code>, Command <code>prefix</code>, and SubCommand <code>unset</code>.</small>
+	</div>
+	<p>
+		If you have unset the prefix, commands look like:
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>!help</code>
+		<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle command parts breakdown]</em></button>
+	</p>
+	<div class="alert alert-secondary ms-3 me-3 m-0 p-1 mb-4 d-none breakdown-togglee">
+		<small>This command has no Prefix, Action <code>!</code>, and Command <code>help</code>.</small>
+	</div>
+</div>
 
-			<div data-item-snippet-url="./snippets/item/admin/admin-commands.html"></div>
-			<div data-item-snippet-url="./snippets/item/admin/sage-prefix-admin.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/admin/game-sage-server-admin.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/admin/color-admin.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/admin/emoji-admin.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/admin/server-role-admin.html" data-item-sub="true"></div>
+			<div id="item-2d" class="item">
+	<h5 class="ps-4">2d. Command Permissions</h5>
+	<p>
+		By default, Sage responds to all commands in any channel it has access to read and send messages.
+		That said, "admin" commands (those that manipulate Sage, the Server, or Games, denoted by <code>!!</code>) require permissions with Sage.
+		The Server Owner has full access and must give permission to others.
+		<br/>
+		<br/><strong>Sage Admin: </strong> Full access to Sage on the server, can assign Server Admin and Game Admin permissions and perform their actions.
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!!admin add @UserMention SageAdmin</code>
+		<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle command parts breakdown]</em></button>
+	</p>
+	<div class="alert alert-secondary ms-3 me-3 m-0 p-1 mb-4 d-none breakdown-togglee">
+		<small>This example has Prefix <code>sage</code>, Action <code>!!</code>, Command <code>admin</code>, SubCommand <code>add</code>, and Arguments <code>@UserMention</code> and <code>SageAdmin</code>.</small>
+	</div>
+	<p>
+		<strong>Server Admin: </strong> Can configure channels to work with Sage, can assign Game Admin permissions and perform their actions.
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!!admin add @UserMention ServerAdmin</code>
+		<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle command parts breakdown]</em></button>
+	</p>
+	<div class="alert alert-secondary ms-3 me-3 m-0 p-1 mb-4 d-none breakdown-togglee">
+		<small>This example has Prefix <code>sage</code>, Action <code>!!</code>, Command <code>admin</code>, SubCommand <code>add</code>, and Arguments <code>@UserMention</code> and <code>ServerAdmin</code>.</small>
+	</div>
+	<p>
+		<strong>Game Admin: </strong> Can configure Sage's game tables and channels, can assign Game Masters and perform their actions.
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>sage!!admin add @UserMention GameAdmin</code>
+		<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle command parts breakdown]</em></button>
+	</p>
+	<div class="alert alert-secondary ms-3 me-3 m-0 p-1 mb-4 d-none breakdown-togglee">
+		<small>This example has Prefix <code>sage</code>, Action <code>!!</code>, Command <code>admin</code>, SubCommand <code>add</code>, and Arguments <code>@UserMention</code> and <code>GameAdmin</code>.</small>
+	</div>
+</div>
 
-			<div data-item-snippet-url="./snippets/item/game/game-admin-commands.html"></div>
-			<div data-item-snippet-url="./snippets/item/game/game-admin.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/game/channel-admin.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/game/gm-admin.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/game/npc-admin.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/game/player-admin.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/game/pc-admin.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/game/companion-admin.html" data-item-sub="true"></div>
+			<div id="item-3" class="item">
+	<h4 class="">3. Sage Help</h4>
+	<p>
+		&nbsp;&nbsp;&nbsp;&nbsp<code>sage! help</code>
+		<br/>Lists the categories of help available.
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp<code>sage! help {category}</code>
+		<br/>Lists the help commands available within the given category.
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp<code>sage! help {category} {subCategory}</code>
+		<br/>Lists the help commands available within the given category and sub-category.
+	</p>
+</div>
 
-			<div data-item-snippet-url="./snippets/item/dialog/dialog-commands.html"></div>
-			<div data-item-snippet-url="./snippets/item/dialog/dialog-post-command.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/dialog/dialog-edit-command.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/dialog/dialog-alias-commands.html" data-item-sub="true"></div>
+			<div id="item-4" class="item">
+	<h4 class="">4. Admin (Administrative) Commands</h4>
+	<p><code>sage! help admin</code></p>
+</div>
+			<div id="item-4a" class="item">
+	<h5 class="ps-4">4a. Sage Prefix Admin</h5>
+	<p><code>sage! help admin prefix</code>
+	<br/>
+	<br/>These commands let you set or unset Sage command prefixes.
+	<br/><code>sage!! prefix get</code>
+	<br/><code>sage!! prefix set {commandPrefix; ex: sage}</code>
+	<br/><code>sage!! prefix sync</code>
+	<br/><code>sage!! prefix unset</code></p>
+</div>
+			<div id="item-4b" class="item">
+	<h5 class="ps-4">4b. Game, Sage, Server Admin</h5>
+	<p><code>sage! help admin admin</code>
+	<br/>
+	<br/>These commands are for server owners to configure admin access to Sage.
+	<br/><code>sage!! admin add @UserMention {GameAdmin|ServerAdmin|SageAdmin}</code>
+	<br/><code>sage!! admin remove @UserMention</code>
+	<br/><code>sage!! admin update @UserMention {GameAdmin|ServerAdmin|SageAdmin}</code>
+	<br/>GameAdmin can only manage games.
+	<br/>Server Admin can manage games and server channels.
+	<br/>SageAdmin can manage all things Sage.</p>
+</div>
+			<div id="item-4c" class="item">
+	<h5 class="ps-4">4c. Color Admin</h5>
+	<p><code>sage! help admin color</code>
+	<br/>
+	<br/>These commands are for managing the color that lines a post's embedded content.
+	<br/><code>sage!! color get {ColorType}</code>
+	<br/><code>sage!! color get {server|game} {ColorType}</code>
+	<br/><code>sage!! color list</code>
+	<br/><code>sage!! color list {server|game}</code>
+	<br/><code>sage!! color set {ColorType} {hexColorValue}</code>
+	<br/><code>sage!! color set {server|game} {ColorType} {hexColorValue}</code>
+	<br/><code>sage!! color sync</code>
+	<br/><code>sage!! color sync {server|game}</code>
+	<br/><code>sage!! color unset {ColorType}</code>
+	<br/><code>sage!! color unset {server|game} {ColorType}</code>
+	<br/>When choosing <code>server</code> or <code>game</code> you are deciding if you are working with Server colors or Game colors.
+	<br/>Use <code>sage!! color list</code> to see all of the acceptable values for ColorType.</p>
+</div>
 
-			<div data-item-snippet-url="./snippets/item/dice/dice-commands.html"></div>
-			<div data-item-snippet-url="./snippets/item/dice/simple-dice.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/dice/dice-w-descriptions.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/dice/dice-w-modifiers.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/dice/dice-w-tests.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/dice/dice-w-multiple-sets.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/dice/dice-w-multiple-sets-and-tests.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/dice/dice-w-target.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/dice/dice-w-output-override.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/dice/dice-w-game-override.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/dice/dice-macros.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/dice/dice-macro-arguments.html" data-item-sub="true"></div>
+			<div id="item-4d" class="item">
+	<h5 class="ps-4">4d. Emoji Admin</h5>
+	<p><code>sage! help admin emoji</code>
+	<br/>
+	<br/>These commands are for managing the emoji used for various parts of Sage.
+	<br/><code>sage!! emoji get {EmojiType}</code>
+	<br/><code>sage!! emoji get {server|game} {EmojiType}</code>
+	<br/><code>sage!! emoji list</code>
+	<br/><code>sage!! emoji list {server|game}</code>
+	<br/><code>sage!! emoji set {EmojiType} {emoji}</code>
+	<br/><code>sage!! emoji set {server|game} {EmojiType} {emoji}</code>
+	<br/><code>sage!! emoji sync</code>
+	<br/><code>sage!! emoji sync {server|game}</code>
+	<br/><code>sage!! emoji unset {EmojiType}</code>
+	<br/><code>sage!! emoji unset {server|game} {EmojiType}</code>
+	<br/>When choosing <code>server</code> or <code>game</code> you are deciding if you are working with Server emoji or Game emoji.
+	<br/>Use <code>sage!! emoji list</code> to see all of the acceptable values for EmojiType.</p>
+</div>
+			<div id="item-4e" class="item">
+	<h5 class="ps-4">4e. Server Role Admin <small>Not Fully Functional</small></h5>
+	<p><code>sage! help admin server</code>
+	<br/>
+	<br/>These commands are for manging the Roles used for admins of Sage.
+	<br/><code>sage!! server role list</code>
+	<br/><code>sage!! server role remove {ServerRoleType}</code>
+	<br/><code>sage!! server role set @RoleMention {ServerRoleType}</code>
+	<br/>ServerRoleType values: SageAdmin, ServerAdmin, GameAdmin</p>
+</div>
 
-			<div data-item-snippet-url="./snippets/item/character/import-command.html"></div>
+			<div id="item-5" class="item">
+	<h4 class="">5. Game Admin (Administrative) Commands</h4>
+	<p>These commands are for configuring a "Game Table" (a game and group of channels that are all part of a game).</p>
+</div>
+			<div id="item-5a" class="item">
+	<h5 class="ps-4">5a. Game Admin</h5>
+	<p>
+		<code>sage! help admin game</code>
+		<br />
+		<br />These commands are for managing games.
+		<br /><code>sage!! game archive</code>
+		<br /><code>sage!! game archive list</code>
+		<br /><code>sage!! game count</code>
+		<br /><code>sage!! game create name="Dragon Saga: Questbound!"</code>
+		<br /><code>sage!! game create name="Dragon Saga: Questbound!" game="PF2E|NONE"</code>
+		<br /><code>sage!! game details</code>
+		<br /><code>sage!! game list</code>
+		<br /><code>sage!! game role remove {GameRoleType}</code>
+		<br /><code>sage!! game role set @RoleMention {GameRoleType}</code>
+		<br /><code>sage!! game set diceoutput="XXS|XS|S|M|L|XL|XXL|UNSET"</code>
+		<br /><code>sage!! game set game="PF2E|NONE"</code>
+		<br /><code>sage!! game set name="Dragon Saga: End Times ..."</code>
+		<br /><code>sage!! role list</code>
+		<br />GameRoleTypes values: Spectator, Player, GameMaster, Cast, Table
+		<br />- These roles are not fully implemented yet, but are meant to allow Sage to manage roles and permissions.
+	</p>
+</div>
+			<div id="item-5b" class="item">
+	<h5 class="ps-4">5b. Channel Admin</h5>
+	<p>
+		<code>sage! help admin channel</code>
+		<br/>
+		<br/>These commands are for managing what features are available on each channel.
+		<br/><code>sage!! channel add #ChannelReference {optionKey}="optionValue"</code>
+		<br/><code>sage!! channel details</code>
+		<br/><code>sage!! channel list {game|server}</code>
+		<br/><code>sage!! channel remove #ChannelReference</code>
+		<br/><code>sage!! channel set {optionKey}="optionValue"</code>
+		<br/>Channel Options <em>(can set multiple options at the same time)</em>:
+		<br/>
+		<br/>- admin="true|false"
+		<br/>- commands="true|false" <em>(also known as non-admin commands)</em>
+		<br/>- dialog="true|false"
+		<br/>- dice="true|false"
+		<br/>- search="true|false"
+		<br/>- - This determines which types of commands (admin, non-admin, dialog, dice, search) are allowed.
+		<br/>
+		<br/>- crit="timestwo|rolltwice|addmax|unset"
+		<br/>- - TIMESTWO rolls the dice and multiplies the results x2. <em>(default)</em>
+		<br/>- - ROLLTWICE rolls the damage twice and adds the results together.
+		<br/>- - ADDMAX rolls the dice once and then adds max damage to the result. <em>(house rule)</em>
+		<br/>- - UNSET uses the crit method inherited from either the game or the server.
+		<br/>
+		<br/>- diceoutput="xxs|xs|s|m|l|xl|xxl|rollem|unset"
+		<br/>- - This determines how compact or expanded the dice results are displayed.
+		<br/>- - ROLLEM uses the diceoutput method that most closely emulates what Rollem uses.
+		<br/>- - UNSET uses the diceoutput method inherited from either the game or the server.
+		<br/>
+		<br/>- dicepost="post|embed|unset"
+		<br/>- - POST will output dice results in a simple post.
+		<br/>- - EMBED will output dice results in an embed in a post.
+		<br/>- - ~~REPLY will output dice results in a reply to the input.~~ <em>(future feature)</em>
+		<br/>- - UNSET uses the dicepost method inherited from either the game or the server.
+		<br/>
+		<br/>- game="pf2e|none"
+		<br/>- - This determines which game is being played.
+		<br/>- - PF2E Currently Pathfinder Second Edition is the only game that Sage recognizes.
+		<br/>- - The primary place this is noticable is the dice engine: PF2E dice know about ACs, DCs, and how to calculate Critical Success and Failure.
+		<br/>
+		<br/>- gamemaster="none|write"
+		<br/>- player="none|write"
+		<br/>- - NONE The user (gamemaster, player) should not have access to this channel.
+		<br/>- - WRITE The user (gamemaster, player) should have full access to this channel.
+		<br/>- - Note: A channel that is gamemaster=write and player=none is considered a GM only channel and is where secret dice rolls are sent!
+	</p>
+</div>
+			<div id="item-5c" class="item">
+	<h5 class="ps-4">5c. GM (Game Master) Admin</h5>
+	<p><code>sage! help admin gm</code>
+	<br/>
+	<br/>These commands are for managing Game Masters for games.
+	<br/><code>sage!! gm add @UserMention</code>
+	<br/><code>sage!! gm list</code>
+	<br/><code>sage!! gm remove @UserMention</code></p>
+</div>
+			<div id="item-5d" class="item">
+	<h5 class="ps-4">5d. NPC (Non Player Character) Admin</h5>
+	<p><code>sage! help admin npc</code>
+	<br/>
+	<br/>These commands are for managing Non Player Characters for games.
+	<br/><code>sage!! npc create name="Farmer Bob" token="http://url_to_token_image" avatar="http://url_to_avatar_image"</code>
+	<br/><code>sage!! npc delete name="Farmer Bob"</code>
+	<br/><code>sage!! npc details name="Farmer Bob"</code>
+	<br/><code>sage!! npc list "optionalFilter"</code>
+	<br/><code>sage!! npc update name="Farmer Bob" avatar="http://url_to_avatar_image"</code>
+	<br/><code>sage!! npc update oldname="Farmer Bob" newname="Blacksmith Bob"</code>
+	<br/>Images can be urls or embedded images.</p>
+</div>
 
-			<div data-item-snippet-url="./snippets/item/other/other-commands.html"></div>
-			<div data-item-snippet-url="./snippets/item/other/coin-currency-calculator.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/other/weather-report-generator.html" data-item-sub="true"></div>
+			<div id="item-5e" class="item">
+	<h5 class="ps-4">5e. Player Admin</h5>
+	<p><code>sage!help admin player</code>
+	<br/>
+	<br/>These commands are for managing Players for games.
+	<br/><code>sage!! player add @UserMention</code>
+	<br/><code>sage!! player add @UserMention @UserMention</code>
+	<br/><code>sage!! player list</code>
+	<br/><code>sage!! player remove @UserMention {@OptionalPlayerMention}</code>
+	<br/>The Optional Player Mentions are there to show you can add or remove multiples.</p>
+</div>
+			<div id="item-5f" class="item">
+	<h5 class="ps-4">5f. PC (Player Character) Admin</h5>
+	<p><code>sage! help admin pc</code>
+	<br/>
+	<br/>These commands are for managing Player Characters.
+	<br/><code>sage!! pc create name="Bardok the Brave" token="http://url_to_token_image" avatar="http://url_to_avatar_image"</code>
+	<br/><code>sage!! pc delete name="Bardok the Brave"</code>
+	<br/><code>sage!! pc details name="Bardok the Brave"</code>
+	<br/><code>sage!! pc list "optionalFilter"</code>
+	<br/><code>sage!! pc update name="Bardok the Brave" avatar="http://url_to_avatar_image"</code>
+	<br/><code>sage!! pc update oldname="Bardok the Brave" newname="Bardok the Cowardly"</code>
+	<br/>Images can be urls or embedded images.</p>
+</div>
+			<div id="item-5g" class="item">
+	<h5 class="ps-4">5g. Companion (Companion, Familiar, Hireling, etc) Admin</h5>
+	<p>
+		<code>sage! help admin companion</code>
+		<br />
+		<br />These commands are for managing companions for player characters.
+		<br /><code>sage!! companion create charname="Bardok the Brave" name="Ser Stallion" token="http://url_to_token_image" avatar="http://url_to_avatar_image"</code>
+		<br /><code>sage!! companion delete charname="Bardok the Brave" name="Ser Stallion"</code>
+		<br /><code>sage!! companion details name="Ser Stallion"</code>
+		<br /><code>sage!! companion list "optionalFilter"</code>
+		<br /><code>sage!! companion update charname="Bardok the Brave" name="Ser Stallion" avatar="http://url_to_avatar_image"</code>
+		<br /><code>sage!! companion update charname="Bardok the Cowardly" oldname="Ser Stallion" newname="Ser Bolts'a'lot"</code>
+		<br />Images can be urls or embedded images.
+	</p>
+</div>
 
-			<div data-item-snippet-url="./snippets/item/pf2e/pf2e-commands.html"></div>
-			<div data-item-snippet-url="./snippets/item/pf2e/golarion-info.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/pf2e/pf2e-dcs.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/pf2e/pf2e-lists.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/pf2e/pf2e-search.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/pf2e/pf2e-find.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/pf2e/pf2e-spell-lists.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/pf2e/pf2e-focus-spell-lists.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/pf2e/pf2e-starting-wealth.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/pf2e/pf2e-income.html" data-item-sub="true"></div>
+			<div id="item-6" class="item">
+	<h4 class="">6. Dialog Commands</h4>
+	<p><code>sage! help dialog</code> &nbsp; or &nbsp; <code>/sage help category="Dialog Commands"</code>
+	<br/>These commands are how you interact with the dialog engine of Sage.
+	<br/>When posting dialog, you do not need to use a command prefix.
+	<br/>Each different dialog type can be configured to have its own default color.</p>
+</div>
+			<div id="item-6a" class="item">
+	<h5 class="ps-4">6a. Dialog Post Command</h5>
+	<p><code>{type}::{name}(display name)::(title)::{color}::{avatar}::{content}</code>
+	<br/>- {type}: gm, npc, enemy, ally, pc, alt, companion, hireling
+	<br/>- {name}: the name of the npc, pc, or companion to post as
+	<br/>- - optional for PCs in a game
+	<br/>- {display name}: the name to post as
+	<br/>- - optional: defaults to character name or 'Game Master' for GM
+	<br/>- {title}: a title or descripiton of the dialog optional
+	<br/>- {color}: a color to override the dialog color with
+	<br/>- - optional: expects hex value 0x000000 or #FFFFFF
+	<br/>- {avatar}: a url to override the avatar image
+	<br/>- - optional
+	<br/>- {content}: everything you want to post in your dialog
+	<br/>- - accepts normal discord/markup as well as custom Sage markup</p>
+</div>
+			<div id="item-6b" class="item">
+	<h5 class="ps-4">6b. Dialog Edit Command</h5>
+	<p><code>sage! help dialog edit</code>
+	<br/>
+	<br/>This command lets you edit your last dialog post.
+	<br/><code>edit::{dialog content}</code></p>
+</div>
 
-			<div data-item-snippet-url="./snippets/item/pfs2e/pfs2e-commands.html"></div>
-			<div data-item-snippet-url="./snippets/item/pfs2e/pfs2e-links.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/pfs2e/pfs2e-downtime-rolls.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/pfs2e/pfs2e-scenario-randomizers.html" data-item-sub="true"></div>
-			<div data-item-snippet-url="./snippets/item/pfs2e/pfs2e-tier-calculator.html" data-item-sub="true"></div>
+			<div id="item-6c" class="item">
+	<h5 class="ps-4">6c. Dialog Alias Commands</h5>
+	<p><code>sage! help dialog alias</code>
+	<br/>
+	<br/>These commands are for managing aliases for all your dialog needs.
+	<br/><code>sage!! alias delete {alias}</code>
+	<br/><code>sage!! alias list</code>
+	<br/><code>sage!! alias set {alias} {dialog prefix}</code>
+	<br/>An alias is a simple word or name with no punctation.
+	<br/>A dialog prefix can include an alias and even some content.
+	<br/>Example: <code>sage!! alias set gorm npc::Gorm Greathammer::</code></p>
+</div>
+
+
+			<div id="item-7" class="item">
+	<h4 class="">7. Dice Commands</h4>
+	<p><code>sage! help dice</code> &nbsp; or &nbsp; <code>/sage help category="Dice Commands"</code>
+	<br/>These commands are how you roll dice with Sage.</p>
+</div>
+			<div id="item-7a" class="item">
+	<h5 class="ps-4">7a. Simple Dice</h5>
+	<p><code>[1d20]</code></p>
+</div>
+			<div id="item-7b" class="item">
+	<h5 class="ps-4">7b. Dice w/ description</h5>
+	<p><code>[1d20 attack]</code>
+	<br/><code>[1d6 damage]</code></p>
+</div>
+			<div id="item-7c" class="item">
+	<h5 class="ps-4">7c. Dice w/ modifiers</h5>
+	<p><code>[1d20 + 5 Description]</code>
+	<br/><code>[1d20 + 5]</code>
+	<br/><code>[1d8 + 2 + 1d6]</code>
+	<br/><code>[1d8 sword + 2 strength + 1d6 holy]</code></p>
+</div>
+			<div id="item-7d" class="item">
+	<h5 class="ps-4">7d. Dice w/ tests</h5>
+	<p><code>[1d100 &lt; 25]</code>
+	<br/><code>[1d20 + 5 &gt;= 10 Description]</code>
+	<br/><code>[1d20 &gt;= 10]</code></p>
+</div>
+			<div id="item-7e" class="item">
+	<h5 class="ps-4">7e. Dice w/ multiple sets</h5>
+	<p><code>[1d20 attack; 1d8 damage]</code>
+	<br/><code>[1d20+5 attack; 1d8 + 2 slashing damage]</code>
+	<br/><code>[1d20+2 attack; 1d4 dagger + 2d6 sneak damage]</code></p>
+</div>
+			<div id="item-7f" class="item">
+	<h5 class="ps-4">7f. Dice w/ multiple sets and tests</h5>
+	<p><code>[1d20 &gt; 10 attack; 1d8 damage]</code>
+	<br/><code>[1d20 &gt; 5 (miss chance); 1d20+5 &gt;= 15 attack; 1d8 + 2 slashing damage]</code></p>
+</div>
+			<div id="item-7g" class="item">
+	<h5 class="ps-4">7g. Dice w/ target <small>certain game systems only</small></h5>
+	<p>
+		<code>[1d20 + 5 vs 10 Description]</code>
+		<br/><code>[1d20 ac 10]</code> <small>DnD5e, PF2e</small>
+		<br/><code>[1d20 dc 10]</code> <small>DnD5e, PF2e</small>
+		<br/><code>[1d20 dif 10]</code> <small>E20</small>
+		<br/><code>[1d20 vs 10]</code> <small>DnD5e, E20, PF2e, Quest</small>
+		<br/>Future releases will expand this for other game systems.
+	</p>
+</div>
+			<div id="item-7h" class="item">
+	<h5 class="ps-4">7h. Dice w/ output override</h5>
+	<p>
+		<code>[XL 1d20 + 20 vs ac 10 greater striking rapier, fatal d8; 1d6 piercing + 4 dex + 2d6 holy + 4d6 sneak]</code>
+		<br/>Output options: xxs, xs, s, m, l, xl, xxl, rollem
+		<br/>Default Dice Output: m
+		<br/><small>Default Dice Output can be set at the Server, Game, and Channel level</small>
+	</p>
+</div>
+			<div id="item-7i" class="item">
+	<h5 class="ps-4">7i. Dice w/ game override</h5>
+	<p><code>[pf2e 1d20 dc 10 check]</code>
+	<br/><code>[dnd5e 1d20 ac 10 attack]</code>
+	<br/>Used when a server or game defaults to a different mode than you want for your dice.
+	<br/>Future releases will expand this for other game systems.
+</div>
+			<div id="item-7j" class="item">
+	<h5 class="ps-4">7j. Dice Macros</h5>
+	<p>
+		<code>sage! help dice macro</code>
+		<br/>
+		<br/>These commands are for managing macros to make complex dice rolls.
+		<br/><code>sage!! macro delete all</code>
+		<br/><code>sage!! macro delete category="{category}"</code>
+		<br/><code>sage!! macro delete name="{name}"</code>
+		<br/><code>sage!! macro details name="{name}"</code>
+		<br/><code>sage!! macro list</code>
+		<br/><code>sage!! macro list category="{category}"</code>
+		<br/><code>sage!! macro move name="{name}" category="{category}"</code>
+		<br/><code>sage!! macro set name="{name}" [{dice}]</code>
+		<br/><code>sage!! macro set name="{name}" category="{category}" [{dice}]</code>
+		<br/>Example: <code>sage!! macro set name="three daggers" category="daggers" [1d20+8;1d6][1d20+4;1d6][1d20;1d6]</code>
+		<br/>Usage: <code>[three daggers]</code>
+		<br/>Example: <code>sage!! macro set name="swords" [3MAP-4#1d20+8{ac};1d6]</code>
+		<br/>Usage: <code>[swords ac=10]</code>
+	</p>
+	<p>
+		Macro Categories are helpful in grouping related macros together, but they also serve a special function for Pathfinder 2e players using imported characters.
+		Macros with the same category name as an imported Pathfinder 2e character name will show up in the imported character's sheet so that you can select then and roll them with the click of a button.
+		<em>(Will provide link to importing documentation as it is finished.)</em>
+	</p>
+</div>
+			<div id="item-7k" class="item">
+	<h5 class="ps-4">7k. Dice Macro Arguments</h5>
+	<p>
+		Macros allow arguments, making them very flexible but also easy to overcomplicate.
+		<br/>Arguments are indicated with curly braces: <code>{</code> and <code>}</code>
+		<br/>
+		<br/>The two primary types of arguments are: indexed and named.
+		<br/>Note: If you use an argument more than once in your macro, it will be replaced every time.
+		<br/>
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;Indexed arguments start with 0 go up: <code>{0}</code>, <code>{1}</code>, <code>{2}</code>, etc
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example Macro: "attack" <code>[1d20 {0} atk; 1d6 {1} dmg]</code>
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example Usage: <code>[attack "+1" "+2"]</code>
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example Roll: <code>[1d20 +1 atk; 1d6 +2 dmg]</code>
+		<br/>
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;Named arguments should can only letters, numbers, and underscores: <code>{bless_bonus}</code>
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example Macro: "attack" <code>[1d20 {bless_bonus} atk; 1d6 {bless_bonus} dmg]</code>
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example Usage: <code>[attack bless_bonus="+1"]</code>
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example Roll: <code>[1d20 +1 atk; 1d6 +1 dmg]</code>
+		<br/>
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;Arguments can have default values: <code>{atk_bonus:+0}</code>, <code>{dmg_type:P}</code>
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;Note: A default value of 0 (or +0) will NOT be shown in the final dice roll
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example Macro: "dagger" <code>[1d20 {atk_bonus:+0} atk; 1d4 {dmg_type:P} dmg]</code>
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example Usage: <code>[dagger]</code>
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example Roll: <code>[1d20 atk; 1d4 P dmg]</code>
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example Usage: <code>[dagger atk_bonus="+1"]</code>
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example Roll: <code>[1d20 +1 atk; 1d4 P dmg]</code>
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example Usage: <code>[dagger atk_bonus="+2" dmg_type="S"]</code>
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example Roll: <code>[1d20 +2 atk; 1d4 S dmg]</code>
+		<br/>
+		<br/>Two special argument types are: "vs" <code>{vs}</code> and "remaining" <code>{...}</code>
+		<br/>
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;VS is a convenience for setting the roll's target success value in d20 style games; AC, DC, and VS are all acceptable as <code>{ac}</code>, <code>{dc}</code>, or <code>{vs}</code>
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example Macro: "attack" <code>[1d20 {ac} atk; 1d6 dmg]</code>
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example Usage: <code>[attack ac=10]</code>
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example Roll: <code>[1d20 ac 10 atk; 1d6 dmg]</code>
+		<br/>
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;Remaining is more advanced- it takes every indexed argument that wasn't explicitly used in your macro and adds them all with spaces between them.
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example Macro: "extras" <code>[1d20 {0} atk; 1d6 {1} {...} dmg]</code>
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example Usage: <code>[extras +1 +3 "+1d6 sneak" "+1d4 fire" "+1 holy"]</code>
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example Roll: <code>[1d20 +1 atk; 1d6 +3 +1d6 sneak +1d4 fire +1 holy dmg]</code>
+		<br/>&nbsp;&nbsp;&nbsp;&nbsp;Note: If you have more than one "remaining" arg in your macro, they will all get the same set of values.
+
+	</p>
+</div>
+
+			<div id="item-8" class="item">
+	<h4 class="">8. Character Import</h4>
+	<p>
+		<code>/sage import</code>
+		<br/>
+		<br/>This slash command is used to import characters so that you can view their stats and quickly roll dice/macros.
+		<br/>
+		<br/>The two main options (<code>pathbuilder2e-id</code> and <code>e20-pdf</code>) are for your character source and you can only use one of them at a time.
+		The other two options (<code>attach</code> and <code>pin</code>) change how Sage posts your imported character and you can use either, both, or neither of them.
+		<br/>
+		<br/><code>/sage import pathbuilder2e-id=""</code>
+		<br/>This requires the export "Pathbuilder 2e JSON ID" that you get from Pathbuilder 2e via the "Export JSON" command.
+		<br/>
+		<br/><code>/sage import e20-pdf=""</code>
+		<br/>This requires either the url to a PDF or the url to a Discord message that has a PDF file as an attachment.
+		The PDF must be one official PDFs downloaded from Renegade Games Studios.
+		<br/>
+		<br/><code>attach="true"</code>
+		<br/>When set to true, this tells Sage to post the character as a .txt file attachment instead of creating an interactive character sheet.
+		<br/>
+		<br/><code>pin="true"</code>
+		<br/>When set to true, this tells Sage to pin the post that it creates for the character.
+	</p>
+</div>
+
+			<div id="item-9" class="item">
+	<h4 class="">9. Other Commands</h4>
+	<p><code>sage! help command</code></p>
+</div>
+			<div id="item-9a" class="item">
+	<h5 class="ps-4">9a. Coin / Currency Calculator</h5>
+	<p><code>sage! {1pp} {-2gp} {+3sp} {-4cp}</code>
+	<br/><code>sage! {1pp} {2gp} {3sp} {4cp}</code></p>
+</div>
+			<div id="item-9b" class="item">
+	<h5 class="ps-4">9b. Weather Report Generator</h5>
+	<p><code>sage! help command weather</code>
+	<br/>
+	<br/>This command creates a random weather report.
+	<br/><code>sage! weather {climate} {elevation} {season}</code>
+	<br/>- Climate Options: Cold | Temperate | Tropical
+	<br/>- Elevation Options: SeaLevel | Lowland | Highland
+	<br/>- Season Options: Spring | Summer | Fall | Winter</p>
+</div>
+
+			<div id="item-10" class="item">
+	<h4 class="">10. Pathfinder 2e Commands</h4>
+	<p>The following commands are specific to Pathfinder 2e.</p>
+</div>
+			<div id="item-10a" class="item">
+	<h5 class="ps-4">10a. Pathfinder / Golarion Info (days &amp; months)</h5>
+	<p><code>sage! help command golarion</code>
+	<br/>These commands are for viewing the dates, days, and months of the Golarion (Pathfinder) calendar.
+	<br/><code>sage! date {yyyy-mm-dd}</code>
+	<br/>- Displays the given date on Golarion <em>and</em> on Earth. Includes season.
+	<br/><code>sage! days</code>
+	<br/>- Lists the days of the week on Golarion.
+	<br/><code>sage! months</code>
+	<br/>- Lists the months of the Golarion year (along with how many days are in each).
+	<br/><code>sage! today</code>
+	<br/>- Displays today's date on Golarion <em>and</em> on Earth. Includes season.</p>
+</div>
+			<div id="item-10b" class="item">
+	<h5 class="ps-4">10b. Pathfinder 2e DCs</h5>
+	<p><code>sage! help command dcs</code>
+	<br/>
+	<br/>These commands are for viewing the various DCs used in Pathfinder 2e.
+	<br/><code>sage! dc by level {level}</code>
+	<br/><code>sage! dc by spell level {level}</code>
+	<br/><code>sage! dcs by level</code>
+	<br/><code>sage! simple dc {proficiency}</code>
+	<br/><code>sage! {proficiency} simple dc</code></p>
+</div>
+			<div id="item-10c" class="item">
+	<h5 class="ps-4">10c. Pathfinder 2e Lists</h5>
+	<p><code>sage! list {deities|gods} by domain {domain}</code>
+	<br/><code>sage! list {weapons|armor|spells} by trait {trait}</code>
+	<br/>Future releases will expand on these lists.</p>
+</div>
+			<div id="item-10d" class="item">
+	<h5 class="ps-4">10d. Pathfinder 2e Content Search</h5>
+	<p>These commands perform full text searches.
+	<br/><code>sage? {searchTerm}</code>
+	<br/><code>sage? {searchTerm} -{categoryOrObjectType}</code>
+	<br/>Category/ObjectType examples: Background, Feat, Spell, etc.
+	<br/>This isn't fully operational, nor is the data complete yet.</p>
+</div>
+			<div id="item-10e" class="item">
+	<h5 class="ps-4">10e. Pathfinder 2e Content Find</h5>
+	<p>These commands perform searches only against names.
+	<br/><code>sage?! {searchTerm}</code>
+	<br/><code>sage?! {searchTerm} -{categoryOrObjectType}</code>
+	<br/>Category/ObjectType examples: Background, Feat, Spell, etc.
+	<br/>This isn't fully operational, nor is the data complete yet.</p>
+</div>
+			<div id="item-10f" class="item">
+	<h5 class="ps-4">10f. Pathfinder 2e Spell Lists</h5>
+	<p>These commands allow you to view various types of spell lists
+	<br/><code>sage! spells {tradition} {level|Cantrips}</code>
+	<br/><code>sage! spells {tradition} {level|Cantrips} by school</code>
+	<br/><code>sage! {level} {tradition} spells</code>
+	<br/><code>sage! {level} {tradition} spells by school</code>
+	<br/><code>sage! {tradition} cantrips</code>
+	<br/><code>sage! {tradition} cantrips by school</code>
+	<br/><code>sage! {tradition} spells {level|Cantrips}</code>
+	<br/><code>sage! {tradition} spells {level|Cantrips} by school</code>
+	<br/>The following creates a specialized list of spells by merging or excluding traditions
+	<br/><code>sage! spells {level|Cantrips} {+tradition} {-tradition} {|tradition} {&amp;tradition}</code></p>
+</div>
+			<div id="item-10g" class="item">
+	<h5 class="ps-4">10g. Pathfinder 2e Focus Spell Lists</h5>
+	<p><code>sage! focus spells {Archetype|Class|Domain}</code>
+	<br/><code>sage! {Archetype|Class|Domain} focus spells</code></p>
+</div>
+			<div id="item-10h" class="item">
+	<h5 class="ps-4">10h. Pathfinder 2e Starting Wealth Info</h5>
+	<p><code>sage! starting wealth</code>
+	<br/><code>sage! starting wealth {level}</code></p>
+</div>
+			<div id="item-10i" class="item">
+	<h5 class="ps-4">10i. Pathfinder 2e Income Info</h5>
+	<p><code>sage! income earned</code>
+	<br/>- Shows the entire table 4-2: Income Earned
+	<br/><code>sage! income earned {taskLevel}</code>
+	<br/>- Shows the results for the given level.
+	<br/><code>sage! income earned {proficiency} {taskLevel}</code>
+	<br/>- Shows the results for the given level and proficiency.</p>
+</div>
+
+			<div id="item-11" class="item">
+	<h4 class="">11. Pathfinder Society 2e Commands</h4>
+	<p>The following commands are designed to help if you are playing Organized Play (Pathfinder Society) games for Pathfinder 2e.</p>
+</div>
+			<div id="item-11a" class="item">
+	<h5 class="ps-4">11a. Pathfinder PFS / Org Play Links</h5>
+	<p><code>sage! pfs links</code>
+	<br/>DISABLED FOR NOW (their site changed)</p>
+</div>
+
+			<div id="item-11b" class="item">
+	<h5 class="ps-4">11b. Pathfinder PFS Downtime Rolls</h5>
+	<p><code>sage! pfs income {pcLevel} {skillProficiency} {skillModifier}</code>
+	<br/><code>sage! pfs income {pcLevel} {skillProficiency} {skillModifier} {days}</code></p>
+</div>
+			<div id="item-11c" class="item">
+	<h5 class="ps-4">11c. Pathfinder PFS Scenario Randomizers</h5>
+	<p><code>sage! pfs s1-01 {pc1Level}, {pc2Level}, {pc3Level}, {pc4Level}, {pc5Level}, {pc6Level}, {pc7Level}</code>
+	<br/>Future releases will include more scenarios.
+	<br/>PFS Guidelines now recommend against 7 player tables</p>
+</div>
+			<div id="item-11d" class="item">
+	<h5 class="ps-4">11d. Pathfinder PFS Tier Calculator</h5>
+	<p><code>sage! pfs {tier} {minLevel}-{maxLevel} {pc1Level} {pc2Level} {pc3Level} {pc4Level} {pc5Level} {pc6Level} {pc7Level}</code>
+	<br/>PFS Guidelines now recommend against 7 player tables</p>
+</div>
 		</div>
 
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

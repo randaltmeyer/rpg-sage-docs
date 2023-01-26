@@ -23,9 +23,73 @@
 	</head>
 	<body>
 
-		<!-- <div data-snippet-url="./snippets/dev/size-helper.html"></div> -->
+		<nav class="navbar fixed-top m-0 p-0" id="navbar-top">
+	<button class="navbar-toggler bg-primary text-light m-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar-left" aria-controls="navbar-left">Topics</button>
+	<button class="navbar-toggler bg-primary text-light m-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar-right" aria-controls="navbar-right">Links</button>
+	<div class="offcanvas offcanvas-start" tabindex="-1" id="navbar-left" aria-labelledby="navbar-left-label">
+	<div class="offcanvas-header mb-0 pb-0">
+		<h5 class="offcanvas-title" id="navbar-left-label">
+			Guide Topics
+		</h5>
+		<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	</div>
+	<div class="offcanvas-body">
+		<nav class="navbar flex-column align-items-stretch">
+			<nav class="nav flex-column" id="navbar-left-items"><a class="nav-link" href="#item-1">1. Dialog Commands</a><a class="nav-link" href="#item-2">2. Dice Commands</a><a class="nav-link" href="#item-3">3. Dice Macros</a></nav>
+		</nav>
+	</div>
+</div>
 
-		<div data-snippet-url="./snippets/nav/navbar-top.html"></div>
+	<div class="offcanvas offcanvas-end" tabindex="-1" id="navbar-right" aria-labelledby="navbar-right-label">
+	<div class="offcanvas-header mb-0 pb-0 text-dark">
+		<h5 class="offcanvas-title" id="navbar-right-label">RPG Sage Links</h5>
+		<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	</div>
+	<div class="offcanvas-body">
+		<nav class="navbar flex-column align-items-stretch">
+			<div class="alert alert-warning text-center p-1 mt-1 mb-1">
+				<a href="features.html">Feature Guide</a>
+				<br/><small>what we do</small>
+			</div>
+			<div class="alert alert-warning text-center p-1 mt-1 mb-1">
+				<a href="index.html">Command Guide</a>
+				<br/><small>mostly complete</small>
+			</div>
+			<div class="alert alert-warning text-center p-1 mt-1 mb-1">
+				<a href="quick.html">Quick Start Guide</a>
+				<br/><small>learn the basics</small>
+			</div>
+			<div class="alert alert-warning text-center p-1 mt-1 mb-1">
+				<a href="https://e20.rpgsage.io/demo.html">Essence20 Demo</a>
+				<br/><small>see it in action</small>
+			</div>
+			<div class="alert alert-success text-center p-1 mt-1 mb-1">
+				<a href="https://discord.com/api/oauth2/authorize?client_id=644942473315090434&permissions=535529122897&scope=bot%20applications.commands" target="_blank">Invite RPG Sage</a>
+				<br/><small>to your server</small>
+			</div>
+			<div class="alert alert-primary text-center p-1 mt-1 mb-1">
+				<a href="https://www.patreon.com/rpgsage" target="_blank">Join our Patreon</a>
+				<br/><a href="https://ko-fi.com/rpgsage" target="_blank">Visit our Ko-Fi</a>
+				<br/>Support us!
+			</div>
+			<div class="alert alert-info text-center p-1 mt-1 mb-1">
+				<a href="https://discord.com/invite/pfAcUMN" target="_blank">RPG Sage Discord</a>
+				<br/>Chat with us!
+			</div>
+			<div class="alert alert-info text-center p-1 mt-1 mb-1">
+				<a href="https://twitter.com/RPGSageOfficial" target="_blank">@RPGSageOfficial</a>
+				<br/>Follow us!
+			</div>
+			<div class="text-center p-1 mt-1 mb-1">
+				<a href="terms.html" target="_blank"><small>Terms of Service</small></a>
+				<br/><a href="privacy.html" target="_blank"><small>Privacy Policy</small></a>
+			</div>
+		</nav>
+	</div>
+</div>
+
+</nav>
+
 
 		<div class="container">
 
@@ -51,13 +115,68 @@
 				</p>
 			</div>
 
-			<div data-item-snippet-url="./snippets/item/dialog/dialog-commands.html"></div>
-			<div data-item-snippet-url="./snippets/item/dialog/dialog-post-command.html" data-item-sub="true"></div>
+			<div id="item-1" class="item">
+	<h4 class="">1. Dialog Commands</h4>
+	<p><code>sage! help dialog</code> &nbsp; or &nbsp; <code>/sage help category="Dialog Commands"</code>
+	<br/>These commands are how you interact with the dialog engine of Sage.
+	<br/>When posting dialog, you do not need to use a command prefix.
+	<br/>Each different dialog type can be configured to have its own default color.</p>
+</div>
+			<div id="item-1a" class="item">
+	<h5 class="ps-4">1a. Dialog Post Command</h5>
+	<p><code>{type}::{name}(display name)::(title)::{color}::{avatar}::{content}</code>
+	<br/>- {type}: gm, npc, enemy, ally, pc, alt, companion, hireling
+	<br/>- {name}: the name of the npc, pc, or companion to post as
+	<br/>- - optional for PCs in a game
+	<br/>- {display name}: the name to post as
+	<br/>- - optional: defaults to character name or 'Game Master' for GM
+	<br/>- {title}: a title or descripiton of the dialog optional
+	<br/>- {color}: a color to override the dialog color with
+	<br/>- - optional: expects hex value 0x000000 or #FFFFFF
+	<br/>- {avatar}: a url to override the avatar image
+	<br/>- - optional
+	<br/>- {content}: everything you want to post in your dialog
+	<br/>- - accepts normal discord/markup as well as custom Sage markup</p>
+</div>
 
-			<div data-item-snippet-url="./snippets/item/dice/dice-commands.html"></div>
-			<div data-item-snippet-url="./snippets/item/dice/dice-w-multiple-sets.html" data-item-sub="true"></div>
+			<div id="item-2" class="item">
+	<h4 class="">2. Dice Commands</h4>
+	<p><code>sage! help dice</code> &nbsp; or &nbsp; <code>/sage help category="Dice Commands"</code>
+	<br/>These commands are how you roll dice with Sage.</p>
+</div>
+			<div id="item-2a" class="item">
+	<h5 class="ps-4">2a. Dice w/ multiple sets</h5>
+	<p><code>[1d20 attack; 1d8 damage]</code>
+	<br/><code>[1d20+5 attack; 1d8 + 2 slashing damage]</code>
+	<br/><code>[1d20+2 attack; 1d4 dagger + 2d6 sneak damage]</code></p>
+</div>
 
-			<div data-item-snippet-url="./snippets/item/dice/dice-macros.html"></div>
+			<div id="item-3" class="item">
+	<h4 class="">3. Dice Macros</h4>
+	<p>
+		<code>sage! help dice macro</code>
+		<br/>
+		<br/>These commands are for managing macros to make complex dice rolls.
+		<br/><code>sage!! macro delete all</code>
+		<br/><code>sage!! macro delete category="{category}"</code>
+		<br/><code>sage!! macro delete name="{name}"</code>
+		<br/><code>sage!! macro details name="{name}"</code>
+		<br/><code>sage!! macro list</code>
+		<br/><code>sage!! macro list category="{category}"</code>
+		<br/><code>sage!! macro move name="{name}" category="{category}"</code>
+		<br/><code>sage!! macro set name="{name}" [{dice}]</code>
+		<br/><code>sage!! macro set name="{name}" category="{category}" [{dice}]</code>
+		<br/>Example: <code>sage!! macro set name="three daggers" category="daggers" [1d20+8;1d6][1d20+4;1d6][1d20;1d6]</code>
+		<br/>Usage: <code>[three daggers]</code>
+		<br/>Example: <code>sage!! macro set name="swords" [3MAP-4#1d20+8{ac};1d6]</code>
+		<br/>Usage: <code>[swords ac=10]</code>
+	</p>
+	<p>
+		Macro Categories are helpful in grouping related macros together, but they also serve a special function for Pathfinder 2e players using imported characters.
+		Macros with the same category name as an imported Pathfinder 2e character name will show up in the imported character's sheet so that you can select then and roll them with the click of a button.
+		<em>(Will provide link to importing documentation as it is finished.)</em>
+	</p>
+</div>
 
 		</div>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
