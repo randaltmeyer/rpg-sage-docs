@@ -1,0 +1,52 @@
+div.item {
+	border-radius: 6px;
+	border: 1px solid rgb(222, 226, 230);
+}
+
+div.item+div.item {
+	margin-top: 10px;
+}
+
+div.item>h4 {
+	padding: 6px 10px 5px 10px;
+	border-bottom: 1px solid rgb(222, 226, 230);
+	background-color: rgb(231, 241, 255);
+}
+
+div.item>h5 {
+	padding: 6px 10px 5px 10px;
+	border-bottom: 1px solid rgb(222, 226, 230);
+	background-color: rgb(199, 209, 223);
+}
+
+div.item>p {
+	padding: 10px 10px 0 10px;
+}
+
+nav.navbar {
+	padding: 0 1rem 1rem 1rem;
+}
+
+a.nav-link {
+	padding: 0;
+}
+
+nav>nav>nav>a.nav-link {
+	margin-left: 1rem;
+}
+
+small {
+	font-style: italic;
+}
+
+small::before {
+	content: "("
+}
+
+small::after {
+	content: ")"
+}
+
+img {
+	max-width: 100%;
+}

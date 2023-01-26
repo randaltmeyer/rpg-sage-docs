@@ -107,7 +107,9 @@ function copyDefaultFiles() {
 	folderPaths.forEach(srcFolderPath => {
 		const distFolderPath = srcFolderPath.replace("./src", "./dist");
 		files.forEach(fileName => {
-			fs.copyFileSync(`${srcFolderPath}/${fileName}`, `${distFolderPath}/${fileName}`);
+			const srcFilePath = `${srcRootFolderPath}/${fileName}`;
+			const distFilePath = `${distFolderPath}/${fileName}`;
+			fs.copyFileSync(srcFilePath, distFilePath);
 		});
 	});
 }
