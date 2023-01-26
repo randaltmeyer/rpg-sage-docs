@@ -15,9 +15,16 @@ function handleDocumentClicks() {
 	});
 }
 
+function toggleTopicsButton() {
+	if (!$("#navbar-left-items").children().length) {
+		$("#navbar-left-button").css("visibility", "hidden");
+	}
+}
+
 /**
  * runs all the page load scripts
  */
 $(async () => {
 	handleDocumentClicks();
+	toggleTopicsButton();
 });
