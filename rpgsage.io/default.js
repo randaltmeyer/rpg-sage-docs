@@ -24,7 +24,9 @@ function createLinks() {
 	return links.join("");
 
 	function pushChildren() {
-		links.push(`<nav class="nav flex-column">${children.join("")}</nav>`);
+		if (children.length) {
+			links.push(`<nav class="nav flex-column">${children.join("")}</nav>`);
+		}
 		children.length = 0;
 	}
 }
@@ -33,7 +35,14 @@ function createLinks() {
  * Creates then loads all the links into the right navbar
  */
 function loadLinks() {
-	$("nav#navbar-right-items").append(createLinks());
+	const navbarLeftItems = $("nav#navbar-left-items");
+	navbarLeftItems.append(createLinks());
+	if (navbarLeftItems.children().length) {
+		$("button#navbar-left-button").removeClass("d-none");
+	}else {
+		$("#navbar-top").css("left", "unset");
+	}
+	$("div.topics-spinner").remove();
 }
 
 /**
@@ -43,6 +52,7 @@ function handleDocumentClicks() {
 	$(document).on("click", e => {
 		const el = $(e.target);
 		if (el.closest("a").is(`[href]`)) {
+			$("#navbar-left").offcanvas("hide");
 			$("#navbar-right").offcanvas("hide");
 		}
 		if (el.closest("button").is("button.breakdown-toggler")) {
@@ -81,7 +91,10 @@ async function fetchSnippetHtml($div) {
 	snippetUrls.push(url);
 
 	// get the html
-	const html = await $.ajax(url).catch(console.error);
+	let html = await $.ajax(url).catch(console.error);
+	if (location.href.includes("file://") && location.href.includes("e20.")) {
+		html = await $.ajax(url.replace("./", "../rpgsage.io/")).catch(console.error);
+	}
 	if (!html) {
 		$div.replaceWith(`<div class="alert alert-danger">${url}</div>`);
 		return null;
