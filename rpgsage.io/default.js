@@ -46,7 +46,7 @@ function handleDocumentClicks() {
 			$("#navbar-right").offcanvas("hide");
 		}
 		if (el.closest("button").is("button.breakdown-toggler")) {
-			el.closest('p').next("div.alert").toggleClass('d-none');
+			el.closest('p').next(".breakdown-togglee").toggleClass('d-none');
 		}
 	});
 }
@@ -180,8 +180,8 @@ async function loadItems() {
  */
 $(async () => {
 	$.ajaxSetup({cache:false});
-	await loadSnippets();
 	await loadItems();
+	await loadSnippets();
 	loadLinks();
 	handleDocumentClicks();
 });
