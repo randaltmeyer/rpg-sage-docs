@@ -96,8 +96,21 @@ function processFile(file) {
 	writeFile(file);
 }
 
-function processFiles(files) {
+function processFiles() {
+	const files = fetchFilesToProcess();
 	files.forEach(processFile);
 }
 
-processFiles(fetchFilesToProcess());
+function copyDefaultFiles() {
+	const files = fs.readdirSync(srcRootFolderPath).filter(fileName => fileName.startsWith("default."));
+	const folderPaths = fetchFolderPathsToProcess();
+	folderPaths.forEach(srcFolderPath => {
+		const distFolderPath = srcFolderPath.replace("./src", "./dist");
+		files.forEach(fileName => {
+			fs.copyFileSync(`${srcFolderPath}/${fileName}`, `${distFolderPath}/${fileName}`);
+		});
+	});
+}
+
+processFiles();
+copyDefaultFiles();
