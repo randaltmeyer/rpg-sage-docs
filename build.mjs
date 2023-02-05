@@ -25,6 +25,10 @@ function fetchFilesToProcess() {
 
 function readSnippet(snippetFilePath) {
 	const updatedSnippetFilePath = snippetFilePath.replace(/^\.\/snippets/, `${srcRootFolderPath}/snippets`);
+	if (!fs.existsSync(updatedSnippetFilePath)) {
+		console.error(`Invalid snippetFilePath: ${snippetFilePath}`);
+		return `<div class="alert alert-danger">Invalid snippetFilePath: ${snippetFilePath}</div>`;
+	}
 	return fs.readFileSync(updatedSnippetFilePath).toString();
 }
 
@@ -66,7 +70,7 @@ function processItemSnippets(file, navItems) {
 			snippetHtml = snippetHtml.replace(/^<div/i, () => `<div id="item-${navItem.key}"`);
 
 			// update the item header to include key (number/letter)
-			snippetHtml = snippetHtml.replace(/<h\d>(.*?)<\/h\d>/i, (_tag, text) => {
+			snippetHtml = snippetHtml.replace(/<header>(.*?)<\/header>/i, (_tag, text) => {
 				// pass label back for building nav later
 				navItem.label = text;
 

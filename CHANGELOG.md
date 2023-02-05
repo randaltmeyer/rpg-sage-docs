@@ -19,3 +19,5 @@ Updated Channel Admin to include all the latest options
 Clarified wording of Prefix
 
 ## v0.5.0 (2023-01-30)
+Updated build to log missing files as errors in console and output.
+Updated all snippets to use <header> instead of h4 or h5.
