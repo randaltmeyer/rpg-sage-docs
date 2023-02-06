@@ -2,22 +2,37 @@
 	<header>Game Admin</header>
 	<p>
 		<code>sage! help admin game</code>
-		<br />
-		<br />These commands are for managing games.
-		<br /><code>sage!! game archive</code>
-		<br /><code>sage!! game archive list</code>
-		<br /><code>sage!! game count</code>
-		<br /><code>sage!! game create name="Dragon Saga: Questbound!"</code>
-		<br /><code>sage!! game create name="Dragon Saga: Questbound!" type="DND5E|E20|PF1E|PF2E|QUEST|SF|NONE"</code>
-		<br /><code>sage!! game details</code>
-		<br /><code>sage!! game list</code>
-		<br /><code>sage!! game role remove {GameRoleType}</code>
-		<br /><code>sage!! game role set @RoleMention {GameRoleType}</code>
-		<br /><code>sage!! game set diceoutput="XXS|XS|S|M|L|XL|XXL|UNSET"</code>
-		<br /><code>sage!! game set type="DND5E|E20|PF1E|PF2E|QUEST|SF|NONE"</code>
-		<br /><code>sage!! game set name="Dragon Saga: End Times ..."</code>
-		<br /><code>sage!! role list</code>
-		<br />GameRoleTypes values: Spectator, Player, GameMaster, Cast, Table
-		<br />- These roles are not fully implemented yet, but are meant to allow Sage to manage roles and permissions.
+		<br/>
+		<br/>These commands are for managing games.
+		<br/><code>sage!! game archive</code>
+		<br/><code>sage!! game archive list</code>
+		<br/><code>sage!! game count</code>
+		<br/><code>sage!! game create name="Dragon Saga: Questbound!"</code>
+		<br/><code>sage!! game create name="Dragon Saga: Questbound!" {optionKey}="optionValue"</code>
+		<br/><code>sage!! game details</code>
+		<br/><code>sage!! game list</code>
+		<br/><code>sage!! game role remove {GameRoleType}</code>
+		<br/><code>sage!! game role set @RoleMention {GameRoleType}</code>
+		<br/><code>sage!! game set {optionKey}="optionValue"</code>
+		<br/><code>sage!! game set name="Dragon Saga: End Times ..."</code>
+		<br/><code>sage!! role list</code>
+		<br/>
+		<br/>Game Options <em>(can set multiple options at the same time)</em>:
+		<br/>
+		<div data-snippet-url="./snippets/item/game/config/crit-method-type.html"></div>
+		<br/>
+		<div data-snippet-url="./snippets/item/game/config/dialog-type.html"></div>
+		<br/>
+		<div data-snippet-url="./snippets/item/game/config/dice-output-type.html"></div>
+		<br/>
+		<div data-snippet-url="./snippets/item/game/config/dice-post-type.html"></div>
+		<br/>
+		<div data-snippet-url="./snippets/item/game/config/dice-secret-type.html"></div>
+		<br/>
+		<div data-snippet-url="./snippets/item/game/config/game-type-game.html"></div>
+
+
+		<br/>GameRoleTypes values: Spectator, Player, GameMaster, Cast, Table
+		<br/>- These roles are not fully implemented yet, but are meant to allow Sage to manage roles and permissions.
 	</p>
 </div>
