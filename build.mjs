@@ -134,6 +134,19 @@ function removeComments(file) {
 	});
 }
 
+function now() {
+	const date = new Date(),
+		year = date.getFullYear(),
+		month = String(date.getMonth() + 1).padStart(2, "0"),
+		day = String(date.getDate()).padStart(2, "0");
+	return `${year}-${month}-${day}`;
+}
+
+function updateDate(file) {
+	const updateDateHtml = `<div class="text-center"><small>updated: ${now()}</small></div>`;
+	file.fileContents = file.fileContents.replace(`<div class="alert alert-danger">UPDATE DATE</div>`, updateDateHtml);
+}
+
 function writeFile(file) {
 	const distFilePath = file.filePath.replace("./src", "./dist");
 	fs.writeFileSync(distFilePath, file.fileContents);
@@ -146,6 +159,7 @@ function processFile(file) {
 	processSnippets(file);
 	processNavItems(file, navItems);
 	removeComments(file);
+	updateDate(file);
 	writeFile(file);
 }
 
