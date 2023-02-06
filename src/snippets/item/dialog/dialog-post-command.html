@@ -1,16 +1,39 @@
 <div class="item">
 	<header>Dialog Post Command</header>
-	<p><code>{type}::{name}(display name)::(title)::{color}::{avatar}::{content}</code>
-	<br/>- {type}: gm, npc, enemy, ally, pc, alt, companion, hireling
-	<br/>- {name}: the name of the npc, pc, or companion to post as
-	<br/>- - optional for PCs in a game
-	<br/>- {display name}: the name to post as
-	<br/>- - optional: defaults to character name or 'Game Master' for GM
-	<br/>- {title}: a title or descripiton of the dialog optional
-	<br/>- {color}: a color to override the dialog color with
-	<br/>- - optional: expects hex value 0x000000 or #FFFFFF
-	<br/>- {avatar}: a url to override the avatar image
-	<br/>- - optional
-	<br/>- {content}: everything you want to post in your dialog
-	<br/>- - accepts normal discord/markup as well as custom Sage markup</p>
+	<p><code>{type}::{name}({display name})::(title)::{color}::{avatar}::{content}</code></p>
+	<div class="row m-0">
+		<div class="col">
+			<p>
+				<br/>&bull; {type}: gm, npc, enemy, ally, pc, alt, companion, hireling
+				<br/>&bull; {name}: the name of the npc, pc, or companion to post as
+				<br/>&nbsp; &nbsp; &bull; <small>optional for gm; optional for PCs in a game</small>
+				<br/>&bull; {display name}: the name to post as
+				<br/>&nbsp; &nbsp; &bull; <small>optional: defaults to character name or 'Game Master' for GM</small>
+				<br/>&bull; {title}: a title or descripiton of the dialog
+				<br/>&nbsp; &nbsp; &bull; <small>optional</small>
+				<br/>&bull; {color}: a color to override the dialog color with
+				<br/>&nbsp; &nbsp; &bull; <small>optional: expects hex value 0x000000 or #FFFFFF</small>
+				<br/>&bull; {avatar}: a url to override the avatar image
+				<br/>&nbsp; &nbsp; &bull; <small>optional</small>
+				<br/>&bull; {content}: everything you want to post in your dialog
+				<br/>&nbsp; &nbsp; &bull; accepts normal discord/markup as well as custom Sage markup
+			</p>
+			<p class="text-center d-lg-none">
+				<small>game master input</small>
+				<img src="./images/docs/dialog/dark-and-gloomy-input-dark.png" alt="An example of how to enter dialog content as a game master."/>
+				<br/><br/>
+				<small>game master output</small>
+				<br/>
+				<img src="./images/docs/dialog/dark-and-gloomy-output-dark.png" alt="An example of how the previous input looks after RPG Sage reposts it as Game Master."/>
+			</p>
+		</div>
+		<div class="col-6 d-none d-lg-block text-center">
+			<small>game master input</small>
+			<img src="./images/docs/dialog/dark-and-gloomy-input-dark.png" alt="An example of how to enter dialog content as a game master."/>
+			<br/><br/>
+			<small>game master output</small>
+			<br/>
+			<img src="./images/docs/dialog/dark-and-gloomy-output-dark.png" alt="An example of how the previous input looks after RPG Sage reposts it as Game Master."/>
+		</div>
+	</div>
 </div>
