@@ -1,0 +1,56 @@
+<div class="item">
+	<header>Map File Contents</header>
+	<div class="row m-0">
+		<div class="col">
+			<p>
+				A map file consists of "blocks" that detail each image you want on the map.
+				The four types of block are: map (the map's background image), terrain (a moveable piece of terrain/trap/hazard), aura (a toggleable aura that moves with a token/terrain), token (a pc/npc).
+				The layers are drawn from the bottom to top (map, terrain, aura, token) and initially drawn in the order listed in the file within each layer (you can change their draw order later via the interface).
+				Only the first <code>map</code> layer will be drawn.
+				Each block <em>must have</em> the url to the image and the name of the image (in the case of the <code>[map]</code> block, this is the name of the map that RPG Sage will display).
+			</p>
+			<div class="d-lg-none">
+				<div data-snippet-url="./snippets/item/map/map-example-file.html"></div>
+			</div>
+		</div>
+		<div class="col-6 d-none d-lg-block text-center">
+			<div data-snippet-url="./snippets/item/map/map-example-file.html"></div>
+		</div>
+	</div>
+	<ul>
+		<code>[map]</code> <small>background image/layer</small>
+		<li><strong>url</strong> = <em>url to the image</em></li>
+		<li><strong>name</strong> = <em>name of the map</em></li>
+		<li><strong>grid</strong> = <em>number of columns (first) and rows (second): 24x11</em></li>
+		<li><strong>spawn</strong> = <em>column (left) and row (right) where where new tokens appear: 2,1</em></li>
+	</ul>
+	<ul>
+		<code>[terrain]</code> <small>bottom layer</small>
+		<li><strong>url</strong> = <em>url to the image</em></li>
+		<li><strong>name</strong> = <em>name of the terrain or object</em></li>
+		<li><strong>size</strong> = <em>width (first) and height (second) of terrain: 1x1</em></li>
+		<li><strong>position</strong> = <em>starting column (left) and row (right) on the map: 3,2</em></li>
+		<ul><li><small>Only a GM can move an object of this layer</small></li></ul>
+	</ul>
+	<ul>
+		<code>[aura]</code> <small>middle layer</small>
+		<li><strong>url</strong> = <em>url to the image</em> <small>yes, it requires images for now</small></li>
+		<li><strong>name</strong> = <em>name of the aura</em></li>
+		<li><strong>anchor</strong> = <em>name of the token (or terrain) to anchor the aura to</em></li>
+		<li><strong>opacity</strong> = <em>how transparent the image is (0% - 100%)</em>: 50%</li>
+		<li><strong>size</strong> = <em>width (first) and height (second) of aura: 1x1</em></li>
+		<li><strong>position</strong> = <em>column (left) and row (right) on the map <strong>relative to anchor</strong></em></li>
+		<ul>
+			<li>A 5 ft. emanation from a 1x1 token would have an <code>anchor</code>, <code>size=3x3</code>, and <code>position=-1,-1</code></li>
+			<li><small>Auras will change greatly in the next iteration.</small></li>
+		</ul>
+	</ul>
+	<ul>
+		<code>[token]</code> <small>top layer</small>
+		<li><strong>url</strong> = <em>url to the image</em></li>
+		<li><strong>name</strong> = <em>name of the PC or NPC</em></li>
+		<li><strong>size</strong> = <em>width (first) and height (second) of token: 1x1</em></li>
+		<li><strong>position</strong> = <em>starting column (left) and row (right) on the map: 3,2</em></li>
+		<li><strong>user</strong> = <em>Discord handle of the User to ownership of the token (PCs only): @PlayerName#1234</em></li>
+	</ul>
+</div>
