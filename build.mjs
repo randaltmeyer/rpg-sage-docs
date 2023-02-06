@@ -130,6 +130,7 @@ function processNavItems(file, navItems) {
 function writeFile(file) {
 	const distFilePath = file.filePath.replace("./src", "./dist");
 	fs.writeFileSync(distFilePath, file.fileContents);
+	console.log(`\tSrc file created: ${distFilePath}`);
 }
 
 function processFile(file) {
@@ -154,9 +155,12 @@ function copyDefaultFiles() {
 			const srcFilePath = `${srcRootFolderPath}/${fileName}`;
 			const distFilePath = `${distFolderPath}/${fileName}`;
 			fs.copyFileSync(srcFilePath, distFilePath);
+			console.log(`\tDist file created: ${distFilePath}`);
 		});
 	});
 }
 
+console.log(`Building ...`);
 processFiles();
 copyDefaultFiles();
+console.log(`Building ... done.`);
