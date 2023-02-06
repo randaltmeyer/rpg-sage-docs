@@ -127,6 +127,13 @@ function processNavItems(file, navItems) {
 	}
 }
 
+function removeComments(file) {
+	file.fileContents = file.fileContents.replace(/<\!--(.|\n)*?-->/g, comment => {
+		console.log(`\t\t${comment.replace(/\n|\t/g, char => char === "\n" ? "\\n" : "\\t")}`);
+		return "";
+	});
+}
+
 function writeFile(file) {
 	const distFilePath = file.filePath.replace("./src", "./dist");
 	fs.writeFileSync(distFilePath, file.fileContents);
@@ -138,6 +145,7 @@ function processFile(file) {
 	processItemSnippets(file, navItems);
 	processSnippets(file);
 	processNavItems(file, navItems);
+	removeComments(file);
 	writeFile(file);
 }
 
