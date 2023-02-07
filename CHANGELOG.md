@@ -18,6 +18,16 @@ Include updated date in header of each page
 Updated Channel Admin to include all the latest options
 Clarified wording of Prefix
 
-## v0.5.0 (2023-01-30)
+## v0.5.0 (2023-02-06)
 Updated build to log missing files as errors in console and output.
 Updated all snippets to use <header> instead of h4 or h5.
+Updated features page, including more images.
+Addded logging to build process.
+Map documentation added (index and features).
+Expanded content for game and channel update arguments.
+Expanded content for pc, npc, companion commands.
+Game "role" commands removed as they aren't 100%.
+Remove html comments from build output.
+Updated date now updates as part of build process.
+Updated dialog reply information.
+Added dialog feature snippet and images.
