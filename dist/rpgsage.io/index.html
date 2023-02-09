@@ -35,7 +35,7 @@
 	</div>
 	<div class="offcanvas-body">
 		<nav class="navbar flex-column align-items-stretch">
-			<nav class="nav flex-column" id="navbar-left-items"><a class="nav-link" href="#item-1">1. Inviting RPG Sage</a><a class="nav-link" href="#item-2">2. Command Types</a><nav class="nav flex-column"><a class="nav-link" href="#item-2a">2a. Message Commands</a><a class="nav-link" href="#item-2b">2b. Slash Commands</a><a class="nav-link" href="#item-2c">2c. Command Prefix</a><a class="nav-link" href="#item-2d">2d. Command Permissions</a></nav><a class="nav-link" href="#item-3">3. Sage Help</a><a class="nav-link" href="#item-4">4. Admin (Administrative) Commands</a><a class="nav-link" href="#item-5">5. Game Admin (Administrative) Commands</a><a class="nav-link" href="#item-6">6. Dialog Commands</a><a class="nav-link" href="#item-7">7. Dice Commands</a><a class="nav-link" href="#item-8">8. Character Import</a><a class="nav-link" href="#item-9">9. Other Commands</a><a class="nav-link" href="#item-10">10. Pathfinder 2e Commands</a><a class="nav-link" href="#item-11">11. Pathfinder Society 2e Commands</a></nav>
+			<nav class="nav flex-column" id="navbar-left-items"><a class="nav-link" href="#item-1">1. Inviting RPG Sage</a><a class="nav-link" href="#item-2">2. Command Types</a><nav class="nav flex-column"><a class="nav-link" href="#item-2a">2a. Message Commands</a><a class="nav-link" href="#item-2b">2b. Slash Commands</a><a class="nav-link" href="#item-2c">2c. Command Prefix</a><a class="nav-link" href="#item-2d">2d. Command Permissions</a></nav><a class="nav-link" href="#item-3">3. Sage Help</a><a class="nav-link" href="#item-4">4. Admin (Administrative) Commands</a><a class="nav-link" href="#item-5">5. Game Admin (Administrative) Commands</a><a class="nav-link" href="#item-6">6. Dialog Commands</a><a class="nav-link" href="#item-7">7. Dice Commands</a><a class="nav-link" href="#item-8">8. Maps <small>prototype</small></a><a class="nav-link" href="#item-9">9. Character Import</a><a class="nav-link" href="#item-10">10. Other Commands</a><a class="nav-link" href="#item-11">11. Pathfinder 2e Commands</a><a class="nav-link" href="#item-12">12. Pathfinder Society 2e Commands</a></nav>
 		</nav>
 	</div>
 </div>
@@ -99,7 +99,7 @@
 					<br class="d-sm-none"/>
 					Command Guide
 				</h2>
-				<div class="text-center"><small>updated: 2023-01-30</small></div>
+				<div class="text-center"><small>updated: 2023-02-09</small></div>
 			</header>
 
 			<div class="alert alert-info m-2">
@@ -130,7 +130,7 @@
 				<br/><small>some features are still in development</small>
 			</p>
 			<p class="text-center d-lg-none">
-				<img src="https://rpgsage.io/images/docs/invite-permission-list.jpg" alt="An image of the RPG Sage invite prompt listing all of the permissions it is requesting."/>
+				<img src="./images/docs/invite-permission-list.jpg" alt="An image of the RPG Sage invite prompt listing all of the permissions it is requesting."/>
 				<button class="btn btn-link text-center w-100 breakdown-toggler"><em>[toggle permissions breakdown]</em></button>
 			</p>
 			<ul class="breakdown-togglee d-none d-lg-block">
@@ -151,7 +151,7 @@
 			</ul>
 		</div>
 		<div class="col-lg-4 col-md-6 d-none d-lg-block text-center">
-			<img src="https://rpgsage.io/images/docs/invite-permission-list.jpg" alt="An image of the RPG Sage invite prompt listing all of the permissions it is requesting."/>
+			<img src="./images/docs/invite-permission-list.jpg" alt="An image of the RPG Sage invite prompt listing all of the permissions it is requesting."/>
 		</div>
 	</div>
 </div>
@@ -376,23 +376,72 @@
 	<h5 class="ps-4">5a. Game Admin</h5>
 	<p>
 		<code>sage! help admin game</code>
-		<br />
-		<br />These commands are for managing games.
-		<br /><code>sage!! game archive</code>
-		<br /><code>sage!! game archive list</code>
-		<br /><code>sage!! game count</code>
-		<br /><code>sage!! game create name="Dragon Saga: Questbound!"</code>
-		<br /><code>sage!! game create name="Dragon Saga: Questbound!" type="DND5E|E20|PF1E|PF2E|QUEST|SF|NONE"</code>
-		<br /><code>sage!! game details</code>
-		<br /><code>sage!! game list</code>
-		<br /><code>sage!! game role remove {GameRoleType}</code>
-		<br /><code>sage!! game role set @RoleMention {GameRoleType}</code>
-		<br /><code>sage!! game set diceoutput="XXS|XS|S|M|L|XL|XXL|UNSET"</code>
-		<br /><code>sage!! game set type="DND5E|E20|PF1E|PF2E|QUEST|SF|NONE"</code>
-		<br /><code>sage!! game set name="Dragon Saga: End Times ..."</code>
-		<br /><code>sage!! role list</code>
-		<br />GameRoleTypes values: Spectator, Player, GameMaster, Cast, Table
-		<br />- These roles are not fully implemented yet, but are meant to allow Sage to manage roles and permissions.
+		<br/>
+		<br/>These commands are for managing games.
+		<br/><code>sage!! game archive</code>
+		<br/><code>sage!! game archive list</code>
+		<br/><code>sage!! game count</code>
+		<br/><code>sage!! game create name="Dragon Saga: Questbound!"</code>
+		<br/><code>sage!! game create name="Dragon Saga: Questbound!" {optionKey}="optionValue"</code>
+		<br/><code>sage!! game details</code>
+		<br/><code>sage!! game list</code>
+		
+		<br/><code>sage!! game set {optionKey}="optionValue"</code>
+		<br/><code>sage!! game set name="Dragon Saga: End Times ..."</code>
+		<br/><code>sage!! role list</code>
+		<br/>
+		<br/>Game Options <em>(can set multiple options at the same time)</em>:
+		<br/>
+		<br/><code>crit="timestwo|rolltwice|addmax|unset"</code> <small>DnD5e and PF2e only</small>
+<br/>&bull; TIMESTWO <small>default</small> rolls the dice and multiplies the results x2.
+<br/>&bull; ROLLTWICE rolls the damage twice and adds the results together.
+<br/>&bull; ADDMAX <small>RPG Sage House Rule</small> rolls the dice once and then adds max damage to the result.
+<br/>&bull; UNSET uses the crit method inherited from either the game or the server.
+
+		<br/>
+		<br/><code>dialogtype="embed|post|unset"</code>
+<br/>This determines how Sage's dialog posts are handled.
+<br/>&bull; EMBED <small>default</small> uses an embed that includes the character's avatar on the right.
+<br/>&bull; POST uses a simple message post <small>some screen readers cannot read Discord embeds</small>.
+<br/>&bull; UNSET uses the dialogtype method inherited from either the game, user, or server.
+
+		<br/>
+		<br/><code>diceoutput="xxs|xs|s|m|l|xl|xxl|rollem|unset"</code>
+<br/>This determines how compact or expanded the dice results are displayed.
+<br/>&bull; M <small>default</small>
+<br/>&bull; ROLLEM uses the diceoutput method that most closely emulates what Rollem uses.
+<br/>&bull; UNSET uses the diceoutput method inherited from either the game or the server.
+
+		<br/>
+		<br/><code>dicepost="post|embed|unset"</code>
+<br/>&bull; POST will output dice results in a simple post.
+<br/>&bull; EMBED <small>default</small> will output dice results in an embed in a post.
+<br/>&bull; <strike>REPLY will output dice results in a reply to the input.</strike> <small>future feature</small>
+<br/>&bull; UNSET uses the dicepost method inherited from either the game or the server.
+
+		<br/>
+		<br/><code>dicesecret="dm|gm|hide|ignore|unset"</code>
+<br/>This determines how Sage reacts to dice with the word "secret" in them.
+<br/>&bull; DM tells Sage to find the first available GM and send the dice results to them as a DM.
+<br/>&bull; GM tells Sage to find a GM channel and send the dice results there. If no GM channel exists, this is treated as DM.
+<br/>&bull; HIDE tells Sage to hide/redact the results using spoiler tags.
+<br/>&bull; IGNORE <small>default</small> simply ignores them.
+<br/>&bull; UNSET uses the dicesecret method inherited from either the game or server.
+
+		<br/>
+		<br/><code>type="dnd5e|e20|pf1e|pf2e|quest|sf|none"</code>
+<br/>&bull; DND5E Dungeons & Dragons 5e
+<br/>&bull; E20 Essence 20 system (G.I. Joe, Power Rangers, Transformers, etc.)
+<br/>&bull; PF1E Pathfinder RPG
+<br/>&bull; PF2E Pathfinder 2e
+<br/>&bull; QUEST Quest RPG
+<br/>&bull; SF Starfinder
+<br/>&bull; NONE <small>default</small>
+<br/>The primary place this is noticable is the dice engine. For instance, PF2E dice know about ACs, DCs, and how to calculate Critical Success and Failure.
+
+
+
+		
 	</p>
 </div>
 			<div id="item-5b" class="item">
@@ -409,40 +458,62 @@
 		<br/>
 		<br/>Channel Options <em>(can set multiple options at the same time)</em>:
 		<br/>
-		<br/>- crit="timestwo|rolltwice|addmax|unset"
-		<br/>- - TIMESTWO rolls the dice and multiplies the results x2. <em>(default)</em>
-		<br/>- - ROLLTWICE rolls the damage twice and adds the results together.
-		<br/>- - ADDMAX rolls the dice once and then adds max damage to the result. <em>(house rule)</em>
-		<br/>- - UNSET uses the crit method inherited from either the game or the server.
+		<br/><code>crit="timestwo|rolltwice|addmax|unset"</code> <small>DnD5e and PF2e only</small>
+<br/>&bull; TIMESTWO <small>default</small> rolls the dice and multiplies the results x2.
+<br/>&bull; ROLLTWICE rolls the damage twice and adds the results together.
+<br/>&bull; ADDMAX <small>RPG Sage House Rule</small> rolls the dice once and then adds max damage to the result.
+<br/>&bull; UNSET uses the crit method inherited from either the game or the server.
+
 		<br/>
-		<br/>- dialogtype="embed|post|unset"
-		<br/>- - This determines how Sage's dialog posts are handled.
-		<br/>- - EMBED <small>default</small> uses an embed that includes the character's avatar on the right.
-		<br/>- - POST uses a simple message post <small>some screen readers cannot read Discord embeds)</small>.
-		<br/>- - UNSET uses the dialogtype method inherited from either the game, user, or server.
+		<br/><code>dialogtype="embed|post|unset"</code>
+<br/>This determines how Sage's dialog posts are handled.
+<br/>&bull; EMBED <small>default</small> uses an embed that includes the character's avatar on the right.
+<br/>&bull; POST uses a simple message post <small>some screen readers cannot read Discord embeds</small>.
+<br/>&bull; UNSET uses the dialogtype method inherited from either the game, user, or server.
+
 		<br/>
-		<br/>- diceoutput="xxs|xs|s|m|l|xl|xxl|rollem|unset"
-		<br/>- - This determines how compact or expanded the dice results are displayed.
-		<br/>- - ROLLEM uses the diceoutput method that most closely emulates what Rollem uses.
-		<br/>- - UNSET uses the diceoutput method inherited from either the game or the server.
+		<br/><code>diceoutput="xxs|xs|s|m|l|xl|xxl|rollem|unset"</code>
+<br/>This determines how compact or expanded the dice results are displayed.
+<br/>&bull; M <small>default</small>
+<br/>&bull; ROLLEM uses the diceoutput method that most closely emulates what Rollem uses.
+<br/>&bull; UNSET uses the diceoutput method inherited from either the game or the server.
+
 		<br/>
-		<br/>- dicepost="post|embed|unset"
-		<br/>- - POST will output dice results in a simple post.
-		<br/>- - EMBED will output dice results in an embed in a post.
-		<br/>- - <strike>REPLY will output dice results in a reply to the input.</strike> <em>(future feature)</em>
-		<br/>- - UNSET uses the dicepost method inherited from either the game or the server.
+		<br/><code>dicepost="post|embed|unset"</code>
+<br/>&bull; POST will output dice results in a simple post.
+<br/>&bull; EMBED <small>default</small> will output dice results in an embed in a post.
+<br/>&bull; <strike>REPLY will output dice results in a reply to the input.</strike> <small>future feature</small>
+<br/>&bull; UNSET uses the dicepost method inherited from either the game or the server.
+
 		<br/>
-		<br/>- game="dnd5e|e20|pf1e|pf2e|quest|sf|none"
-		<br/>- - This determines which game is being played.
-		<br/>- - The primary place this is noticable is the dice engine. For instance, PF2E dice know about ACs, DCs, and how to calculate Critical Success and Failure.
+		<br/><code>dicesecret="dm|gm|hide|ignore|unset"</code>
+<br/>This determines how Sage reacts to dice with the word "secret" in them.
+<br/>&bull; DM tells Sage to find the first available GM and send the dice results to them as a DM.
+<br/>&bull; GM tells Sage to find a GM channel and send the dice results there. If no GM channel exists, this is treated as DM.
+<br/>&bull; HIDE tells Sage to hide/redact the results using spoiler tags.
+<br/>&bull; IGNORE <small>default</small> simply ignores them.
+<br/>&bull; UNSET uses the dicesecret method inherited from either the game or server.
+
 		<br/>
-		<br/>- type="ic|ooc|misc|gm|unset"
-		<br/>- - IC denotes an In Character channel, thus only Dialog and Dice are allowed for GMs and Players.
-		<br/>- - OOC denotes an Out of Character channel, thus all Sage commands are allowed for GMs and Players.
-		<br/>- - MISC denotes an Miscellaneous channel, thus all Sage commands are allowed for GMs and Players.
-		<br/>- - GM denotes an Game Master channel, thus all Sage commands are allowed for only GMs.
-		<br/>- - UNSET tells Sage that this isn't a specific channel type, allowing you to customize the options.
-		<br/>- - - Note: A GM only channel is where secret dice rolls are sent!
+		<br/><code>gametype="dnd5e|e20|pf1e|pf2e|quest|sf|none"</code>
+<br/>&bull; DND5E Dungeons & Dragons 5e
+<br/>&bull; E20 Essence 20 system (G.I. Joe, Power Rangers, Transformers, etc.)
+<br/>&bull; PF1E Pathfinder RPG
+<br/>&bull; PF2E Pathfinder 2e
+<br/>&bull; QUEST Quest RPG
+<br/>&bull; SF Starfinder
+<br/>&bull; NONE <small>default</small>
+<br/>The primary place this is noticable is the dice engine. For instance, PF2E dice know about ACs, DCs, and how to calculate Critical Success and Failure.
+
+		<br/>
+		<br/><code>type="ic|ooc|misc|gm|unset"</code>
+<br/>&bull; IC denotes an In Character channel, thus only Dialog and Dice are allowed for GMs and Players.
+<br/>&bull; OOC denotes an Out of Character channel, thus all Sage commands are allowed for GMs and Players.
+<br/>&bull; MISC denotes an Miscellaneous channel, thus all Sage commands are allowed for GMs and Players.
+<br/>&bull; GM denotes an Game Master channel, thus all Sage commands are allowed for only GMs.
+<br/>&bull; UNSET tells Sage that this isn't a specific channel type, allowing you to customize the options.
+<br/>Note: A GM only channel is where secret dice rolls are sent!
+
 	</p>
 </div>
 			<div id="item-5c" class="item">
@@ -451,21 +522,29 @@
 	<br/>
 	<br/>These commands are for managing Game Masters for games.
 	<br/><code>sage!! gm add @UserMention</code>
+	<br/><code>sage!! gm add @UserMention {@OptionalUserMention}</code>
 	<br/><code>sage!! gm list</code>
 	<br/><code>sage!! gm remove @UserMention</code></p>
+	<br/><code>sage!! gm remove @UserMention {@OptionalUserMention}</code>
+	<br/>"OptionalUserMention" is there to show you can add or remove multiples.</p>
 </div>
 			<div id="item-5d" class="item">
 	<h5 class="ps-4">5d. NPC (Non Player Character) Admin</h5>
-	<p><code>sage! help admin npc</code>
-	<br/>
-	<br/>These commands are for managing Non Player Characters for games.
-	<br/><code>sage!! npc create name="Farmer Bob" token="http://url_to_token_image" avatar="http://url_to_avatar_image"</code>
-	<br/><code>sage!! npc delete name="Farmer Bob"</code>
-	<br/><code>sage!! npc details name="Farmer Bob"</code>
-	<br/><code>sage!! npc list "optionalFilter"</code>
-	<br/><code>sage!! npc update name="Farmer Bob" avatar="http://url_to_avatar_image"</code>
-	<br/><code>sage!! npc update oldname="Farmer Bob" newname="Blacksmith Bob"</code>
-	<br/>Images can be urls or embedded images.</p>
+	<p>
+		<code>sage! help admin npc</code>
+		<br/>
+		<br/>These commands are for managing Non Player Characters for games.
+		<br/><code>sage!! npc create name="Farmer Bob" token="http://url_to_token_image" avatar="http://url_to_avatar_image"</code>
+		<br/><code>sage!! npc delete name="Farmer Bob"</code>
+		<br/><code>sage!! npc details name="Farmer Bob"</code>
+		<br/><code>sage!! npc list "optionalFilter"</code>
+		<br/><code>sage!! npc update name="Farmer Bob" avatar="http://url_to_avatar_image"</code>
+		<br/><code>sage!! npc update name="Farmer Bob" token="http://url_to_token_image"</code>
+		<br/><code>sage!! npc update name="Farmer Bob" color="#FF00AA"</code>
+		<br/><code>sage!! npc update oldname="Farmer Bob" newname="Blacksmith Bob"</code>
+		<br/>Images should be urls. If you embed images in your post, the first one will be the token and the second one the avatar.
+		<br/>You can mix and match the avatar, token, and color options when you create or update a PC.
+	</p>
 </div>
 
 			<div id="item-5e" class="item">
@@ -474,37 +553,45 @@
 	<br/>
 	<br/>These commands are for managing Players for games.
 	<br/><code>sage!! player add @UserMention</code>
-	<br/><code>sage!! player add @UserMention @UserMention</code>
+	<br/><code>sage!! player add @UserMention {@OptionalUserMention}</code>
 	<br/><code>sage!! player list</code>
-	<br/><code>sage!! player remove @UserMention {@OptionalPlayerMention}</code>
-	<br/>The Optional Player Mentions are there to show you can add or remove multiples.</p>
+	<br/><code>sage!! player remove @UserMention {@OptionalUserMention}</code>
+	<br/>"OptionalUserMention" is there to show you can add or remove multiples.</p>
 </div>
 			<div id="item-5f" class="item">
 	<h5 class="ps-4">5f. PC (Player Character) Admin</h5>
-	<p><code>sage! help admin pc</code>
-	<br/>
-	<br/>These commands are for managing Player Characters.
-	<br/><code>sage!! pc create name="Bardok the Brave" token="http://url_to_token_image" avatar="http://url_to_avatar_image"</code>
-	<br/><code>sage!! pc delete name="Bardok the Brave"</code>
-	<br/><code>sage!! pc details name="Bardok the Brave"</code>
-	<br/><code>sage!! pc list "optionalFilter"</code>
-	<br/><code>sage!! pc update name="Bardok the Brave" avatar="http://url_to_avatar_image"</code>
-	<br/><code>sage!! pc update oldname="Bardok the Brave" newname="Bardok the Cowardly"</code>
-	<br/>Images can be urls or embedded images.</p>
+	<p>
+		<code>sage! help admin pc</code>
+		<br/>
+		<br/>These commands are for managing Player Characters.
+		<br/><code>sage!! pc create name="Bardok the Brave" token="http://url_to_token_image" avatar="http://url_to_avatar_image"</code>
+		<br/><code>sage!! pc delete name="Bardok the Brave"</code>
+		<br/><code>sage!! pc details name="Bardok the Brave"</code>
+		<br/><code>sage!! pc list "optionalFilter"</code>
+		<br/><code>sage!! pc update name="Bardok the Brave" avatar="http://url_to_new_avatar_image"</code>
+		<br/><code>sage!! pc update name="Bardok the Brave" token="http://url_to_new_token_image"</code>
+		<br/><code>sage!! pc update name="Bardok the Brave" color="#FF00AA"</code>
+		<br/><code>sage!! pc update oldname="Bardok the Brave" newname="Bardok the Cowardly"</code>
+		<br/>Images should be urls. If you embed images in your post, the first one will be the token and the second one the avatar.
+		<br/>You can mix and match the avatar, token, and color options when you create or update a PC.
+	</p>
 </div>
 			<div id="item-5g" class="item">
-	<h5 class="ps-4">5g. Companion (Companion, Familiar, Hireling, etc) Admin</h5>
+	<h5 class="ps-4">5g. Companion (Alt, Companion, Familiar, Hireling, etc) Admin</h5>
 	<p>
 		<code>sage! help admin companion</code>
 		<br />
 		<br />These commands are for managing companions for player characters.
-		<br /><code>sage!! companion create charname="Bardok the Brave" name="Ser Stallion" token="http://url_to_token_image" avatar="http://url_to_avatar_image"</code>
-		<br /><code>sage!! companion delete charname="Bardok the Brave" name="Ser Stallion"</code>
+		<br /><code>sage!! companion create charname="Bardok the Cowardly" name="Ser Stallion" token="http://url_to_token_image" avatar="http://url_to_avatar_image"</code>
+		<br /><code>sage!! companion delete charname="Bardok the Cowardly" name="Ser Stallion"</code>
 		<br /><code>sage!! companion details name="Ser Stallion"</code>
 		<br /><code>sage!! companion list "optionalFilter"</code>
-		<br /><code>sage!! companion update charname="Bardok the Brave" name="Ser Stallion" avatar="http://url_to_avatar_image"</code>
+		<br /><code>sage!! companion update charname="Bardok the Cowardly" name="Ser Stallion" avatar="http://url_to_avatar_image"</code>
+		<br /><code>sage!! companion update charname="Bardok the Cowardly" name="Ser Stallion" token="http://url_to_token_image"</code>
+		<br /><code>sage!! companion update charname="Bardok the Cowardly" name="Ser Stallion" color="#FF00AA"</code>
 		<br /><code>sage!! companion update charname="Bardok the Cowardly" oldname="Ser Stallion" newname="Ser Bolts'a'lot"</code>
-		<br />Images can be urls or embedded images.
+		<br/>Images should be urls. If you embed images in your post, the first one will be the token and the second one the avatar.
+		<br/>You can mix and match the avatar, token, and color options when you create or update a PC.
 	</p>
 </div>
 
@@ -517,28 +604,76 @@
 </div>
 			<div id="item-6a" class="item">
 	<h5 class="ps-4">6a. Dialog Post Command</h5>
-	<p><code>{type}::{name}(display name)::(title)::{color}::{avatar}::{content}</code>
-	<br/>- {type}: gm, npc, enemy, ally, pc, alt, companion, hireling
-	<br/>- {name}: the name of the npc, pc, or companion to post as
-	<br/>- - optional for PCs in a game
-	<br/>- {display name}: the name to post as
-	<br/>- - optional: defaults to character name or 'Game Master' for GM
-	<br/>- {title}: a title or descripiton of the dialog optional
-	<br/>- {color}: a color to override the dialog color with
-	<br/>- - optional: expects hex value 0x000000 or #FFFFFF
-	<br/>- {avatar}: a url to override the avatar image
-	<br/>- - optional
-	<br/>- {content}: everything you want to post in your dialog
-	<br/>- - accepts normal discord/markup as well as custom Sage markup</p>
-</div>
-			<div id="item-6b" class="item">
-	<h5 class="ps-4">6b. Dialog Edit Command</h5>
-	<p><code>sage! help dialog edit</code>
-	<br/>
-	<br/>This command lets you edit your last dialog post.
-	<br/><code>edit::{dialog content}</code></p>
+	<p><code>{type}::{name}({display name})::(title)::{color}::{avatar}::{content}</code></p>
+	<div class="row m-0">
+		<div class="col">
+			<p>
+				<br/>&bull; {type}: gm, npc, enemy, ally, pc, alt, companion, hireling
+				<br/>&bull; {name}: the name of the npc, pc, or companion to post as
+				<br/>&nbsp; &nbsp; &bull; <small>optional for gm; optional for PCs in a game</small>
+				<br/>&bull; {display name}: the name to post as
+				<br/>&nbsp; &nbsp; &bull; <small>optional: defaults to character name or 'Game Master' for GM</small>
+				<br/>&bull; {title}: a title or descripiton of the dialog
+				<br/>&nbsp; &nbsp; &bull; <small>optional</small>
+				<br/>&bull; {color}: a color to override the dialog color with
+				<br/>&nbsp; &nbsp; &bull; <small>optional: expects hex value 0x000000 or #FFFFFF</small>
+				<br/>&bull; {avatar}: a url to override the avatar image
+				<br/>&nbsp; &nbsp; &bull; <small>optional</small>
+				<br/>&bull; {content}: everything you want to post in your dialog
+				<br/>&nbsp; &nbsp; &bull; accepts normal discord/markup as well as custom Sage markup
+			</p>
+			<p class="text-center d-lg-none">
+				<small>game master input</small>
+<img src="./images/docs/dialog/dark-and-gloomy-input-dark.png" alt="An example of how to enter dialog content as a game master."/>
+<br/><br/>
+<small>game master output</small>
+<br/>
+<img src="./images/docs/dialog/dark-and-gloomy-output-dark.png" alt="An example of how the previous input looks after RPG Sage reposts it as Game Master."/>
+
+			</p>
+		</div>
+		<div class="col-6 d-none d-lg-block text-center">
+			<small>game master input</small>
+<img src="./images/docs/dialog/dark-and-gloomy-input-dark.png" alt="An example of how to enter dialog content as a game master."/>
+<br/><br/>
+<small>game master output</small>
+<br/>
+<img src="./images/docs/dialog/dark-and-gloomy-output-dark.png" alt="An example of how the previous input looks after RPG Sage reposts it as Game Master."/>
+
+		</div>
+	</div>
 </div>
 
+			<div id="item-6b" class="item">
+	<h5 class="ps-4">6b. Dialog Edit Command</h5>
+	<div class="row m-0">
+		<div class="col">
+			<p>
+				<code>sage! help dialog edit</code>
+				<br/>
+				<br/>The syntax to edit dialog content is as follows:
+				<br/><code>edit::{updated dialog content}</code>
+				<br/>
+				<br/>If you send it as a new message in the dialiog channel, it will update the last dialog you posted.
+				If you reply to a message with dialog that you posted, you will edit the message that you are replying to.
+			</p>
+			<p class="text-center d-lg-none">
+				<img src="./images/docs/dialog/edit-last-entry-dark.png" alt="An example of how to edit your last RPG Sage dialog post."/>
+				<br/><br/>
+				<img src="./images/docs/dialog/edit-reply-entry-dark.png" alt="An example of how to edit a specific RPG Sage dialog post."/>
+				<br/><br/>
+				<img src="./images/docs/dialog/edit-final-dark.png" alt="Showing the results of editing two RPG Sage dialog posts."/>
+			</p>
+		</div>
+		<div class="col-6 d-none d-lg-block text-center">
+			<img src="./images/docs/dialog/edit-last-entry-dark.png" alt="An example of how to edit your last RPG Sage dialog post."/>
+			<br/><br/>
+			<img src="./images/docs/dialog/edit-reply-entry-dark.png" alt="An example of how to edit a specific RPG Sage dialog post."/>
+			<br/><br/>
+			<img src="./images/docs/dialog/edit-final-dark.png" alt="Showing the results of editing two RPG Sage dialog posts."/>
+		</div>
+	</div>
+</div>
 			<div id="item-6c" class="item">
 	<h5 class="ps-4">6c. Dialog Alias Commands</h5>
 	<p><code>sage! help dialog alias</code>
@@ -690,7 +825,217 @@
 </div>
 
 			<div id="item-8" class="item">
-	<h4 class="">8. Character Import</h4>
+	<h4 class="">8. Maps <small>prototype</small></h4>
+	<div class="row m-0">
+		<div class="col">
+			<p>
+				Yes, you heard that right, we can do maps!
+				And all you have to do is create a metadata text file that has a name ending in <code>.map.txt</code> and then drop the file in the channel you want your map.
+				Sage will take it from there!
+			</p>
+			<p>
+				<strong>Note about prototype.</strong>
+				<br/>
+				This feature is still a prototype, perhaps consider it an alpha release.
+				The interface and feedback aren't as clean as we want and the execution of features is a tad clumsy.
+				But, we assure you that we already have planned improvements that will make it much better!
+			</p>
+			<p>
+				<strong>Note about image storage.</strong>
+				<br/>
+				RPG Sage doesn't store any images used in the creation of maps.
+				Therefore, you will need to make sure that they are all public urls that will be available until you are no longer using the map.
+				The simplest way to do this is to post the image(s) into a discord channel and then grab the url from the uploaded image(s).
+			</p>
+			<p class="text-center d-lg-none">
+				<img src="./images/docs/map/map-overview-dark.png" alt="An example of RPG Sage's prototype map feature."/>
+
+			</p>
+		</div>
+		<div class="col d-none d-lg-block text-center">
+			<img src="./images/docs/map/map-overview-dark.png" alt="An example of RPG Sage's prototype map feature."/>
+
+		</div>
+	</div>
+</div>
+			<div id="item-8a" class="item">
+	<h5 class="ps-4">8a. Map Controls</h5>
+	<p>
+		<strong>Movement Arrows</strong> <small>left side</small>
+		<br/>
+		Move your active token (or terrain if GM) one square in the direction indicated.
+	</p>
+	<p>
+		<strong>Gear</strong>
+		<br/>
+		Disabled; saved for future use.
+	</p>
+	<p>
+		<strong>Mountain</strong>
+		<br/>
+		GM uses this button to cycle through the terrain images to select the active terrain.
+	</p>
+	<p>
+		<strong>Yellow Circle</strong>
+		<br/>
+		Cycle through aura images (for the active token) to select the active aura.
+		A token can have any number of auras configured, but only one can be active at a time.
+		(This also applies to terrain for GMs.)
+	</p>
+	<p>
+		<strong>Person</strong>
+		<br/>
+		Cycle through token images to select the active token.
+		Players can only cycle through tokens assigned to them.
+		GMs cycle through all tokens.
+		If you are using RPG Sage's Game feature, a PC's token (along with familiars/companions) should be added automatically to the map when trying to select their token.
+		<small>There is a known bug in the current code that will likely spawn a PC's token even if you already assigned them a token when making the map.</small>
+	</p>
+	<p>
+		<strong>Up / Down Arrows</strong> <small>right side</small>
+		<br/>
+		GMs can use this to reorder (alter the z-index) of the terrain and tokens.
+	</p>
+	<p>
+		<strong>Red X</strong>
+		<br/>
+		GM uses this button to delete terrain / tokens.
+		<small>The thought was you import a map for an encounter with all baddies and delete them as they are removed from play.</small>
+	</p>
+</div>
+			<div id="item-8b" class="item">
+	<h5 class="ps-4">8b. Map File Contents</h5>
+	<div class="row m-0">
+		<div class="col">
+			<p>
+				A map file consists of "blocks" that detail each image you want on the map.
+				The four types of block are: map (the map's background image), terrain (a moveable piece of terrain/trap/hazard), aura (a toggleable aura that moves with a token/terrain), token (a pc/npc).
+				The layers are drawn from the bottom to top (map, terrain, aura, token) and initially drawn in the order listed in the file within each layer (you can change their draw order later via the interface).
+				Only the first <code>map</code> layer will be drawn.
+				Each block <em>must have</em> the url to the image and the name of the image (in the case of the <code>[map]</code> block, this is the name of the map that RPG Sage will display).
+			</p>
+			<div class="d-lg-none">
+				<textarea class="form-control" rows="10" wrap="off">
+[map]
+https://rpgsage.io/images/docs/map/example/ForgedFacadeReveal.png
+name=Forged Facade Reveal
+grid=7x10
+spawn=4,1
+
+[token]
+https://rpgsage.io/images/docs/map/example/Hoobla.png
+name=Hoobla
+size=1x1
+position=4,7
+user=@Randal#7243
+
+[token]
+https://rpgsage.io/images/docs/map/example/BaltaramToken.png
+name=Baltaram
+size=1x1
+position=4,2
+
+[token]
+https://rpgsage.io/images/games/ftp-756/YellowCircle.png
+name=Bodyguard (Yellow)
+size=1x1
+position=3,2
+
+[token]
+https://rpgsage.io/images/games/ftp-756/BlueCircle.png
+name=Bodyguard (Blue)
+size=1x1
+position=4,3
+
+[token]
+https://rpgsage.io/images/games/ftp-756/PurpleCircle.png
+name=Bodyguard (Purple)
+size=1x1
+position=5,2
+</textarea>
+			</div>
+		</div>
+		<div class="col-6 d-none d-lg-block text-center">
+			<textarea class="form-control" rows="10" wrap="off">
+[map]
+https://rpgsage.io/images/docs/map/example/ForgedFacadeReveal.png
+name=Forged Facade Reveal
+grid=7x10
+spawn=4,1
+
+[token]
+https://rpgsage.io/images/docs/map/example/Hoobla.png
+name=Hoobla
+size=1x1
+position=4,7
+user=@Randal#7243
+
+[token]
+https://rpgsage.io/images/docs/map/example/BaltaramToken.png
+name=Baltaram
+size=1x1
+position=4,2
+
+[token]
+https://rpgsage.io/images/games/ftp-756/YellowCircle.png
+name=Bodyguard (Yellow)
+size=1x1
+position=3,2
+
+[token]
+https://rpgsage.io/images/games/ftp-756/BlueCircle.png
+name=Bodyguard (Blue)
+size=1x1
+position=4,3
+
+[token]
+https://rpgsage.io/images/games/ftp-756/PurpleCircle.png
+name=Bodyguard (Purple)
+size=1x1
+position=5,2
+</textarea>
+		</div>
+	</div>
+	<ul>
+		<code>[map]</code> <small>background image/layer</small>
+		<li><strong>url</strong> = <em>url to the image</em></li>
+		<li><strong>name</strong> = <em>name of the map</em></li>
+		<li><strong>grid</strong> = <em>number of columns (first) and rows (second): 24x11</em></li>
+		<li><strong>spawn</strong> = <em>column (left) and row (right) where where new tokens appear: 2,1</em></li>
+	</ul>
+	<ul>
+		<code>[terrain]</code> <small>bottom layer</small>
+		<li><strong>url</strong> = <em>url to the image</em></li>
+		<li><strong>name</strong> = <em>name of the terrain or object</em></li>
+		<li><strong>size</strong> = <em>width (first) and height (second) of terrain: 1x1</em></li>
+		<li><strong>position</strong> = <em>starting column (left) and row (right) on the map: 3,2</em></li>
+		<ul><li><small>Only a GM can move an object of this layer</small></li></ul>
+	</ul>
+	<ul>
+		<code>[aura]</code> <small>middle layer</small>
+		<li><strong>url</strong> = <em>url to the image</em> <small>yes, it requires images for now</small></li>
+		<li><strong>name</strong> = <em>name of the aura</em></li>
+		<li><strong>anchor</strong> = <em>name of the token (or terrain) to anchor the aura to</em></li>
+		<li><strong>opacity</strong> = <em>how transparent the image is (0% - 100%)</em>: 50%</li>
+		<li><strong>size</strong> = <em>width (first) and height (second) of aura: 1x1</em></li>
+		<li><strong>position</strong> = <em>column (left) and row (right) on the map <strong>relative to anchor</strong></em></li>
+		<ul>
+			<li>A 5 ft. emanation from a 1x1 token would have an <code>anchor</code>, <code>size=3x3</code>, and <code>position=-1,-1</code></li>
+			<li><small>Auras will change greatly in the next iteration.</small></li>
+		</ul>
+	</ul>
+	<ul>
+		<code>[token]</code> <small>top layer</small>
+		<li><strong>url</strong> = <em>url to the image</em></li>
+		<li><strong>name</strong> = <em>name of the PC or NPC</em></li>
+		<li><strong>size</strong> = <em>width (first) and height (second) of token: 1x1</em></li>
+		<li><strong>position</strong> = <em>starting column (left) and row (right) on the map: 3,2</em></li>
+		<li><strong>user</strong> = <em>Discord handle of the User to ownership of the token (PCs only): @PlayerName#1234</em></li>
+	</ul>
+</div>
+
+			<div id="item-9" class="item">
+	<h4 class="">9. Character Import</h4>
 	<p>
 		<code>/sage import</code>
 		<br/>
@@ -714,17 +1059,17 @@
 	</p>
 </div>
 
-			<div id="item-9" class="item">
-	<h4 class="">9. Other Commands</h4>
+			<div id="item-10" class="item">
+	<h4 class="">10. Other Commands</h4>
 	<p><code>sage! help command</code></p>
 </div>
-			<div id="item-9a" class="item">
-	<h5 class="ps-4">9a. Coin / Currency Calculator</h5>
+			<div id="item-10a" class="item">
+	<h5 class="ps-4">10a. Coin / Currency Calculator</h5>
 	<p><code>sage! {1pp} {-2gp} {+3sp} {-4cp}</code>
 	<br/><code>sage! {1pp} {2gp} {3sp} {4cp}</code></p>
 </div>
-			<div id="item-9b" class="item">
-	<h5 class="ps-4">9b. Weather Report Generator</h5>
+			<div id="item-10b" class="item">
+	<h5 class="ps-4">10b. Weather Report Generator</h5>
 	<p><code>sage! help command weather</code>
 	<br/>
 	<br/>This command creates a random weather report.
@@ -734,12 +1079,12 @@
 	<br/>- Season Options: Spring | Summer | Fall | Winter</p>
 </div>
 
-			<div id="item-10" class="item">
-	<h4 class="">10. Pathfinder 2e Commands</h4>
+			<div id="item-11" class="item">
+	<h4 class="">11. Pathfinder 2e Commands</h4>
 	<p>The following commands are specific to Pathfinder 2e.</p>
 </div>
-			<div id="item-10a" class="item">
-	<h5 class="ps-4">10a. Pathfinder / Golarion Info (days &amp; months)</h5>
+			<div id="item-11a" class="item">
+	<h5 class="ps-4">11a. Pathfinder / Golarion Info (days &amp; months)</h5>
 	<p><code>sage! help command golarion</code>
 	<br/>These commands are for viewing the dates, days, and months of the Golarion (Pathfinder) calendar.
 	<br/><code>sage! date {yyyy-mm-dd}</code>
@@ -751,8 +1096,8 @@
 	<br/><code>sage! today</code>
 	<br/>- Displays today's date on Golarion <em>and</em> on Earth. Includes season.</p>
 </div>
-			<div id="item-10b" class="item">
-	<h5 class="ps-4">10b. Pathfinder 2e DCs</h5>
+			<div id="item-11b" class="item">
+	<h5 class="ps-4">11b. Pathfinder 2e DCs</h5>
 	<p><code>sage! help command dcs</code>
 	<br/>
 	<br/>These commands are for viewing the various DCs used in Pathfinder 2e.
@@ -762,30 +1107,30 @@
 	<br/><code>sage! simple dc {proficiency}</code>
 	<br/><code>sage! {proficiency} simple dc</code></p>
 </div>
-			<div id="item-10c" class="item">
-	<h5 class="ps-4">10c. Pathfinder 2e Lists</h5>
+			<div id="item-11c" class="item">
+	<h5 class="ps-4">11c. Pathfinder 2e Lists</h5>
 	<p><code>sage! list {deities|gods} by domain {domain}</code>
 	<br/><code>sage! list {weapons|armor|spells} by trait {trait}</code>
 	<br/>Future releases will expand on these lists.</p>
 </div>
-			<div id="item-10d" class="item">
-	<h5 class="ps-4">10d. Pathfinder 2e Content Search</h5>
+			<div id="item-11d" class="item">
+	<h5 class="ps-4">11d. Pathfinder 2e Content Search</h5>
 	<p>These commands perform full text searches.
 	<br/><code>sage? {searchTerm}</code>
 	<br/><code>sage? {searchTerm} -{categoryOrObjectType}</code>
 	<br/>Category/ObjectType examples: Background, Feat, Spell, etc.
 	<br/>This isn't fully operational, nor is the data complete yet.</p>
 </div>
-			<div id="item-10e" class="item">
-	<h5 class="ps-4">10e. Pathfinder 2e Content Find</h5>
+			<div id="item-11e" class="item">
+	<h5 class="ps-4">11e. Pathfinder 2e Content Find</h5>
 	<p>These commands perform searches only against names.
 	<br/><code>sage?! {searchTerm}</code>
 	<br/><code>sage?! {searchTerm} -{categoryOrObjectType}</code>
 	<br/>Category/ObjectType examples: Background, Feat, Spell, etc.
 	<br/>This isn't fully operational, nor is the data complete yet.</p>
 </div>
-			<div id="item-10f" class="item">
-	<h5 class="ps-4">10f. Pathfinder 2e Spell Lists</h5>
+			<div id="item-11f" class="item">
+	<h5 class="ps-4">11f. Pathfinder 2e Spell Lists</h5>
 	<p>These commands allow you to view various types of spell lists
 	<br/><code>sage! spells {tradition} {level|Cantrips}</code>
 	<br/><code>sage! spells {tradition} {level|Cantrips} by school</code>
@@ -798,18 +1143,18 @@
 	<br/>The following creates a specialized list of spells by merging or excluding traditions
 	<br/><code>sage! spells {level|Cantrips} {+tradition} {-tradition} {|tradition} {&amp;tradition}</code></p>
 </div>
-			<div id="item-10g" class="item">
-	<h5 class="ps-4">10g. Pathfinder 2e Focus Spell Lists</h5>
+			<div id="item-11g" class="item">
+	<h5 class="ps-4">11g. Pathfinder 2e Focus Spell Lists</h5>
 	<p><code>sage! focus spells {Archetype|Class|Domain}</code>
 	<br/><code>sage! {Archetype|Class|Domain} focus spells</code></p>
 </div>
-			<div id="item-10h" class="item">
-	<h5 class="ps-4">10h. Pathfinder 2e Starting Wealth Info</h5>
+			<div id="item-11h" class="item">
+	<h5 class="ps-4">11h. Pathfinder 2e Starting Wealth Info</h5>
 	<p><code>sage! starting wealth</code>
 	<br/><code>sage! starting wealth {level}</code></p>
 </div>
-			<div id="item-10i" class="item">
-	<h5 class="ps-4">10i. Pathfinder 2e Income Info</h5>
+			<div id="item-11i" class="item">
+	<h5 class="ps-4">11i. Pathfinder 2e Income Info</h5>
 	<p><code>sage! income earned</code>
 	<br/>- Shows the entire table 4-2: Income Earned
 	<br/><code>sage! income earned {taskLevel}</code>
@@ -818,29 +1163,29 @@
 	<br/>- Shows the results for the given level and proficiency.</p>
 </div>
 
-			<div id="item-11" class="item">
-	<h4 class="">11. Pathfinder Society 2e Commands</h4>
+			<div id="item-12" class="item">
+	<h4 class="">12. Pathfinder Society 2e Commands</h4>
 	<p>The following commands are designed to help if you are playing Organized Play (Pathfinder Society) games for Pathfinder 2e.</p>
 </div>
-			<div id="item-11a" class="item">
-	<h5 class="ps-4">11a. Pathfinder PFS / Org Play Links</h5>
+			<div id="item-12a" class="item">
+	<h5 class="ps-4">12a. Pathfinder PFS / Org Play Links</h5>
 	<p><code>sage! pfs links</code>
 	<br/>DISABLED FOR NOW (their site changed)</p>
 </div>
 
-			<div id="item-11b" class="item">
-	<h5 class="ps-4">11b. Pathfinder PFS Downtime Rolls</h5>
+			<div id="item-12b" class="item">
+	<h5 class="ps-4">12b. Pathfinder PFS Downtime Rolls</h5>
 	<p><code>sage! pfs income {pcLevel} {skillProficiency} {skillModifier}</code>
 	<br/><code>sage! pfs income {pcLevel} {skillProficiency} {skillModifier} {days}</code></p>
 </div>
-			<div id="item-11c" class="item">
-	<h5 class="ps-4">11c. Pathfinder PFS Scenario Randomizers</h5>
+			<div id="item-12c" class="item">
+	<h5 class="ps-4">12c. Pathfinder PFS Scenario Randomizers</h5>
 	<p><code>sage! pfs s1-01 {pc1Level}, {pc2Level}, {pc3Level}, {pc4Level}, {pc5Level}, {pc6Level}, {pc7Level}</code>
 	<br/>Future releases will include more scenarios.
 	<br/>PFS Guidelines now recommend against 7 player tables</p>
 </div>
-			<div id="item-11d" class="item">
-	<h5 class="ps-4">11d. Pathfinder PFS Tier Calculator</h5>
+			<div id="item-12d" class="item">
+	<h5 class="ps-4">12d. Pathfinder PFS Tier Calculator</h5>
 	<p><code>sage! pfs {tier} {minLevel}-{maxLevel} {pc1Level} {pc2Level} {pc3Level} {pc4Level} {pc5Level} {pc6Level} {pc7Level}</code>
 	<br/>PFS Guidelines now recommend against 7 player tables</p>
 </div>

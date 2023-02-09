@@ -35,7 +35,7 @@
 	</div>
 	<div class="offcanvas-body">
 		<nav class="navbar flex-column align-items-stretch">
-			<nav class="nav flex-column" id="navbar-left-items"><a class="nav-link" href="#item-1">1. Dialog Commands</a><a class="nav-link" href="#item-2">2. Dice Commands</a><a class="nav-link" href="#item-3">3. Dice Macros</a></nav>
+			<nav class="nav flex-column" id="navbar-left-items"><a class="nav-link" href="#item-1">1. Dialog</a><a class="nav-link" href="#item-2">2. Dice</a><a class="nav-link" href="#item-3">3. Dice Macros</a><a class="nav-link" href="#item-4">4. Maps <small>prototype</small></a><a class="nav-link" href="#item-5">5. Search <small>currently Archives of Nethys only</small></a></nav>
 		</nav>
 	</div>
 </div>
@@ -99,6 +99,7 @@
 					<br class="d-sm-none"/>
 					Feature Guide
 				</h2>
+				<div class="text-center"><small>updated: 2023-02-09</small></div>
 			</header>
 
 			<div class="alert alert-info m-2">
@@ -116,66 +117,170 @@
 			</div>
 
 			<div id="item-1" class="item">
-	<h4 class="">1. Dialog Commands</h4>
-	<p><code>sage! help dialog</code> &nbsp; or &nbsp; <code>/sage help category="Dialog Commands"</code>
-	<br/>These commands are how you interact with the dialog engine of Sage.
-	<br/>When posting dialog, you do not need to use a command prefix.
-	<br/>Each different dialog type can be configured to have its own default color.</p>
-</div>
-			<div id="item-1a" class="item">
-	<h5 class="ps-4">1a. Dialog Post Command</h5>
-	<p><code>{type}::{name}(display name)::(title)::{color}::{avatar}::{content}</code>
-	<br/>- {type}: gm, npc, enemy, ally, pc, alt, companion, hireling
-	<br/>- {name}: the name of the npc, pc, or companion to post as
-	<br/>- - optional for PCs in a game
-	<br/>- {display name}: the name to post as
-	<br/>- - optional: defaults to character name or 'Game Master' for GM
-	<br/>- {title}: a title or descripiton of the dialog optional
-	<br/>- {color}: a color to override the dialog color with
-	<br/>- - optional: expects hex value 0x000000 or #FFFFFF
-	<br/>- {avatar}: a url to override the avatar image
-	<br/>- - optional
-	<br/>- {content}: everything you want to post in your dialog
-	<br/>- - accepts normal discord/markup as well as custom Sage markup</p>
-</div>
+	<h4 class="">1. Dialog</h4>
+	<div class="row m-0">
+		<div class="col">
+			<p>
+				One of the two primary uses of RPG Sage is its dialog feature.
+				Once configured, this allows players and game masters to post as their characters with little more than starting their post with <code>pc::</code> or <code>gm::</code>
+			</p>
+			<p>
+				<strong>PC Dialog for Players</strong>
+				<br/>
+				Players will generally post their dialog by using the <code>pc::</code> command; posting as their Player Character for the current game.
+				PCs can also have alts, companions, familiars, hirelings, and more!
+				Once added to a PC, you would post as those other characters using their various dialog commands, such as <code>alt::</code> or <code>familiar::Fluffy Kitty::</code>.
+			</p>
+			<p>
+				<strong>NPC Dialog for Game Masters</strong>
+				<br/>
+				Game masters will generally post their dialog by using the <code>npc::</code> command.
+				Because there are generally many NPCs to a Game Master (as opposed to one PC per Player) you must include the name of the NPC you are posting as, such as <code>npc::Mayor Cogsgrove::</code>.
+				For convenience, there is a built in NPC called "Game Master" that GMs can post as by simply using the <code>gm::</code> dialog command.
+			</p>
+			<p class="text-center d-lg-none">
+				<img src="./images/docs/dialog/two-npc-example-dark.png" alt="An example of dialog between two characters using RPG Sage."/>
 
+			</p>
+		</div>
+		<div class="col d-none d-lg-block text-center">
+			<img src="./images/docs/dialog/two-npc-example-dark.png" alt="An example of dialog between two characters using RPG Sage."/>
+
+		</div>
+	</div>
+</div>
 			<div id="item-2" class="item">
-	<h4 class="">2. Dice Commands</h4>
-	<p><code>sage! help dice</code> &nbsp; or &nbsp; <code>/sage help category="Dice Commands"</code>
-	<br/>These commands are how you roll dice with Sage.</p>
-</div>
-			<div id="item-2a" class="item">
-	<h5 class="ps-4">2a. Dice w/ multiple sets</h5>
-	<p><code>[1d20 attack; 1d8 damage]</code>
-	<br/><code>[1d20+5 attack; 1d8 + 2 slashing damage]</code>
-	<br/><code>[1d20+2 attack; 1d4 dagger + 2d6 sneak damage]</code></p>
-</div>
+	<h4 class="">2. Dice</h4>
+	<div class="row m-0">
+		<div class="col">
+			<p>
+				The second of the two primary uses of RPG Sage is its dice feature.
+				At its most basic, it enables you to roll dice and post the results.
 
+			</p>
+			<p>
+				The simplest form of this is the humble <code>[1d20]</code> roll.
+			</p>
+			<p>
+				As you get more comfortable using it, you will find that you can enter multiple rolls (each with their own description) into a single dice command so that RPG Sage can group the resulst together to make it easier for your group to find and read dice rolls that belong together.
+				The most common form of this is the attack and damage roll combo of d20 games: <code>[1d20 attack; 1d8 damage]</code>.
+			</p>
+			<p>
+				You can, of course, include modifiers to die rolls (even more dice types) and even give each modifier a description should you choose to.
+				For example, a common d20 rogue might roll <code>[1d20 + 8 dagger attack; 1d4 piercing + 2 strength + 1d6 sneak]</code>.
+			</p>
+			<p class="text-center d-lg-none">
+				<img src="./images/docs/dice/dice-feature-dark.png" alt="An example of common dice rolls that RPG Sage can parse and respond to."/>
+<br/>
+<small>While this example shows the user only posting a dice rolls, RPG Sage will read entire messages and respond to all instances of dice rolls that it finds within each message.</small>
+
+			</p>
+		</div>
+		<div class="col d-none d-lg-block text-center">
+			<img src="./images/docs/dice/dice-feature-dark.png" alt="An example of common dice rolls that RPG Sage can parse and respond to."/>
+<br/>
+<small>While this example shows the user only posting a dice rolls, RPG Sage will read entire messages and respond to all instances of dice rolls that it finds within each message.</small>
+
+		</div>
+	</div>
+</div>
 			<div id="item-3" class="item">
 	<h4 class="">3. Dice Macros</h4>
-	<p>
-		<code>sage! help dice macro</code>
-		<br/>
-		<br/>These commands are for managing macros to make complex dice rolls.
-		<br/><code>sage!! macro delete all</code>
-		<br/><code>sage!! macro delete category="{category}"</code>
-		<br/><code>sage!! macro delete name="{name}"</code>
-		<br/><code>sage!! macro details name="{name}"</code>
-		<br/><code>sage!! macro list</code>
-		<br/><code>sage!! macro list category="{category}"</code>
-		<br/><code>sage!! macro move name="{name}" category="{category}"</code>
-		<br/><code>sage!! macro set name="{name}" [{dice}]</code>
-		<br/><code>sage!! macro set name="{name}" category="{category}" [{dice}]</code>
-		<br/>Example: <code>sage!! macro set name="three daggers" category="daggers" [1d20+8;1d6][1d20+4;1d6][1d20;1d6]</code>
-		<br/>Usage: <code>[three daggers]</code>
-		<br/>Example: <code>sage!! macro set name="swords" [3MAP-4#1d20+8{ac};1d6]</code>
-		<br/>Usage: <code>[swords ac=10]</code>
-	</p>
-	<p>
-		Macro Categories are helpful in grouping related macros together, but they also serve a special function for Pathfinder 2e players using imported characters.
-		Macros with the same category name as an imported Pathfinder 2e character name will show up in the imported character's sheet so that you can select then and roll them with the click of a button.
-		<em>(Will provide link to importing documentation as it is finished.)</em>
-	</p>
+	<div class="row m-0">
+		<div class="col">
+			<p>
+				Once you really start using dice rolls in RPG Sage, you will find that you wind up doing a <em>lot</em> of copy/paste actions.
+				To alleviate this, we have implemented a fairly complex macro feature.
+				At the basic level, dice macros allow you to avoid copying and pasting long dice commands by creating a short cut (called "macro").
+			</p>
+			<p>
+				Using our example above of a sneak attack, we can see that it would get annoying constantly typing (or even copy/pasting) <code>[1d20 + 8 dagger attack; 1d4 piercing + 2 strength + 1d6 sneak]</code> over and over.
+				By creating a macro named (conveniently and descriptively) "sneak dagger", we find it much more wieldy to use that attack roll on a regular basis by simply using <code>[sneak dagger]</code>.
+			</p>
+			<p class="text-center d-lg-none">
+				<img src="./images/docs/dice/dice-macros-sneak-dagger-dark.png" alt="An example of rolling RPG Sage dice the long way vs using the built in dice macros feature."/>
+
+			</p>
+		</div>
+		<div class="col d-none d-lg-block text-center">
+			<img src="./images/docs/dice/dice-macros-sneak-dagger-dark.png" alt="An example of rolling RPG Sage dice the long way vs using the built in dice macros feature."/>
+
+		</div>
+	</div>
+</div>
+			<div id="item-4" class="item">
+	<h4 class="">4. Maps <small>prototype</small></h4>
+	<div class="row m-0">
+		<div class="col">
+			<p>
+				Yes, you heard that right, we can do maps!
+				And all you have to do is create a metadata text file that has a name ending in <code>.map.txt</code> and then drop the file in the channel you want your map.
+				Sage will take it from there!
+			</p>
+			<p>
+				<strong>Note about prototype.</strong>
+				<br/>
+				This feature is still a prototype, perhaps consider it an alpha release.
+				The interface and feedback aren't as clean as we want and the execution of features is a tad clumsy.
+				But, we assure you that we already have planned improvements that will make it much better!
+			</p>
+			<p>
+				<strong>Note about image storage.</strong>
+				<br/>
+				RPG Sage doesn't store any images used in the creation of maps.
+				Therefore, you will need to make sure that they are all public urls that will be available until you are no longer using the map.
+				The simplest way to do this is to post the image(s) into a discord channel and then grab the url from the uploaded image(s).
+			</p>
+			<p class="text-center d-lg-none">
+				<img src="./images/docs/map/map-overview-dark.png" alt="An example of RPG Sage's prototype map feature."/>
+
+			</p>
+		</div>
+		<div class="col d-none d-lg-block text-center">
+			<img src="./images/docs/map/map-overview-dark.png" alt="An example of RPG Sage's prototype map feature."/>
+
+		</div>
+	</div>
+</div>
+			<div id="item-5" class="item">
+	<h4 class="">5. Search <small>currently Archives of Nethys only</small></h4>
+	<div class="row m-0">
+		<div class="col">
+			<p>
+				Yup, we said it, you can ask RPG Sage to look something up on Archives of Nethys and get a list of links to the top 10 (or so) results!
+				We can even render quite a bit of content directly in Discord for you so that you don't always have to click that link and leave your chat to get the content for yourself or your group!
+			</p>
+			<p>
+				<strong>Note about content search.</strong>
+				<br/>
+				Currently, we can only search content on Archives of Nethys for Pathfinder 1e, Pathfinder 2e, and Starfinder ... but we are always looking for ways to search content for more games!
+			</p>
+			<p>
+				<strong>Note about posting search results.</strong>
+				<br/>
+				Currently, we can only post some things from Pathfinder 2e, but we plan to continue expanding the amount of content we can post directly.
+				When results are determined, if there is only one item that was returned for your search <strong><em>and</em></strong> the name is exactly what you searched for <strong><em>and</em></strong> we have the ability to post it directly, we will post it instead of returning a list of results.
+			</p>
+			<p>
+				<strong>Note about "search" vs "find".</strong>
+				<br/>
+				By default, using <code>sage?magic missile</code> performs what we call "search"; it searches all the text of the content being searched. If you include an exclamation, for example <code>sage?!magic missile</code>, then RPG Sage will only consider the names of the items returned when it provides you with results.
+				When results are determined, if there is one item that was returned for your search with a name that is exactly what you searched for <strong><em>and</em></strong> we have the ability to post it directly, we will post it instead of returning a list of results.
+			</p>
+			<p class="text-center d-lg-none">
+				<img src="./images/docs/search/search-feature-please-wait-dark.png" alt="An example of RPG Sage's Pathfinder 2e search feature indicating that it is searching."/>
+<br/><br/>
+<img src="./images/docs/search/search-feature-search-missile-magic-dark.png" alt="An example of RPG Sage's Pathfinder 2e search feature results."/>
+
+			</p>
+		</div>
+		<div class="col d-none d-lg-block text-center">
+			<img src="./images/docs/search/search-feature-please-wait-dark.png" alt="An example of RPG Sage's Pathfinder 2e search feature indicating that it is searching."/>
+<br/><br/>
+<img src="./images/docs/search/search-feature-search-missile-magic-dark.png" alt="An example of RPG Sage's Pathfinder 2e search feature results."/>
+
+		</div>
+	</div>
 </div>
 
 		</div>

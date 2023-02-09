@@ -31,3 +31,6 @@ Remove html comments from build output.
 Updated date now updates as part of build process.
 Updated dialog reply information.
 Added dialog feature snippet and images.
+Added dice macros feature snippet and images.
+Added search feature snippet and images.
+Updated dialog feature snippet with some details about pc::, npc::, and gm::.
