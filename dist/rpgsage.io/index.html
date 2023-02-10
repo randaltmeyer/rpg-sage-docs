@@ -35,7 +35,7 @@
 	</div>
 	<div class="offcanvas-body">
 		<nav class="navbar flex-column align-items-stretch">
-			<nav class="nav flex-column" id="navbar-left-items"><a class="nav-link" href="#item-1">1. Inviting RPG Sage</a><a class="nav-link" href="#item-2">2. Command Types</a><nav class="nav flex-column"><a class="nav-link" href="#item-2a">2a. Message Commands</a><a class="nav-link" href="#item-2b">2b. Slash Commands</a><a class="nav-link" href="#item-2c">2c. Command Prefix</a><a class="nav-link" href="#item-2d">2d. Command Permissions</a></nav><a class="nav-link" href="#item-3">3. Sage Help</a><a class="nav-link" href="#item-4">4. Admin (Administrative) Commands</a><a class="nav-link" href="#item-5">5. Game Admin (Administrative) Commands</a><a class="nav-link" href="#item-6">6. Dialog Commands</a><a class="nav-link" href="#item-7">7. Dice Commands</a><a class="nav-link" href="#item-8">8. Maps <small>prototype</small></a><a class="nav-link" href="#item-9">9. Character Import</a><a class="nav-link" href="#item-10">10. Other Commands</a><a class="nav-link" href="#item-11">11. Pathfinder 2e Commands</a><a class="nav-link" href="#item-12">12. Pathfinder Society 2e Commands</a></nav>
+			<nav class="nav flex-column" id="navbar-left-items"><a class="nav-link" href="#item-1">1. Inviting RPG Sage</a><a class="nav-link" href="#item-2">2. Command Types</a><nav class="nav flex-column"><a class="nav-link" href="#item-2a">2a. Message Commands</a><a class="nav-link" href="#item-2b">2b. Slash Commands</a><a class="nav-link" href="#item-2c">2c. Command Prefix</a><a class="nav-link" href="#item-2d">2d. Command Permissions</a></nav><a class="nav-link" href="#item-3">3. RPG Sage Help</a><a class="nav-link" href="#item-4">4. Admin (Administrative) Commands</a><a class="nav-link" href="#item-5">5. Game Admin (Administrative) Commands</a><a class="nav-link" href="#item-6">6. Dialog Commands</a><a class="nav-link" href="#item-7">7. Dice Commands</a><a class="nav-link" href="#item-8">8. Maps <small>prototype</small></a><a class="nav-link" href="#item-9">9. Character Import</a><a class="nav-link" href="#item-10">10. Other Commands</a><a class="nav-link" href="#item-11">11. Pathfinder 2e Commands</a><a class="nav-link" href="#item-12">12. Pathfinder Society 2e Commands</a></nav>
 		</nav>
 	</div>
 </div>
@@ -179,7 +179,7 @@
 		Message Commands are commands given to Sage by posting a message into chat, either a channel where Sage has access or via a direct message to Sage.
 	</p>
 	<p class="text-center">
-		<img src="https://rpgsage.io/images/docs/message-command-sage-help.jpg"/>
+		<img src="./images/docs/message-command-sage-help.jpg"/>
 	</p>
 	<div class="alert alert-info m-1">
 		<p>
@@ -197,7 +197,7 @@
 			<br/><sup>2</sup>If you see in these guides (or in the help) <code>@UserMention</code>, you need to ensure that Discord created a proper User Mention for Sage to be able to properly find the user. <small>A "Proper User Mention" means that Discord recognized the user you were trying to mention and replaced your entered text with a link to the user. See image below.</small>
 		</p>
 		<p class="text-center">
-			<img src="https://rpgsage.io/images/docs/proper-user-mention.jpg"/>
+			<img src="./images/docs/proper-user-mention.jpg"/>
 		</p>
 		<code>sage!help dice</code> is a simple command with a Prefix <code>sage</code>, Action <code>!</code>, Command <code>help</code>, and SubCommand <code>dice</code>
 	</div>
@@ -283,89 +283,115 @@
 </div>
 
 			<div id="item-3" class="item">
-	<h4 class="">3. Sage Help</h4>
-	<p>
-		&nbsp;&nbsp;&nbsp;&nbsp<code>sage! help</code>
-		<br/>Lists the categories of help available.
-		<br/>&nbsp;&nbsp;&nbsp;&nbsp<code>sage! help {category}</code>
-		<br/>Lists the help commands available within the given category.
-		<br/>&nbsp;&nbsp;&nbsp;&nbsp<code>sage! help {category} {subCategory}</code>
-		<br/>Lists the help commands available within the given category and sub-category.
-	</p>
+	<h4 class="">3. RPG Sage Help</h4>
+	<div class="row m-0">
+		<div class="col">
+			<p>
+				<code>/sage help category=""</code>
+				<br/>This <strong>slash command</strong> provides help for the selected category.
+			</p>
+			<p>
+	<small>
+		Slash commands are <strong>NOT</strong> posted to chat for RPG Sage to respond to, they are activated by typing a <code>/</code> (slash) and then selecting from the options provided by Discord.
+		Typing <code>/sage</code> before selecting the command will help remove slash commands on the server that are not related to RPG Sage.
+	</small>
+</p>
+
+			<p class="text-center d-lg-none">
+				<img src="./images/docs/help/slash-command-help-dark.png" alt="An example of RPG Sage's Help Slash Command."/>
+			</p>
+		</div>
+		<div class="col d-none d-lg-block text-center">
+			<img src="./images/docs/help/slash-command-help-dark.png" alt="An example of RPG Sage's Help Slash Command."/>
+		</div>
+	</div>
 </div>
 
 			<div id="item-4" class="item">
 	<h4 class="">4. Admin (Administrative) Commands</h4>
-	<p><code>sage! help admin</code></p>
+	<p>
+		These commands are how you manage RPG Sage on your server.
+		They allow a Server Owner to assign other admins at various levels of control (admins, roles) as well as configure some default options (colors, emoji) at the Server level.
+	</p>
 </div>
 			<div id="item-4a" class="item">
 	<h5 class="ps-4">4a. Sage Prefix Admin</h5>
-	<p><code>sage! help admin prefix</code>
-	<br/>
-	<br/>These commands let a Server Owner or "SageAdmin" set or unset Sage command prefixes.
-	<br/><code>sage!! prefix get</code>
-	<br/><code>sage!! prefix set {commandPrefix; ex: sage}</code>
-	<br/><code>sage!! prefix sync</code>
-	<br/><code>sage!! prefix unset</code></p>
+	<p>
+		<code>/sage help category:Sage Prefix Management</code>
+		<br/>
+		<br/>These commands let a Server Owner or "SageAdmin" set or unset Sage command prefixes.
+		<br/><code>sage!! prefix get</code>
+		<br/><code>sage!! prefix set {commandPrefix; ex: sage}</code>
+		<br/><code>sage!! prefix sync</code>
+		<br/><code>sage!! prefix unset</code>
+	</p>
 </div>
 			<div id="item-4b" class="item">
 	<h5 class="ps-4">4b. Game, Sage, Server Admin</h5>
-	<p><code>sage! help admin admin</code>
-	<br/>
-	<br/>These commands are for server owners to configure admin access to Sage.
-	<br/><code>sage!! admin add @UserMention {GameAdmin|ServerAdmin|SageAdmin}</code>
-	<br/><code>sage!! admin remove @UserMention</code>
-	<br/><code>sage!! admin update @UserMention {GameAdmin|ServerAdmin|SageAdmin}</code>
-	<br/>GameAdmin can only manage games.
-	<br/>Server Admin can manage games and server channels.
-	<br/>SageAdmin can manage all things Sage.</p>
+	<p>
+		<code>/sage help category:Sage Admin Management</code>
+		<br/>
+		<br/>These commands are for server owners to configure admin access to Sage.
+		<br/><code>sage!! admin add @UserMention {GameAdmin|ServerAdmin|SageAdmin}</code>
+		<br/><code>sage!! admin remove @UserMention</code>
+		<br/><code>sage!! admin update @UserMention {GameAdmin|ServerAdmin|SageAdmin}</code>
+		<br/>&bull; <strong>GameAdmin</strong> can only manage games.
+		<br/>&bull; <strong>ServerAdmin</strong> can manage games and server channels.
+		<br/>&bull; <strong>SageAdmin</strong> can manage all things Sage.
+	</p>
 </div>
 			<div id="item-4c" class="item">
 	<h5 class="ps-4">4c. Color Admin</h5>
-	<p><code>sage! help admin color</code>
-	<br/>
-	<br/>These commands are for managing the color that lines a post's embedded content.
-	<br/><code>sage!! color get {ColorType}</code>
-	<br/><code>sage!! color get {server|game} {ColorType}</code>
-	<br/><code>sage!! color list</code>
-	<br/><code>sage!! color list {server|game}</code>
-	<br/><code>sage!! color set {ColorType} {hexColorValue}</code>
-	<br/><code>sage!! color set {server|game} {ColorType} {hexColorValue}</code>
-	<br/><code>sage!! color sync</code>
-	<br/><code>sage!! color sync {server|game}</code>
-	<br/><code>sage!! color unset {ColorType}</code>
-	<br/><code>sage!! color unset {server|game} {ColorType}</code>
-	<br/>When choosing <code>server</code> or <code>game</code> you are deciding if you are working with Server colors or Game colors.
-	<br/>Use <code>sage!! color list</code> to see all of the acceptable values for ColorType.</p>
+	<p>
+		<code>/sage help category:Color Management</code>
+		<br/>
+		<br/>These commands are for managing the color that lines a post's embedded content.
+		<br/><code>sage!! color get {ColorType}</code>
+		<br/><code>sage!! color get {server|game} {ColorType}</code>
+		<br/><code>sage!! color list</code>
+		<br/><code>sage!! color list {server|game}</code>
+		<br/><code>sage!! color set {ColorType} {hexColorValue}</code>
+		<br/><code>sage!! color set {server|game} {ColorType} {hexColorValue}</code>
+		<br/><code>sage!! color sync</code>
+		<br/><code>sage!! color sync {server|game}</code>
+		<br/><code>sage!! color unset {ColorType}</code>
+		<br/><code>sage!! color unset {server|game} {ColorType}</code>
+		<br/>When choosing <code>server</code> or <code>game</code> you are deciding if you are working with Server colors or Game colors.
+		<br/>Use <code>sage!! color list</code> to see all of the acceptable values for ColorType.
+	</p>
 </div>
 
 			<div id="item-4d" class="item">
 	<h5 class="ps-4">4d. Emoji Admin</h5>
-	<p><code>sage! help admin emoji</code>
-	<br/>
-	<br/>These commands are for managing the emoji used for various parts of Sage.
-	<br/><code>sage!! emoji get {EmojiType}</code>
-	<br/><code>sage!! emoji get {server|game} {EmojiType}</code>
-	<br/><code>sage!! emoji list</code>
-	<br/><code>sage!! emoji list {server|game}</code>
-	<br/><code>sage!! emoji set {EmojiType} {emoji}</code>
-	<br/><code>sage!! emoji set {server|game} {EmojiType} {emoji}</code>
-	<br/><code>sage!! emoji sync</code>
-	<br/><code>sage!! emoji sync {server|game}</code>
-	<br/><code>sage!! emoji unset {EmojiType}</code>
-	<br/><code>sage!! emoji unset {server|game} {EmojiType}</code>
-	<br/>When choosing <code>server</code> or <code>game</code> you are deciding if you are working with Server emoji or Game emoji.
-	<br/>Use <code>sage!! emoji list</code> to see all of the acceptable values for EmojiType.</p>
+	<p>
+		<code>/sage help category:Emoji Management</code>
+		<br/>
+		<br/>These commands are for managing the emoji used for various parts of Sage.
+		<br/><code>sage!! emoji get {EmojiType}</code>
+		<br/><code>sage!! emoji get {server|game} {EmojiType}</code>
+		<br/><code>sage!! emoji list</code>
+		<br/><code>sage!! emoji list {server|game}</code>
+		<br/><code>sage!! emoji set {EmojiType} {emoji}</code>
+		<br/><code>sage!! emoji set {server|game} {EmojiType} {emoji}</code>
+		<br/><code>sage!! emoji sync</code>
+		<br/><code>sage!! emoji sync {server|game}</code>
+		<br/><code>sage!! emoji unset {EmojiType}</code>
+		<br/><code>sage!! emoji unset {server|game} {EmojiType}</code>
+		<br/>When choosing <code>server</code> or <code>game</code> you are deciding if you are working with Server emoji or Game emoji.
+		<br/>Use <code>sage!! emoji list</code> to see all of the acceptable values for EmojiType.
+	</p>
 </div>
 			<div id="item-4e" class="item">
 	<h5 class="ps-4">4e. Server Role Admin <small>Not Fully Functional</small></h5>
-	<p><code>sage! help admin server</code>
-	<br/>
-	<br/>These commands are for managing the Roles used for admins of Sage.
-	<br/><code>sage!! server role list</code>
-	<br/><code>sage!! server role remove {ServerRoleType}</code>
-	<br/><code>sage!! server role set @RoleMention {ServerRoleType}</code>
-	<br/>ServerRoleType values: SageAdmin, ServerAdmin, GameAdmin</p>
+	<p>
+		<code>/sage help category:Server Management</code>
+		<br/>
+		<br/>These commands are for managing the Roles used for admins of Sage.
+		<br/><code>sage!! server role list</code>
+		<br/><code>sage!! server role remove {ServerRoleType}</code>
+		<br/><code>sage!! server role set @RoleMention {ServerRoleType}</code>
+		<br/>ServerRoleType values: SageAdmin, ServerAdmin, GameAdmin
+	</p>
 </div>
 
 			<div id="item-5" class="item">
@@ -375,7 +401,7 @@
 			<div id="item-5a" class="item">
 	<h5 class="ps-4">5a. Game Admin</h5>
 	<p>
-		<code>sage! help admin game</code>
+		<code>/sage help category:Game Management</code>
 		<br/>
 		<br/>These commands are for managing games.
 		<br/><code>sage!! game archive</code>
@@ -447,7 +473,7 @@
 			<div id="item-5b" class="item">
 	<h5 class="ps-4">5b. Channel Admin</h5>
 	<p>
-		<code>sage! help admin channel</code>
+		<code>/sage help category:Channel Management</code>
 		<br/>
 		<br/>These commands are for managing what features are available on each channel.
 		<br/><code>sage!! channel add #ChannelReference {optionKey}="optionValue"</code>
@@ -518,20 +544,23 @@
 </div>
 			<div id="item-5c" class="item">
 	<h5 class="ps-4">5c. GM (Game Master) Admin</h5>
-	<p><code>sage! help admin gm</code>
-	<br/>
-	<br/>These commands are for managing Game Masters for games.
-	<br/><code>sage!! gm add @UserMention</code>
-	<br/><code>sage!! gm add @UserMention {@OptionalUserMention}</code>
-	<br/><code>sage!! gm list</code>
-	<br/><code>sage!! gm remove @UserMention</code></p>
-	<br/><code>sage!! gm remove @UserMention {@OptionalUserMention}</code>
-	<br/>"OptionalUserMention" is there to show you can add or remove multiples.</p>
+	<p>
+		<code>/sage help category:Game GM Management</code>
+		<br/>
+		<br/>These commands are for managing Game Masters for games.
+		<br/><code>sage!! gm add @UserMention</code>
+		<br/><code>sage!! gm add @UserMention {@OptionalUserMention}</code>
+		<br/><code>sage!! gm list</code>
+		<br/><code>sage!! gm remove @UserMention</code>
+		<br/><code>sage!! gm remove @UserMention {@OptionalUserMention}</code>
+		<br/>
+		<br/>"OptionalUserMention" is there to show you can add or remove multiples.
+	</p>
 </div>
 			<div id="item-5d" class="item">
 	<h5 class="ps-4">5d. NPC (Non Player Character) Admin</h5>
 	<p>
-		<code>sage! help admin npc</code>
+		<code>/sage help category:NPC Management</code>
 		<br/>
 		<br/>These commands are for managing Non Player Characters for games.
 		<br/><code>sage!! npc create name="Farmer Bob" token="http://url_to_token_image" avatar="http://url_to_avatar_image"</code>
@@ -542,6 +571,7 @@
 		<br/><code>sage!! npc update name="Farmer Bob" token="http://url_to_token_image"</code>
 		<br/><code>sage!! npc update name="Farmer Bob" color="#FF00AA"</code>
 		<br/><code>sage!! npc update oldname="Farmer Bob" newname="Blacksmith Bob"</code>
+		<br/>
 		<br/>Images should be urls. If you embed images in your post, the first one will be the token and the second one the avatar.
 		<br/>You can mix and match the avatar, token, and color options when you create or update a PC.
 	</p>
@@ -549,19 +579,22 @@
 
 			<div id="item-5e" class="item">
 	<h5 class="ps-4">5e. Player Admin</h5>
-	<p><code>sage!help admin player</code>
-	<br/>
-	<br/>These commands are for managing Players for games.
-	<br/><code>sage!! player add @UserMention</code>
-	<br/><code>sage!! player add @UserMention {@OptionalUserMention}</code>
-	<br/><code>sage!! player list</code>
-	<br/><code>sage!! player remove @UserMention {@OptionalUserMention}</code>
-	<br/>"OptionalUserMention" is there to show you can add or remove multiples.</p>
+	<p>
+		<code>/sage help category:Game Player Management</code>
+		<br/>
+		<br/>These commands are for managing Players for games.
+		<br/><code>sage!! player add @UserMention</code>
+		<br/><code>sage!! player add @UserMention {@OptionalUserMention}</code>
+		<br/><code>sage!! player list</code>
+		<br/><code>sage!! player remove @UserMention {@OptionalUserMention}</code>
+		<br/>
+		<br/>"OptionalUserMention" is there to show you can add or remove multiples.
+	</p>
 </div>
 			<div id="item-5f" class="item">
 	<h5 class="ps-4">5f. PC (Player Character) Admin</h5>
 	<p>
-		<code>sage! help admin pc</code>
+		<code>/sage help category:PC Management</code>
 		<br/>
 		<br/>These commands are for managing Player Characters.
 		<br/><code>sage!! pc create name="Bardok the Brave" token="http://url_to_token_image" avatar="http://url_to_avatar_image"</code>
@@ -572,6 +605,7 @@
 		<br/><code>sage!! pc update name="Bardok the Brave" token="http://url_to_new_token_image"</code>
 		<br/><code>sage!! pc update name="Bardok the Brave" color="#FF00AA"</code>
 		<br/><code>sage!! pc update oldname="Bardok the Brave" newname="Bardok the Cowardly"</code>
+		<br/>
 		<br/>Images should be urls. If you embed images in your post, the first one will be the token and the second one the avatar.
 		<br/>You can mix and match the avatar, token, and color options when you create or update a PC.
 	</p>
@@ -579,7 +613,7 @@
 			<div id="item-5g" class="item">
 	<h5 class="ps-4">5g. Companion (Alt, Companion, Familiar, Hireling, etc) Admin</h5>
 	<p>
-		<code>sage! help admin companion</code>
+		<code>/sage help category:PC/NPC Companion Management</code>
 		<br />
 		<br />These commands are for managing companions for player characters.
 		<br /><code>sage!! companion create charname="Bardok the Cowardly" name="Ser Stallion" token="http://url_to_token_image" avatar="http://url_to_avatar_image"</code>
@@ -590,6 +624,7 @@
 		<br /><code>sage!! companion update charname="Bardok the Cowardly" name="Ser Stallion" token="http://url_to_token_image"</code>
 		<br /><code>sage!! companion update charname="Bardok the Cowardly" name="Ser Stallion" color="#FF00AA"</code>
 		<br /><code>sage!! companion update charname="Bardok the Cowardly" oldname="Ser Stallion" newname="Ser Bolts'a'lot"</code>
+		<br/>
 		<br/>Images should be urls. If you embed images in your post, the first one will be the token and the second one the avatar.
 		<br/>You can mix and match the avatar, token, and color options when you create or update a PC.
 	</p>
@@ -597,10 +632,13 @@
 
 			<div id="item-6" class="item">
 	<h4 class="">6. Dialog Commands</h4>
-	<p><code>sage! help dialog</code> &nbsp; or &nbsp; <code>/sage help category="Dialog Commands"</code>
-	<br/>These commands are how you interact with the dialog engine of Sage.
-	<br/>When posting dialog, you do not need to use a command prefix.
-	<br/>Each different dialog type can be configured to have its own default color.</p>
+	<p>
+		<code>/sage help category:Dialog Commands</code>
+		<br/>
+		<br/>These commands are how you interact with the dialog engine of Sage.
+		<br/>When posting dialog, you do not need to use a command prefix.
+		<br/>Each different dialog type can be configured to have its own default color.
+	</p>
 </div>
 			<div id="item-6a" class="item">
 	<h5 class="ps-4">6a. Dialog Post Command</h5>
@@ -608,7 +646,7 @@
 	<div class="row m-0">
 		<div class="col">
 			<p>
-				<br/>&bull; {type}: gm, npc, enemy, ally, pc, alt, companion, hireling
+				&bull; {type}: gm, npc, enemy, ally, pc, alt, companion, hireling
 				<br/>&bull; {name}: the name of the npc, pc, or companion to post as
 				<br/>&nbsp; &nbsp; &bull; <small>optional for gm; optional for PCs in a game</small>
 				<br/>&bull; {display name}: the name to post as
@@ -649,12 +687,9 @@
 	<div class="row m-0">
 		<div class="col">
 			<p>
-				<code>sage! help dialog edit</code>
+				<code>edit::{updated dialog content}</code>
 				<br/>
-				<br/>The syntax to edit dialog content is as follows:
-				<br/><code>edit::{updated dialog content}</code>
-				<br/>
-				<br/>If you send it as a new message in the dialiog channel, it will update the last dialog you posted.
+				<br/>If you send your edited content as a new message in the dialog channel, it will update the last dialog you posted.
 				If you reply to a message with dialog that you posted, you will edit the message that you are replying to.
 			</p>
 			<p class="text-center d-lg-none">
@@ -676,22 +711,49 @@
 </div>
 			<div id="item-6c" class="item">
 	<h5 class="ps-4">6c. Dialog Alias Commands</h5>
-	<p><code>sage! help dialog alias</code>
-	<br/>
-	<br/>These commands are for managing aliases for all your dialog needs.
-	<br/><code>sage!! alias delete {alias}</code>
-	<br/><code>sage!! alias list</code>
-	<br/><code>sage!! alias set {alias} {dialog prefix}</code>
-	<br/>An alias is a simple word or name with no punctation.
-	<br/>A dialog prefix can include an alias and even some content.
-	<br/>Example: <code>sage!! alias set gorm npc::Gorm Greathammer::</code></p>
+	<p>
+		These commands are for managing aliases for all your dialog needs.
+		<br/><code>sage!! alias delete {alias}</code>
+		<br/><code>sage!! alias list</code>
+		<br/><code>sage!! alias set {alias} {dialog prefix}</code>
+		<br/>
+		<br/>An alias is a simple word or name with no punctation.
+		<br/>A dialog prefix can include an alias and even some content.
+		<br/>Example: <code>sage!! alias set gorm npc::Gorm Greathammer::</code>
+	</p>
 </div>
 
+			<div id="item-6d" class="item">
+	<h5 class="ps-4">6d. Character Auto Dialog</h5>
+	<p>
+		These commands allow you link channels and characters so that RPG Sage will repost everything you send to that channel as the assigned character.
+	</p>
+	<p>
+		To configure your PC for the current Game in the current channel:
+		<br/><code>sage!! pc auto on</code>
+		<br/><code>sage!! pc auto off</code>
+		<br/>
+		<br/>To configure a specific PC in a specific channel:
+		<br/><code>sage!! pc auto on name="Bardok the Cowardly" #knightly-quest-ic</code>
+		<br/><code>sage!! pc auto off name="Bardok the Cowardly" #knightly-quest-ic</code>
+		<br/>
+		<br/>To configure the GM in the current channel:
+		<br/><code>sage!! gm auto on</code>
+		<br/><code>sage!! gm auto off</code>
+		<br/>
+		<br/>To configure a specific NPC in a specific channel:
+		<br/><code>sage!! gm auto on name="Farmer Bob" #farm-side-quest-ic</code>
+		<br/><code>sage!! gm auto off name="Farmer Bob" #farm-side-quest-ic</code>
+	</p>
+</div>
 
 			<div id="item-7" class="item">
 	<h4 class="">7. Dice Commands</h4>
-	<p><code>sage! help dice</code> &nbsp; or &nbsp; <code>/sage help category="Dice Commands"</code>
-	<br/>These commands are how you roll dice with Sage.</p>
+	<p>
+		<code>/sage help category:Dice Commands</code>
+		<br/>
+		<br/>These commands are how you roll dice with Sage.
+	</p>
 </div>
 			<div id="item-7a" class="item">
 	<h5 class="ps-4">7a. Simple Dice</h5>
@@ -756,7 +818,7 @@
 			<div id="item-7j" class="item">
 	<h5 class="ps-4">7j. Dice Macros</h5>
 	<p>
-		<code>sage! help dice macro</code>
+		<code>/sage help category:Dice Macros</code>
 		<br/>
 		<br/>These commands are for managing macros to make complex dice rolls.
 		<br/><code>sage!! macro delete all</code>
@@ -1044,10 +1106,10 @@ position=5,2
 		<br/>The two main options (<code>pathbuilder2e-id</code> and <code>e20-pdf</code>) are for your character source and you can only use one of them at a time.
 		The other two options (<code>attach</code> and <code>pin</code>) change how Sage posts your imported character and you can use either, both, or neither of them.
 		<br/>
-		<br/><code>/sage import pathbuilder2e-id=""</code>
+		<br/><code>/sage import pathbuilder2e-id:12345</code>
 		<br/>This requires the export "Pathbuilder 2e JSON ID" that you get from Pathbuilder 2e via the "Export JSON" command.
 		<br/>
-		<br/><code>/sage import e20-pdf=""</code>
+		<br/><code>/sage import e20-pdf:joe-cool.pdf</code>
 		<br/>This requires either the url to a PDF or the url to a Discord message that has a PDF file as an attachment.
 		The PDF must be one official PDFs downloaded from Renegade Games Studios.
 		<br/>
@@ -1061,7 +1123,9 @@ position=5,2
 
 			<div id="item-10" class="item">
 	<h4 class="">10. Other Commands</h4>
-	<p><code>sage! help command</code></p>
+	<p>
+		The following commands are not system specific.
+	</p>
 </div>
 			<div id="item-10a" class="item">
 	<h5 class="ps-4">10a. Coin / Currency Calculator</h5>
@@ -1070,13 +1134,16 @@ position=5,2
 </div>
 			<div id="item-10b" class="item">
 	<h5 class="ps-4">10b. Weather Report Generator</h5>
-	<p><code>sage! help command weather</code>
-	<br/>
-	<br/>This command creates a random weather report.
-	<br/><code>sage! weather {climate} {elevation} {season}</code>
-	<br/>- Climate Options: Cold | Temperate | Tropical
-	<br/>- Elevation Options: SeaLevel | Lowland | Highland
-	<br/>- Season Options: Spring | Summer | Fall | Winter</p>
+	<p>
+		<code>/sage help category:Random Weather Report</code>
+		<br/>
+		<br/>This command creates a random weather report.
+		<br/>
+		<br/><code>sage! weather {climate} {elevation} {season}</code>
+		<br/>&bull; Climate Options: Cold | Temperate | Tropical
+		<br/>&bull; Elevation Options: SeaLevel | Lowland | Highland
+		<br/>&bull; Season Options: Spring | Summer | Fall | Winter
+	</p>
 </div>
 
 			<div id="item-11" class="item">
@@ -1084,28 +1151,34 @@ position=5,2
 	<p>The following commands are specific to Pathfinder 2e.</p>
 </div>
 			<div id="item-11a" class="item">
-	<h5 class="ps-4">11a. Pathfinder / Golarion Info (days &amp; months)</h5>
-	<p><code>sage! help command golarion</code>
-	<br/>These commands are for viewing the dates, days, and months of the Golarion (Pathfinder) calendar.
-	<br/><code>sage! date {yyyy-mm-dd}</code>
-	<br/>- Displays the given date on Golarion <em>and</em> on Earth. Includes season.
-	<br/><code>sage! days</code>
-	<br/>- Lists the days of the week on Golarion.
-	<br/><code>sage! months</code>
-	<br/>- Lists the months of the Golarion year (along with how many days are in each).
-	<br/><code>sage! today</code>
-	<br/>- Displays today's date on Golarion <em>and</em> on Earth. Includes season.</p>
+	<h5 class="ps-4">11a. Golarion / Absalom Staton Info (days &amp; months)</h5>
+	<p>
+		<code>/sage help category:Golarion Calendar Info</code>
+		<br/>
+		<br/>These commands are for viewing the dates, days, and months of the Golarion (Pathfinder) and Absalom Station (Starfinder) calendars.
+		<br/>
+		<br/><code>sage! date {yyyy-mm-dd}</code>
+		<br/>- Displays the given date on Golarion, Absalom Station, <em>and</em> on Earth. Includes season.
+		<br/><code>sage! days</code>
+		<br/>- Lists the days of the week on Golarion and Absalom Station,.
+		<br/><code>sage! months</code>
+		<br/>- Lists the months of the Golarion and Absalom Station calendars (along with how many days are in each).
+		<br/><code>sage! today</code>
+		<br/>- Displays today's date on Golarion, Absalom Station, <em>and</em> on Earth. Includes season.
+	</p>
 </div>
 			<div id="item-11b" class="item">
 	<h5 class="ps-4">11b. Pathfinder 2e DCs</h5>
-	<p><code>sage! help command dcs</code>
-	<br/>
-	<br/>These commands are for viewing the various DCs used in Pathfinder 2e.
-	<br/><code>sage! dc by level {level}</code>
-	<br/><code>sage! dc by spell level {level}</code>
-	<br/><code>sage! dcs by level</code>
-	<br/><code>sage! simple dc {proficiency}</code>
-	<br/><code>sage! {proficiency} simple dc</code></p>
+	<p>
+		<code>/sage help category:PF2e DC Values</code>
+		<br/>
+		<br/>These commands are for viewing the various DCs used in Pathfinder 2e.
+		<br/><code>sage! dc by level {level}</code>
+		<br/><code>sage! dc by spell level {level}</code>
+		<br/><code>sage! dcs by level</code>
+		<br/><code>sage! simple dc {proficiency}</code>
+		<br/><code>sage! {proficiency} simple dc</code>
+	</p>
 </div>
 			<div id="item-11c" class="item">
 	<h5 class="ps-4">11c. Pathfinder 2e Lists</h5>

@@ -34,3 +34,4 @@ Added dialog feature snippet and images.
 Added dice macros feature snippet and images.
 Added search feature snippet and images.
 Updated dialog feature snippet with some details about pc::, npc::, and gm::.
+All Help commands updated to be Slash Commands
