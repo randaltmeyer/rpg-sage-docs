@@ -1,0 +1,35 @@
+<div class="item">
+	<header>Random Selection</header>
+	<p>
+		Another feature of RPG Sage's dice engine is its ability to select items from a list.
+		This was built mostly to alleviate the GM's constant need to select which PC a baddie targets, but we are sure it has many other uses as well.
+		<strong>Note:</strong> Currently this feature relies on commas to separate the items in the list, so be careful of putting fancy names in your lists!
+	</p>
+	<p>
+		<strong>Simple Selection</strong>
+		<br/><code>[Fighter, Wizard, Rogue]</code>
+	</p>
+	<p>
+		<strong>Multiple Selections</strong>
+		<br/><code>[2#Fighter, Wizard, Rogue]</code>
+		<br/><small>The results will be listed in the order they were selected.</small>
+	</p>
+	<p>
+		<strong>Multiple Selections, Sorted</strong>
+		<br/><code>[2s#Fighter, Wizard, Rogue]</code>
+		<br/><small>The results will be sorted alphabetically.</small>
+	</p>
+	<p>
+		<strong>Multiple Selections, Unique</strong>
+		<br/><code>[2u#Fighter, Wizard, Rogue]</code>
+		<br/><small>The results will be listed in the order they were selected.</small>
+	</p>
+	<p>
+		<strong>Multiple Selections, Secret</strong>
+		<br/><code>[gm#Fighter, Wizard, Rogue]</code>
+		<br/>This treats the roll as a "secret" roll and is handled by the channel's or game's settings accordingly.
+	</p>
+	<p>
+		The Multiple, Sorted, Unique, and Secret flags can be mixed and matched in any combination.
+	</p>
+</div>

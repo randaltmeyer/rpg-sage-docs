@@ -1,0 +1,37 @@
+<div class="item">
+	<span id="dice-pf2e"></span>
+	<header>Pathfinder 2e Dice Features</header>
+	<div data-snippet-url="./snippets/item/dice/dice-game-specific-vs.html"></div>
+	<div data-snippet-url="./snippets/item/dice/dice-game-specific-ac.html"></div>
+	<div data-snippet-url="./snippets/item/dice/dice-game-specific-dc.html"></div>
+	<div data-snippet-url="./snippets/item/dice/dice-game-specific-crit-dmg.html"></div>
+	<p>
+		<strong>Fortune / Misfortune (+/-)</strong>
+		<br/>If your roll has Fortune, you may roll <code>[+2d20]</code> to tell RPG Sage to roll twice and take the higher of the two dice.
+		Likewise, if you have Misfortune, you may use <code>[-2d20]</code> to roll twice and take the lower of the two dice.
+	</p>
+	<p>
+		<strong>Multi Attack Penalty (MAP)</strong>
+		<br/>If you are rolling the same attack multiple times, you can simplify your roll by combining the multiple roll modifier <code>2#</code> with <code>MAP-5</code>.
+		You can, of course, roll more than twice and change the MAP to another value (most likely 4).
+		<br/><code>[2MAP-5#1d20 ac 10; 1d6 damage]</code>
+		<br/><code>[3MAP-4#1d20 ac 10; 1d6 damage]</code>
+	</p>
+	<p>
+		<strong>Graded Success / Failure</strong>
+		<br/>When playing Pathfinder 2e, a Success of 10 or more is a Critical Success, while a Failure of 10 or more is a Critical Failure.
+		Additionally, a natural 1 lowers your success grade by 1 while a natural 20 increases your success grade by 1.
+		RPG Sage takes this into account when you roll using AC, DC, or VS and changes the emoji used accordingly.
+		Additionally, when you roll an attack/damage combo <code>[1d20 ac 10; 1d6 damage]</code> RPG Sage will know to double the damage if your success was critical.
+	</p>
+	<p>
+		<strong>Striking, Greater Striking, Deadly, and Fatal</strong>
+		<br/>When playing Pathfinder 2e, there is some extra math involved in critical hits when you have striking, deadly, and fatal weapons.
+		RPG Sage looks at the input of your dice to see if it can find any of these when calculating your critical damage.
+		<br/><code>[1d20 + 10 ac 10 pick (fatal d10); 1d6 piercing]</code>
+		<br/><code>[1d20 + 10 ac 10 longbow (deadly d10); 1d8 piercing]</code>
+		<br/><code>[1d20 + 10 ac 10 striking longsword; 1d8 slashing]</code>
+		<br/><code>[1d20 + 10 ac 10 greater striking longsword; 1d8 slashing]</code>
+		<br/><code>[1d20 + 10 ac 10 major striking longsword; 1d8 slashing]</code>
+	</p>
+</div>

@@ -18,7 +18,7 @@ Include updated date in header of each page
 Updated Channel Admin to include all the latest options
 Clarified wording of Prefix
 
-## v0.5.0 (2023-02-06)
+## v0.5.0 (2023-02-10)
 Updated build to log missing files as errors in console and output.
 Updated all snippets to use <header> instead of h4 or h5.
 Updated features page, including more images.
@@ -35,3 +35,11 @@ Added dice macros feature snippet and images.
 Added search feature snippet and images.
 Updated dialog feature snippet with some details about pc::, npc::, and gm::.
 All Help commands updated to be Slash Commands
+
+## v0.6.0 (2023-02-10)
+Added Game Specific Dice Features
+Added Dice Output
+Added both (previous two items) to left side nav link of Command Guide
+Linked parts of Feature Guide to respective parts of Command Guide
+Reordered Features based on perceived relevance
+Added Command Guide update date to right side nav links

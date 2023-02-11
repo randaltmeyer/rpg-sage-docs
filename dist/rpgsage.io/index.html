@@ -35,7 +35,7 @@
 	</div>
 	<div class="offcanvas-body">
 		<nav class="navbar flex-column align-items-stretch">
-			<nav class="nav flex-column" id="navbar-left-items"><a class="nav-link" href="#item-1">1. Inviting RPG Sage</a><a class="nav-link" href="#item-2">2. Command Types</a><nav class="nav flex-column"><a class="nav-link" href="#item-2a">2a. Message Commands</a><a class="nav-link" href="#item-2b">2b. Slash Commands</a><a class="nav-link" href="#item-2c">2c. Command Prefix</a><a class="nav-link" href="#item-2d">2d. Command Permissions</a></nav><a class="nav-link" href="#item-3">3. RPG Sage Help</a><a class="nav-link" href="#item-4">4. Admin (Administrative) Commands</a><a class="nav-link" href="#item-5">5. Game Admin (Administrative) Commands</a><a class="nav-link" href="#item-6">6. Dialog Commands</a><a class="nav-link" href="#item-7">7. Dice Commands</a><a class="nav-link" href="#item-8">8. Maps <small>prototype</small></a><a class="nav-link" href="#item-9">9. Character Import</a><a class="nav-link" href="#item-10">10. Other Commands</a><a class="nav-link" href="#item-11">11. Pathfinder 2e Commands</a><a class="nav-link" href="#item-12">12. Pathfinder Society 2e Commands</a></nav>
+			<nav class="nav flex-column" id="navbar-left-items"><a class="nav-link" href="#item-1">1. Inviting RPG Sage</a><a class="nav-link" href="#item-2">2. Command Types</a><nav class="nav flex-column"><a class="nav-link" href="#item-2a">2a. Message Commands</a><a class="nav-link" href="#item-2b">2b. Slash Commands</a><a class="nav-link" href="#item-2c">2c. Command Prefix</a><a class="nav-link" href="#item-2d">2d. Command Permissions</a></nav><a class="nav-link" href="#item-3">3. RPG Sage Help</a><a class="nav-link" href="#item-4">4. Admin (Administrative) Commands</a><a class="nav-link" href="#item-5">5. Game Admin (Administrative) Commands</a><a class="nav-link" href="#item-6">6. Dialog Commands</a><a class="nav-link" href="#item-7">7. Dice Commands</a><nav class="nav flex-column"><a class="nav-link" href="#item-7c">7c. Dice Output</a><a class="nav-link" href="#item-7f">7f. DnD 5e Dice Features</a><a class="nav-link" href="#item-7g">7g. Essence20 Dice Features</a><a class="nav-link" href="#item-7h">7h. Pathfinder 2e Dice Features</a><a class="nav-link" href="#item-7i">7i. Quest Dice Features</a><a class="nav-link" href="#item-7j">7j. Random Selection</a></nav><a class="nav-link" href="#item-8">8. Dice Macros</a><a class="nav-link" href="#item-9">9. Maps <small>prototype</small></a><a class="nav-link" href="#item-10">10. Character Import</a><a class="nav-link" href="#item-11">11. Other Commands</a><a class="nav-link" href="#item-12">12. Pathfinder 2e Commands</a><a class="nav-link" href="#item-13">13. Pathfinder Society 2e Commands</a></nav>
 		</nav>
 	</div>
 </div>
@@ -53,7 +53,7 @@
 			</div>
 			<div class="alert alert-warning text-center p-1 mt-1 mb-1">
 				<a href="index.html">Command Guide</a>
-				<br/><small>mostly complete</small>
+				<br/><div class="text-center"><small>updated: 2023-02-10</small></div>
 			</div>
 			<div class="alert alert-warning text-center p-1 mt-1 mb-1">
 				<a href="quick.html">Quick Start Guide</a>
@@ -631,6 +631,7 @@
 </div>
 
 			<div id="item-6" class="item">
+	<span id="dialog-commands"></span>
 	<h4 class="">6. Dialog Commands</h4>
 	<p>
 		<code>/sage help category:Dialog Commands</code>
@@ -756,71 +757,378 @@
 	</p>
 </div>
 			<div id="item-7a" class="item">
-	<h5 class="ps-4">7a. Simple Dice</h5>
-	<p><code>[1d20]</code></p>
+	<h5 class="ps-4">7a. Dice Basics</h5>
+	<div class="container" id="dice-basics">
+		<div class="row">
+			<div class="col-md-4 col-xs-6">
+				<p>
+					<strong>Simple Rolls</strong>
+					<br/><code>[1d20]</code>
+					<br/><code>[1d8]</code>
+					<br/><code>[3d4]</code>
+				</p>
+			</div>
+			<div class="col-md-4 col-xs-6">
+				<p>
+					<strong>Rolls w/ Modifiers</strong>
+					<br/><code>[1d20 + 4]</code>
+					<br/><code>[1d8 + 2]</code>
+					<br/><code>[3d4 + 3]</code>
+				</p>
+			</div>
+			<div class="col-md-4 col-xs-6">
+				<p>
+					<strong>Rolls w/ Descriptions</strong>
+					<br/><code>[1d20 + 4 attack]</code>
+					<br/><code>[1d8 + 2 damage]</code>
+					<br/><code>[3d4 + 3 magic missile]</code>
+				</p>
+			</div>
+			<div class="col-md-4 col-xs-6">
+				<p>
+					<strong>Rolls w/ Multiple Dice Types</strong>
+					<br/><code>[1d4 dagger + 1d6 sneak]</code>
+					<br/><code>[1d8 sword + 1d6 holy]</code>
+					<br/><code>[2d8 fire + 2d8 ice + 2d8 holy]</code>
+				</p>
+			</div>
+			<div class="col-md-4 col-xs-6">
+				<p>
+					<strong>Multiple Rolls</strong>
+					<br/><code>[6#3d6 stat]</code>
+					<br/><code>[2#1d20 attack]</code>
+					<br/><code>[3#1d4 + 1 missile]</code>
+				</p>
+			</div>
+			<div class="col-md-4 col-xs-6">
+				<p>
+					<strong>Simple Tests</strong>
+					<br/><code>[1d20 >= 10]</code>
+					<br/><code>[1d20 + 5 > 15]</code>
+					<br/><code>[1d100 &lt; 25]</code>
+				</p>
+			</div>
+		</div>
+	</div>
 </div>
 			<div id="item-7b" class="item">
-	<h5 class="ps-4">7b. Dice w/ description</h5>
-	<p><code>[1d20 attack]</code>
-	<br/><code>[1d6 damage]</code></p>
+	<h5 class="ps-4">7b. Dice Groups</h5>
+	<div class="container" id="dice-groups">
+		<div class="row">
+			<div class="col-md col-xs-6">
+				<p>
+					<strong>Simple Groups</strong>
+					<br/><code>[1d20 attack; 1d8 damage]</code>
+					<br/><code>[1d20 + 5 attack; 1d8 + 2 slashing]</code>
+					<br/><code>[1d20 + 2 attack; 1d4 dagger + 2d6 sneak]</code>
+					<br/><small>Both sets of dice will be rolled their results listed together.</small>
+				</p>
+			</div>
+			<div class="col-md col-xs-6">
+				<p>
+					<strong>Tested Groups</strong>
+					<br/><code>[1d20 >= 15 attack; 1d8 damage]</code>
+					<br/><code>[1d20 + 5 >= 10 medicine check; 2d8 healing]</code>
+					<br/><code>[1d20 > 5 conceal; 1d20 >= 10 attack; 1d4 damage]</code>
+					<br/><small>Each test must succeed before the next group is rolled.</small>
+				</p>
+			</div>
+		</div>
+	</div>
 </div>
 			<div id="item-7c" class="item">
-	<h5 class="ps-4">7c. Dice w/ modifiers</h5>
-	<p><code>[1d20 + 5 Description]</code>
-	<br/><code>[1d20 + 5]</code>
-	<br/><code>[1d8 + 2 + 1d6]</code>
-	<br/><code>[1d8 sword + 2 strength + 1d6 holy]</code></p>
+	<span id="dice-output"></span>
+	<h5 class="ps-4">7c. Dice Output</h5>
+	<p>
+		RPG Sage's Dice can be configured to be as concise or verbose as you want.
+		These settings can be set at the Channel, Game, or even Server level.
+	</p>
+	<p>
+		You output types are: <code>XXS</code>, <code>XS</code>, <code>S</code>, <code>M</code>, <code>L</code>, <code>XL</code>, <code>XXL</code>, and <code>ROLLEM</code>.
+		The "small" and "medium" types all use a single line for any given dice block (a single <code>[]</code>) while the "large" types use multiple lines.
+		The <code>ROLLEM</code> type is for users that are familiar/comfortable with the way Rollem's output looks.
+		The default value is <code>M</code>.
+	</p>
+	<p>
+		Let us consider the following dice roll for each of the output types:
+		<br/>&nbsp; &nbsp; <code>[1d20 conceal; 1d20+8 attack; 1d10 slashing +1d6 fire +2d6 holy]</code>
+		<br/>Let us assume that the following rolls:
+		<br/>&nbsp; &nbsp; conceal <strong>5</strong>, attack <strong>8</strong>, slashing <strong>10</strong>, fire <strong>3</strong>, holy <strong>1,1</strong>
+		<br/>These values bring us the following totals:
+		<br/>&nbsp; &nbsp; conceal <strong>5</strong>, attack <strong>16</strong>, damage <strong>15</strong>
+	</p>
+	<p>
+		<strong>Output Type:</strong> <code>XXS</code>
+		<br/><code>5; 16; 15</code>
+	</p>
+	<p>
+		<strong>Output Type:</strong> <code>XS</code>
+		<br/><code>5 `conceal`; 16 `attack`; 15 `slashing`</code>
+	</p>
+	<p>
+		<strong>Output Type:</strong> <code>S</code>
+		<br/><code>5 `conceal` ⟵ [5]; 16 `attack` ⟵ [8] + 8; 15 `slashing` ⟵ [10] + [3] fire + [1,1] holy</code>
+	</p>
+	<p>
+		<strong>Output Type:</strong> <code>M</code> <small>default</small>
+		<br/><code>5 `conceal` ⟵ [5]1d20; 16 `attack` ⟵ [8]1d20 + 8; 15 `slashing` ⟵ [10]1d10 + [3]1d6 fire + [1,1]2d6 holy</code>
+	</p>
+	<p>
+		<strong>Output Type:</strong> <code>L</code>
+		<br/><code>5 `conceal` ⟵ [5]</code>
+		<br/><code>16 `attack` ⟵ [8] + 8</code>
+		<br/><code>15 `slashing` ⟵ [10] + [3] fire + [1,1] holy</code>
+	</p>
+	<p>
+		<strong>Output Type:</strong> <code>XL</code>
+		<br/><code>5 `conceal` ⟵ [5]1d20</code>
+		<br/><code>16 `attack` ⟵ [8]1d20 + 8</code>
+		<br/><code>15 `slashing` ⟵ [10]1d10 + [3]1d6 fire + [1,1]2d6 holy</code>
+	</p>
+	<p>
+		<strong>Output Type:</strong> <code>XXL</code>
+		<br/><code>[1d20 conceal; 1d20+8 attack; 1d10 slashing +1d6 fire +2d6 holy]</code>
+		<br/><code>5 `conceal` ⟵ [5]1d20</code>
+		<br/><code>16 `attack` ⟵ [8]1d20 + 8</code>
+		<br/><code>15 `slashing` ⟵ [10]1d10 + [3]1d6 fire + [1,1]2d6 holy</code>
+	</p>
+	<p>
+		<strong>Output Type:</strong> <code>ROLLEM</code>
+		<br/><code>'conceal', ` 5 ` ⟵ [5] 1d20</code>
+		<br/><code>'attack', ` 16 ` ⟵ [8] 1d20 + 8</code>
+		<br/><code>'slashing', ` 18 ` ⟵ [3] 1d10 + [4] 1d6 fire + [5, 6] 2d6 holy</code>
+	</p>
 </div>
+
 			<div id="item-7d" class="item">
-	<h5 class="ps-4">7d. Dice w/ tests</h5>
-	<p><code>[1d100 &lt; 25]</code>
-	<br/><code>[1d20 + 5 &gt;= 10 Description]</code>
-	<br/><code>[1d20 &gt;= 10]</code></p>
+	<h5 class="ps-4">7d. Dice Overrides</h5>
+	<p>
+		The Game used to process the Dice and the output used for the results can both be overridden for any dice block.
+		To do so, you simply need to start your dice with the game or output code you wish to use.
+	</p>
+	<p>
+		To override the game engine:
+		<br/><code>[dnd5e 1d20 ac 10 attack]</code>
+		<br/><code>[pf2e 1d20 dc 10 check]</code>
+	</p>
+	<p>
+		To override the output used:
+		<br/><code>[xxs 1d20 ac 10 attack]</code>
+		<br/><code>[xxl 1d20 dc 10 check]</code>
+	</p>
+	<p>
+		You can override both!
+		<br/><code>[xxs pf2e 1d20 dc 10 check]</code>
+		<br/><code>[xxl dnd5e 1d20 ac 10 attack]</code>
+	</p>
 </div>
 			<div id="item-7e" class="item">
-	<h5 class="ps-4">7e. Dice w/ multiple sets</h5>
-	<p><code>[1d20 attack; 1d8 damage]</code>
-	<br/><code>[1d20+5 attack; 1d8 + 2 slashing damage]</code>
-	<br/><code>[1d20+2 attack; 1d4 dagger + 2d6 sneak damage]</code></p>
+	<h5 class="ps-4">7e. Game Specific Dice Features</h5>
+	<p>
+		While you can use the basic dice engine for any system (all you need is to roll and maybe test results), you are likely used to seeing certain syntax in your rolls.
+		Additionally, there are a number of tests and other bits of math that are performed with almost every roll of many games.
+		With RPG Sage, when you set your Channel, Game, or Server to a specific Game (such as Pathfinder 2e), the Dice engine will know to perform many of these actions for you.
+		<small>We plan to continue adding more games as well as expanding the things we can do within each game.</small>
+	</p>
+	<p>
+		<strong>Success / Failure</strong> <small>core dice engine</small>
+		<br/>When rolling a test, the output will include an emoji to indicate success or failure. By default, these are :thumbs_up: and :thumbs_down:.
+	</p>
 </div>
 			<div id="item-7f" class="item">
-	<h5 class="ps-4">7f. Dice w/ multiple sets and tests</h5>
-	<p><code>[1d20 &gt; 10 attack; 1d8 damage]</code>
-	<br/><code>[1d20 &gt; 5 (miss chance); 1d20+5 &gt;= 15 attack; 1d8 + 2 slashing damage]</code></p>
+	<span id="dice-dnd5e"></span>
+	<h5 class="ps-4">7f. DnD 5e Dice Features</h5>
+	<p>
+	<strong>Versus (VS)</strong>
+	<br/>This shortcut tells the dice to do a test to see if the roll meets or exceeds (the "vs" is treated as ">=") the value given.
+	<br/><code>[1d20 + 5 vs 10]</code>
+</p>
+
+	<p>
+	<strong>Armor Class (AC)</strong>
+	<br/>This shortcut tells the dice to do a test to see if the roll meets or exceeds (the "ac" is treated as ">=") the value given.
+	<br/><code>[1d20 + 5 ac 10]</code>
+</p>
+
+	<p>
+	<strong>Difficulty Class (DC)</strong>
+	<br/>This shortcut tells the dice to do a test to see if the roll meets or exceeds (the "dc" is treated as ">=") the value given.
+	<br/><code>[1d20 + 5 dc 10]</code>
+</p>
+
+	<p>
+	<strong>Critical Damage</strong>
+	<br/>If your attack roll has a target AC and your result is a critical hit, RPG Sage will adjust your damage accordingly.
+	By default this is simply x2 damage, but RPG Sage has multiple methods of determining critical hit damage.
+</p>
+
+	<p>
+		<strong>Advantage / Disadvantage (+/-)</strong>
+		<br/>If your roll has Advantage, you may roll <code>[+2d20]</code> to tell RPG Sage to roll twice and take the higher of the two dice.
+		Likewise, if you have Disadvantage, you may use <code>[-2d20]</code> to roll twice and take the lower of the two dice.
+	</p>
+	<p>
+		<strong>Graded Success / Failure</strong>
+		<br/>When playing DnD 5e, a Natural 20 is a Critical Success and Natural 1 is a Critical Failure.
+		RPG Sage takes this into account when you roll using AC, DC, or VS and changes the emoji used accordingly.
+		Additionally, when you roll an attack/damage combo <code>[1d20 ac 10; 1d6 damage]</code> RPG Sage will know to double the damage if your success was critical.
+	</p>
 </div>
 			<div id="item-7g" class="item">
-	<h5 class="ps-4">7g. Dice w/ target <small>certain game systems only</small></h5>
+	<span id="dice-e20"></span>
+	<h5 class="ps-4">7g. Essence20 Dice Features</h5>
 	<p>
-		<code>[1d20 + 5 vs 10 Description]</code>
-		<br/><code>[1d20 ac 10]</code> <small>DnD5e, PF2e</small>
-		<br/><code>[1d20 dc 10]</code> <small>DnD5e, PF2e</small>
-		<br/><code>[1d20 dif 10]</code> <small>E20</small>
-		<br/><code>[1d20 vs 10]</code> <small>DnD5e, E20, PF2e, Quest</small>
-		<br/>Future releases will expand this for other game systems.
+	<strong>Versus (VS)</strong>
+	<br/>This shortcut tells the dice to do a test to see if the roll meets or exceeds (the "vs" is treated as ">=") the value given.
+	<br/><code>[1d20 + 5 vs 10]</code>
+</p>
+
+	<p>
+		<strong>Skill Test (+)</strong>
+		<br/><code>[+d4]</code>
+	</p>
+	<p>
+		<strong>Difficulty (DIF)</strong>
+		<br/><code>[+d2 dif 10]</code>
+	</p>
+	<p>
+		<strong>Upshift / Downshift (UP/DN)</strong>
+		<br/><code>[+d4up2]</code>
+		<br/><code>[+d6dn1]</code>
+		<br/><small>Currently known bug: no spaces surrounding up/dn</small>
+	</p>
+	<p>
+		<strong>Specialization (*)</strong>
+		<br/><code>[+d4*]</code>
+		<br/><code>[+d6*]</code>
+	</p>
+	<p>
+		All of these may be combined!
+		<br/><code>[+d4*up2 dif 5 simple test]</code>
+		<br/><small>Currently known bug: no spaces surrounding up/dn</small>
 	</p>
 </div>
 			<div id="item-7h" class="item">
-	<h5 class="ps-4">7h. Dice w/ output override</h5>
+	<span id="dice-pf2e"></span>
+	<h5 class="ps-4">7h. Pathfinder 2e Dice Features</h5>
 	<p>
-		<code>[XL 1d20 + 20 vs ac 10 greater striking rapier, fatal d8; 1d6 piercing + 4 dex + 2d6 holy + 4d6 sneak]</code>
-		<br/>Output options: xxs, xs, s, m, l, xl, xxl, rollem
-		<br/>Default Dice Output: m
-		<br/><small>Default Dice Output can be set at the Server, Game, and Channel level</small>
+	<strong>Versus (VS)</strong>
+	<br/>This shortcut tells the dice to do a test to see if the roll meets or exceeds (the "vs" is treated as ">=") the value given.
+	<br/><code>[1d20 + 5 vs 10]</code>
+</p>
+
+	<p>
+	<strong>Armor Class (AC)</strong>
+	<br/>This shortcut tells the dice to do a test to see if the roll meets or exceeds (the "ac" is treated as ">=") the value given.
+	<br/><code>[1d20 + 5 ac 10]</code>
+</p>
+
+	<p>
+	<strong>Difficulty Class (DC)</strong>
+	<br/>This shortcut tells the dice to do a test to see if the roll meets or exceeds (the "dc" is treated as ">=") the value given.
+	<br/><code>[1d20 + 5 dc 10]</code>
+</p>
+
+	<p>
+	<strong>Critical Damage</strong>
+	<br/>If your attack roll has a target AC and your result is a critical hit, RPG Sage will adjust your damage accordingly.
+	By default this is simply x2 damage, but RPG Sage has multiple methods of determining critical hit damage.
+</p>
+
+	<p>
+		<strong>Fortune / Misfortune (+/-)</strong>
+		<br/>If your roll has Fortune, you may roll <code>[+2d20]</code> to tell RPG Sage to roll twice and take the higher of the two dice.
+		Likewise, if you have Misfortune, you may use <code>[-2d20]</code> to roll twice and take the lower of the two dice.
+	</p>
+	<p>
+		<strong>Multi Attack Penalty (MAP)</strong>
+		<br/>If you are rolling the same attack multiple times, you can simplify your roll by combining the multiple roll modifier <code>2#</code> with <code>MAP-5</code>.
+		You can, of course, roll more than twice and change the MAP to another value (most likely 4).
+		<br/><code>[2MAP-5#1d20 ac 10; 1d6 damage]</code>
+		<br/><code>[3MAP-4#1d20 ac 10; 1d6 damage]</code>
+	</p>
+	<p>
+		<strong>Graded Success / Failure</strong>
+		<br/>When playing Pathfinder 2e, a Success of 10 or more is a Critical Success, while a Failure of 10 or more is a Critical Failure.
+		Additionally, a natural 1 lowers your success grade by 1 while a natural 20 increases your success grade by 1.
+		RPG Sage takes this into account when you roll using AC, DC, or VS and changes the emoji used accordingly.
+		Additionally, when you roll an attack/damage combo <code>[1d20 ac 10; 1d6 damage]</code> RPG Sage will know to double the damage if your success was critical.
+	</p>
+	<p>
+		<strong>Striking, Greater Striking, Deadly, and Fatal</strong>
+		<br/>When playing Pathfinder 2e, there is some extra math involved in critical hits when you have striking, deadly, and fatal weapons.
+		RPG Sage looks at the input of your dice to see if it can find any of these when calculating your critical damage.
+		<br/><code>[1d20 + 10 ac 10 pick (fatal d10); 1d6 piercing]</code>
+		<br/><code>[1d20 + 10 ac 10 longbow (deadly d10); 1d8 piercing]</code>
+		<br/><code>[1d20 + 10 ac 10 striking longsword; 1d8 slashing]</code>
+		<br/><code>[1d20 + 10 ac 10 greater striking longsword; 1d8 slashing]</code>
+		<br/><code>[1d20 + 10 ac 10 major striking longsword; 1d8 slashing]</code>
 	</p>
 </div>
 			<div id="item-7i" class="item">
-	<h5 class="ps-4">7i. Dice w/ game override</h5>
-	<p><code>[pf2e 1d20 dc 10 check]</code>
-	<br/><code>[dnd5e 1d20 ac 10 attack]</code>
-	<br/>Used when a server or game defaults to a different mode than you want for your dice.
-	<br/>Future releases will expand this for other game systems.
+	<span id="dice-quest"></span>
+	<h5 class="ps-4">7i. Quest Dice Features</h5>
+	<p>
+		<strong>Versus (VS)</strong>
+		<br/>This shortcut tells the dice to do a test to see if the roll meets or exceeds (the "vs" is treated as ">=") the value given.
+		<br/><code>[1d20 + 5 vs 10]</code>
+	</p>
 </div>
 			<div id="item-7j" class="item">
-	<h5 class="ps-4">7j. Dice Macros</h5>
+	<h5 class="ps-4">7j. Random Selection</h5>
+	<p>
+		Another feature of RPG Sage's dice engine is its ability to select items from a list.
+		This was built mostly to alleviate the GM's constant need to select which PC a baddie targets, but we are sure it has many other uses as well.
+		<strong>Note:</strong> Currently this feature relies on commas to separate the items in the list, so be careful of putting fancy names in your lists!
+	</p>
+	<p>
+		<strong>Simple Selection</strong>
+		<br/><code>[Fighter, Wizard, Rogue]</code>
+	</p>
+	<p>
+		<strong>Multiple Selections</strong>
+		<br/><code>[2#Fighter, Wizard, Rogue]</code>
+		<br/><small>The results will be listed in the order they were selected.</small>
+	</p>
+	<p>
+		<strong>Multiple Selections, Sorted</strong>
+		<br/><code>[2s#Fighter, Wizard, Rogue]</code>
+		<br/><small>The results will be sorted alphabetically.</small>
+	</p>
+	<p>
+		<strong>Multiple Selections, Unique</strong>
+		<br/><code>[2u#Fighter, Wizard, Rogue]</code>
+		<br/><small>The results will be listed in the order they were selected.</small>
+	</p>
+	<p>
+		<strong>Multiple Selections, Secret</strong>
+		<br/><code>[gm#Fighter, Wizard, Rogue]</code>
+		<br/>This treats the roll as a "secret" roll and is handled by the channel's or game's settings accordingly.
+	</p>
+	<p>
+		The Multiple, Sorted, Unique, and Secret flags can be mixed and matched in any combination.
+	</p>
+</div>
+			<div id="item-7k" class="item">
+	<h5 class="ps-4">7k. Simple Math</h5>
+	<p>
+		In addition to rolling dice, using macros, and selecting things from a list, RPG Sage's dice engine can also do simple math that doesn't involve dice.
+		This is intended to be a simple, but helpful, addition for folks that want or need to do math in their games.
+	</p>
+	<p>
+		<code>[1+2]</code>
+		<br/><code>[1+2*3]</code>
+		<br/><code>[1+2(3-8)]</code>
+	</p>
+</div>
+
+			<div id="item-8" class="item">
+	<span id="dice-macros"></span>
+	<h4 class="">8. Dice Macros</h4>
 	<p>
 		<code>/sage help category:Dice Macros</code>
 		<br/>
-		<br/>These commands are for managing macros to make complex dice rolls.
+		<br/>These commands are for managing macros that make dice rolls easier to use.
 		<br/><code>sage!! macro delete all</code>
 		<br/><code>sage!! macro delete category="{category}"</code>
 		<br/><code>sage!! macro delete name="{name}"</code>
@@ -841,8 +1149,8 @@
 		<em>(Will provide link to importing documentation as it is finished.)</em>
 	</p>
 </div>
-			<div id="item-7k" class="item">
-	<h5 class="ps-4">7k. Dice Macro Arguments</h5>
+			<div id="item-8a" class="item">
+	<h5 class="ps-4">8a. Dice Macro Arguments</h5>
 	<p>
 		Macros allow arguments, making them very flexible but also easy to overcomplicate.
 		<br/>Arguments are indicated with curly braces: <code>{</code> and <code>}</code>
@@ -886,8 +1194,9 @@
 	</p>
 </div>
 
-			<div id="item-8" class="item">
-	<h4 class="">8. Maps <small>prototype</small></h4>
+
+			<div id="item-9" class="item">
+	<h4 class="">9. Maps <small>prototype</small></h4>
 	<div class="row m-0">
 		<div class="col">
 			<p>
@@ -909,6 +1218,9 @@
 				Therefore, you will need to make sure that they are all public urls that will be available until you are no longer using the map.
 				The simplest way to do this is to post the image(s) into a discord channel and then grab the url from the uploaded image(s).
 			</p>
+			<p>
+				You can see more information about using these <a href="./index.html#map-controls">here</a>.
+			</p>
 			<p class="text-center d-lg-none">
 				<img src="./images/docs/map/map-overview-dark.png" alt="An example of RPG Sage's prototype map feature."/>
 
@@ -920,8 +1232,9 @@
 		</div>
 	</div>
 </div>
-			<div id="item-8a" class="item">
-	<h5 class="ps-4">8a. Map Controls</h5>
+			<div id="item-9a" class="item">
+	<span id="map-controls"></span>
+	<h5 class="ps-4">9a. Map Controls</h5>
 	<p>
 		<strong>Movement Arrows</strong> <small>left side</small>
 		<br/>
@@ -965,8 +1278,8 @@
 		<small>The thought was you import a map for an encounter with all baddies and delete them as they are removed from play.</small>
 	</p>
 </div>
-			<div id="item-8b" class="item">
-	<h5 class="ps-4">8b. Map File Contents</h5>
+			<div id="item-9b" class="item">
+	<h5 class="ps-4">9b. Map File Contents</h5>
 	<div class="row m-0">
 		<div class="col">
 			<p>
@@ -1096,8 +1409,8 @@ position=5,2
 	</ul>
 </div>
 
-			<div id="item-9" class="item">
-	<h4 class="">9. Character Import</h4>
+			<div id="item-10" class="item">
+	<h4 class="">10. Character Import</h4>
 	<p>
 		<code>/sage import</code>
 		<br/>
@@ -1121,19 +1434,19 @@ position=5,2
 	</p>
 </div>
 
-			<div id="item-10" class="item">
-	<h4 class="">10. Other Commands</h4>
+			<div id="item-11" class="item">
+	<h4 class="">11. Other Commands</h4>
 	<p>
 		The following commands are not system specific.
 	</p>
 </div>
-			<div id="item-10a" class="item">
-	<h5 class="ps-4">10a. Coin / Currency Calculator</h5>
+			<div id="item-11a" class="item">
+	<h5 class="ps-4">11a. Coin / Currency Calculator</h5>
 	<p><code>sage! {1pp} {-2gp} {+3sp} {-4cp}</code>
 	<br/><code>sage! {1pp} {2gp} {3sp} {4cp}</code></p>
 </div>
-			<div id="item-10b" class="item">
-	<h5 class="ps-4">10b. Weather Report Generator</h5>
+			<div id="item-11b" class="item">
+	<h5 class="ps-4">11b. Weather Report Generator</h5>
 	<p>
 		<code>/sage help category:Random Weather Report</code>
 		<br/>
@@ -1146,12 +1459,12 @@ position=5,2
 	</p>
 </div>
 
-			<div id="item-11" class="item">
-	<h4 class="">11. Pathfinder 2e Commands</h4>
+			<div id="item-12" class="item">
+	<h4 class="">12. Pathfinder 2e Commands</h4>
 	<p>The following commands are specific to Pathfinder 2e.</p>
 </div>
-			<div id="item-11a" class="item">
-	<h5 class="ps-4">11a. Golarion / Absalom Staton Info (days &amp; months)</h5>
+			<div id="item-12a" class="item">
+	<h5 class="ps-4">12a. Golarion / Absalom Staton Info (days &amp; months)</h5>
 	<p>
 		<code>/sage help category:Golarion Calendar Info</code>
 		<br/>
@@ -1167,8 +1480,8 @@ position=5,2
 		<br/>- Displays today's date on Golarion, Absalom Station, <em>and</em> on Earth. Includes season.
 	</p>
 </div>
-			<div id="item-11b" class="item">
-	<h5 class="ps-4">11b. Pathfinder 2e DCs</h5>
+			<div id="item-12b" class="item">
+	<h5 class="ps-4">12b. Pathfinder 2e DCs</h5>
 	<p>
 		<code>/sage help category:PF2e DC Values</code>
 		<br/>
@@ -1180,30 +1493,30 @@ position=5,2
 		<br/><code>sage! {proficiency} simple dc</code>
 	</p>
 </div>
-			<div id="item-11c" class="item">
-	<h5 class="ps-4">11c. Pathfinder 2e Lists</h5>
+			<div id="item-12c" class="item">
+	<h5 class="ps-4">12c. Pathfinder 2e Lists</h5>
 	<p><code>sage! list {deities|gods} by domain {domain}</code>
 	<br/><code>sage! list {weapons|armor|spells} by trait {trait}</code>
 	<br/>Future releases will expand on these lists.</p>
 </div>
-			<div id="item-11d" class="item">
-	<h5 class="ps-4">11d. Pathfinder 2e Content Search</h5>
+			<div id="item-12d" class="item">
+	<h5 class="ps-4">12d. Pathfinder 2e Content Search</h5>
 	<p>These commands perform full text searches.
 	<br/><code>sage? {searchTerm}</code>
 	<br/><code>sage? {searchTerm} -{categoryOrObjectType}</code>
 	<br/>Category/ObjectType examples: Background, Feat, Spell, etc.
 	<br/>This isn't fully operational, nor is the data complete yet.</p>
 </div>
-			<div id="item-11e" class="item">
-	<h5 class="ps-4">11e. Pathfinder 2e Content Find</h5>
+			<div id="item-12e" class="item">
+	<h5 class="ps-4">12e. Pathfinder 2e Content Find</h5>
 	<p>These commands perform searches only against names.
 	<br/><code>sage?! {searchTerm}</code>
 	<br/><code>sage?! {searchTerm} -{categoryOrObjectType}</code>
 	<br/>Category/ObjectType examples: Background, Feat, Spell, etc.
 	<br/>This isn't fully operational, nor is the data complete yet.</p>
 </div>
-			<div id="item-11f" class="item">
-	<h5 class="ps-4">11f. Pathfinder 2e Spell Lists</h5>
+			<div id="item-12f" class="item">
+	<h5 class="ps-4">12f. Pathfinder 2e Spell Lists</h5>
 	<p>These commands allow you to view various types of spell lists
 	<br/><code>sage! spells {tradition} {level|Cantrips}</code>
 	<br/><code>sage! spells {tradition} {level|Cantrips} by school</code>
@@ -1216,18 +1529,18 @@ position=5,2
 	<br/>The following creates a specialized list of spells by merging or excluding traditions
 	<br/><code>sage! spells {level|Cantrips} {+tradition} {-tradition} {|tradition} {&amp;tradition}</code></p>
 </div>
-			<div id="item-11g" class="item">
-	<h5 class="ps-4">11g. Pathfinder 2e Focus Spell Lists</h5>
+			<div id="item-12g" class="item">
+	<h5 class="ps-4">12g. Pathfinder 2e Focus Spell Lists</h5>
 	<p><code>sage! focus spells {Archetype|Class|Domain}</code>
 	<br/><code>sage! {Archetype|Class|Domain} focus spells</code></p>
 </div>
-			<div id="item-11h" class="item">
-	<h5 class="ps-4">11h. Pathfinder 2e Starting Wealth Info</h5>
+			<div id="item-12h" class="item">
+	<h5 class="ps-4">12h. Pathfinder 2e Starting Wealth Info</h5>
 	<p><code>sage! starting wealth</code>
 	<br/><code>sage! starting wealth {level}</code></p>
 </div>
-			<div id="item-11i" class="item">
-	<h5 class="ps-4">11i. Pathfinder 2e Income Info</h5>
+			<div id="item-12i" class="item">
+	<h5 class="ps-4">12i. Pathfinder 2e Income Info</h5>
 	<p><code>sage! income earned</code>
 	<br/>- Shows the entire table 4-2: Income Earned
 	<br/><code>sage! income earned {taskLevel}</code>
@@ -1236,29 +1549,29 @@ position=5,2
 	<br/>- Shows the results for the given level and proficiency.</p>
 </div>
 
-			<div id="item-12" class="item">
-	<h4 class="">12. Pathfinder Society 2e Commands</h4>
+			<div id="item-13" class="item">
+	<h4 class="">13. Pathfinder Society 2e Commands</h4>
 	<p>The following commands are designed to help if you are playing Organized Play (Pathfinder Society) games for Pathfinder 2e.</p>
 </div>
-			<div id="item-12a" class="item">
-	<h5 class="ps-4">12a. Pathfinder PFS / Org Play Links</h5>
+			<div id="item-13a" class="item">
+	<h5 class="ps-4">13a. Pathfinder PFS / Org Play Links</h5>
 	<p><code>sage! pfs links</code>
 	<br/>DISABLED FOR NOW (their site changed)</p>
 </div>
 
-			<div id="item-12b" class="item">
-	<h5 class="ps-4">12b. Pathfinder PFS Downtime Rolls</h5>
+			<div id="item-13b" class="item">
+	<h5 class="ps-4">13b. Pathfinder PFS Downtime Rolls</h5>
 	<p><code>sage! pfs income {pcLevel} {skillProficiency} {skillModifier}</code>
 	<br/><code>sage! pfs income {pcLevel} {skillProficiency} {skillModifier} {days}</code></p>
 </div>
-			<div id="item-12c" class="item">
-	<h5 class="ps-4">12c. Pathfinder PFS Scenario Randomizers</h5>
+			<div id="item-13c" class="item">
+	<h5 class="ps-4">13c. Pathfinder PFS Scenario Randomizers</h5>
 	<p><code>sage! pfs s1-01 {pc1Level}, {pc2Level}, {pc3Level}, {pc4Level}, {pc5Level}, {pc6Level}, {pc7Level}</code>
 	<br/>Future releases will include more scenarios.
 	<br/>PFS Guidelines now recommend against 7 player tables</p>
 </div>
-			<div id="item-12d" class="item">
-	<h5 class="ps-4">12d. Pathfinder PFS Tier Calculator</h5>
+			<div id="item-13d" class="item">
+	<h5 class="ps-4">13d. Pathfinder PFS Tier Calculator</h5>
 	<p><code>sage! pfs {tier} {minLevel}-{maxLevel} {pc1Level} {pc2Level} {pc3Level} {pc4Level} {pc5Level} {pc6Level} {pc7Level}</code>
 	<br/>PFS Guidelines now recommend against 7 player tables</p>
 </div>

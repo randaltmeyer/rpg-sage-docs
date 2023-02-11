@@ -26,7 +26,7 @@ function fetchFilesToProcess() {
 function readSnippet(snippetFilePath) {
 	const updatedSnippetFilePath = snippetFilePath.replace(/^\.\/snippets/, `${srcRootFolderPath}/snippets`);
 	if (!fs.existsSync(updatedSnippetFilePath)) {
-		console.error(`Invalid snippetFilePath: ${snippetFilePath}`);
+		console.error(`\t\tInvalid snippetFilePath: ${snippetFilePath}`);
 		return `<div class="alert alert-danger">Invalid snippetFilePath: ${snippetFilePath}</div>`;
 	}
 	return fs.readFileSync(updatedSnippetFilePath).toString();
@@ -85,7 +85,7 @@ function processItemSnippets(file, navItems) {
 
 	// just in case we mess up during dev
 	if (file.fileContents.match(/data\-item\-snippet\-url/i)) {
-		console.warn(`"data-item-snippet-url" found in file "${file.filePath}"!`);
+		console.warn(`\t\t"data-item-snippet-url" found in file "${file.filePath}"!`);
 	}
 }
 
@@ -96,7 +96,7 @@ function processSnippets(file) {
 		file.fileContents = file.fileContents.replace(snippetRegex, (_div, snippetPath, _index) => readSnippet(snippetPath));
 	}
 	if (file.fileContents.match(/data-snippet-url/i)) {
-		console.warn(`"data-snippet-url" found in file "${file.filePath}"!`);
+		console.warn(`\t\t"data-snippet-url" found in file "${file.filePath}"!`);
 	}
 }
 
@@ -109,7 +109,8 @@ function processNavItems(file, navItems) {
 				if (navableChildren.length) {
 					html += `<nav class="nav flex-column">`;
 					navableChildren.forEach(navChild => {
-						html += `<a class="nav-link" href="#item-${navChild.key}">${navChild.key}. ${navChild.label}</a>`;
+						const label = navChild.label.replace(/<small>.*?<\/small>/ig, "").trim();
+						html += `<a class="nav-link" href="#item-${navChild.key}">${navChild.key}. ${label}</a>`;
 					});
 					html += `</nav>`;
 				}
@@ -128,10 +129,11 @@ function processNavItems(file, navItems) {
 }
 
 function removeComments(file) {
-	file.fileContents = file.fileContents.replace(/<\!--(.|\n)*?-->/g, comment => {
-		console.log(`\t\t${comment.replace(/\n|\t/g, char => char === "\n" ? "\\n" : "\\t")}`);
-		return "";
-	});
+	let count = 0;
+	file.fileContents = file.fileContents.replace(/<\!--(.|\n)*?-->/g, () => { count++; return ""; });
+	if (count) {
+		console.log(`\t\t${count} comments removed from: ${file.filePath}`);
+	}
 }
 
 function now() {
@@ -144,7 +146,7 @@ function now() {
 
 function updateDate(file) {
 	const updateDateHtml = `<div class="text-center"><small>updated: ${now()}</small></div>`;
-	file.fileContents = file.fileContents.replace(`<div class="alert alert-danger">UPDATE DATE</div>`, updateDateHtml);
+	file.fileContents = file.fileContents.replace(/<div class="alert alert-danger">UPDATE DATE<\/div>/g, updateDateHtml);
 }
 
 function writeFile(file) {

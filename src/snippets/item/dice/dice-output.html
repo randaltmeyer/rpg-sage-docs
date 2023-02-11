@@ -1,0 +1,63 @@
+<div class="item">
+	<span id="dice-output"></span>
+	<header>Dice Output</header>
+	<p>
+		RPG Sage's Dice can be configured to be as concise or verbose as you want.
+		These settings can be set at the Channel, Game, or even Server level.
+	</p>
+	<p>
+		You output types are: <code>XXS</code>, <code>XS</code>, <code>S</code>, <code>M</code>, <code>L</code>, <code>XL</code>, <code>XXL</code>, and <code>ROLLEM</code>.
+		The "small" and "medium" types all use a single line for any given dice block (a single <code>[]</code>) while the "large" types use multiple lines.
+		The <code>ROLLEM</code> type is for users that are familiar/comfortable with the way Rollem's output looks.
+		The default value is <code>M</code>.
+	</p>
+	<p>
+		Let us consider the following dice roll for each of the output types:
+		<br/>&nbsp; &nbsp; <code>[1d20 conceal; 1d20+8 attack; 1d10 slashing +1d6 fire +2d6 holy]</code>
+		<br/>Let us assume that the following rolls:
+		<br/>&nbsp; &nbsp; conceal <strong>5</strong>, attack <strong>8</strong>, slashing <strong>10</strong>, fire <strong>3</strong>, holy <strong>1,1</strong>
+		<br/>These values bring us the following totals:
+		<br/>&nbsp; &nbsp; conceal <strong>5</strong>, attack <strong>16</strong>, damage <strong>15</strong>
+	</p>
+	<p>
+		<strong>Output Type:</strong> <code>XXS</code>
+		<br/><code>5; 16; 15</code>
+	</p>
+	<p>
+		<strong>Output Type:</strong> <code>XS</code>
+		<br/><code>5 `conceal`; 16 `attack`; 15 `slashing`</code>
+	</p>
+	<p>
+		<strong>Output Type:</strong> <code>S</code>
+		<br/><code>5 `conceal` ⟵ [5]; 16 `attack` ⟵ [8] + 8; 15 `slashing` ⟵ [10] + [3] fire + [1,1] holy</code>
+	</p>
+	<p>
+		<strong>Output Type:</strong> <code>M</code> <small>default</small>
+		<br/><code>5 `conceal` ⟵ [5]1d20; 16 `attack` ⟵ [8]1d20 + 8; 15 `slashing` ⟵ [10]1d10 + [3]1d6 fire + [1,1]2d6 holy</code>
+	</p>
+	<p>
+		<strong>Output Type:</strong> <code>L</code>
+		<br/><code>5 `conceal` ⟵ [5]</code>
+		<br/><code>16 `attack` ⟵ [8] + 8</code>
+		<br/><code>15 `slashing` ⟵ [10] + [3] fire + [1,1] holy</code>
+	</p>
+	<p>
+		<strong>Output Type:</strong> <code>XL</code>
+		<br/><code>5 `conceal` ⟵ [5]1d20</code>
+		<br/><code>16 `attack` ⟵ [8]1d20 + 8</code>
+		<br/><code>15 `slashing` ⟵ [10]1d10 + [3]1d6 fire + [1,1]2d6 holy</code>
+	</p>
+	<p>
+		<strong>Output Type:</strong> <code>XXL</code>
+		<br/><code>[1d20 conceal; 1d20+8 attack; 1d10 slashing +1d6 fire +2d6 holy]</code>
+		<br/><code>5 `conceal` ⟵ [5]1d20</code>
+		<br/><code>16 `attack` ⟵ [8]1d20 + 8</code>
+		<br/><code>15 `slashing` ⟵ [10]1d10 + [3]1d6 fire + [1,1]2d6 holy</code>
+	</p>
+	<p>
+		<strong>Output Type:</strong> <code>ROLLEM</code>
+		<br/><code>'conceal', ` 5 ` ⟵ [5] 1d20</code>
+		<br/><code>'attack', ` 16 ` ⟵ [8] 1d20 + 8</code>
+		<br/><code>'slashing', ` 18 ` ⟵ [3] 1d10 + [4] 1d6 fire + [5, 6] 2d6 holy</code>
+	</p>
+</div>
